@@ -139,6 +139,8 @@ export default function GameCategories() {
 
                   <a
                     href={SITE_INFO.registerUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-6 py-3 text-sm font-bold rounded-xl transition-all duration-300 hover:scale-105 self-start"
                     style={{
                       fontFamily: "'Kanit', sans-serif",

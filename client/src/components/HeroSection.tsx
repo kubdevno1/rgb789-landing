@@ -87,6 +87,8 @@ export default function HeroSection() {
             <div className="flex flex-wrap gap-4">
               <a
                 href={SITE_INFO.registerUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-8 py-4 text-lg font-bold rounded-xl transition-all duration-300 hover:scale-105"
                 style={{
                   fontFamily: "'Kanit', sans-serif",
@@ -103,6 +105,8 @@ export default function HeroSection() {
               </a>
               <a
                 href={SITE_INFO.loginUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-8 py-4 text-lg font-semibold rounded-xl transition-all duration-300 hover:bg-white/10 text-white border"
                 style={{
                   fontFamily: "'Kanit', sans-serif",

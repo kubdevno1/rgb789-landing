@@ -26,6 +26,7 @@ export default function BottomNavBar() {
           <a
             key={i}
             href={item.href}
+            {...(item.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
             className="flex flex-col items-center justify-center gap-0.5 transition-colors"
           >
             {item.isLogo ? (

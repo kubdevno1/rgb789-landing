@@ -15,6 +15,7 @@ import SEOContent from "@/components/SEOContent";
 import CTABanner from "@/components/CTABanner";
 import Footer from "@/components/Footer";
 import BottomNavBar from "@/components/BottomNavBar";
+import LineFloatingButton from "@/components/LineFloatingButton";
 
 export default function Home() {
   return (
@@ -101,6 +102,7 @@ export default function Home() {
       </main>
       <Footer />
       <BottomNavBar />
+      <LineFloatingButton />
     </div>
   );
 }

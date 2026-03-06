@@ -16,6 +16,8 @@ export default function PromoBanner() {
         >
           <a
             href={SITE_INFO.registerUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className="block relative overflow-hidden rounded-2xl group"
             style={{
               boxShadow: "0 0 40px rgba(139,92,246,0.2), 0 8px 32px rgba(0,0,0,0.4)",

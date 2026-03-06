@@ -78,6 +78,7 @@ export default function Footer() {
                 <li key={link.label}>
                   <a
                     href={link.href}
+                    {...(link.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                     className="text-sm text-white/50 hover:text-yellow-400 transition-colors"
                   >
                     {link.label}
@@ -101,11 +102,12 @@ export default function Footer() {
                 { label: "ข้อตกลงและกติกา", href: "#" },
                 { label: "นโยบายความเป็นส่วนตัว", href: "#" },
                 { label: "วิธีการใช้งานเว็บไซต์", href: "#" },
-                { label: "ติดต่อเรา", href: "#" },
+                { label: "ติดต่อเรา (LINE)", href: SITE_INFO.lineUrl },
               ].map((link) => (
                 <li key={link.label}>
                   <a
                     href={link.href}
+                    {...(link.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                     className="text-sm text-white/50 hover:text-yellow-400 transition-colors"
                   >
                     {link.label}

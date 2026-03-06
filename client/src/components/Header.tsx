@@ -56,6 +56,8 @@ export default function Header() {
           <div className="flex items-center gap-3">
             <a
               href={SITE_INFO.loginUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="hidden sm:inline-flex px-5 py-2 text-sm font-semibold text-white/90 border rounded-lg transition-all duration-300 hover:bg-white/10"
               style={{
                 fontFamily: "'Kanit', sans-serif",
@@ -66,6 +68,8 @@ export default function Header() {
             </a>
             <a
               href={SITE_INFO.registerUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex px-5 py-2.5 text-sm font-bold rounded-lg transition-all duration-300 hover:scale-105"
               style={{
                 fontFamily: "'Kanit', sans-serif",
@@ -119,6 +123,8 @@ export default function Header() {
               ))}
               <a
                 href={SITE_INFO.loginUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="sm:hidden flex items-center gap-3 px-4 py-3 text-white/80 hover:text-yellow-400 hover:bg-white/5 rounded-lg transition-colors mt-2 border-t"
                 style={{ fontFamily: "'Kanit', sans-serif", borderColor: "rgba(139,92,246,0.15)" }}
               >
