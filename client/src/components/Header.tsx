@@ -20,21 +20,12 @@ export default function Header() {
       >
         <div className="container flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <a href="/" className="flex items-center gap-2 group">
-            <div className="relative">
-              <span
-                className="text-2xl lg:text-3xl font-black tracking-tight"
-                style={{
-                  fontFamily: "'Kanit', sans-serif",
-                  background: "linear-gradient(135deg, #FFD700 0%, #FFC107 40%, #FFE066 60%, #FFD700 100%)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  filter: "drop-shadow(0 0 8px rgba(255,215,0,0.4))",
-                }}
-              >
-                RGB789
-              </span>
-            </div>
+          <a href="/" className="flex items-center group">
+            <img
+              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663187662312/VGyYopoy4jPaukwiBaCcsR/rgb789-logo_b0cfdfe9.jpg"
+              alt="RGB789 - เว็บพนันออนไลน์อันดับ 1"
+              className="h-10 lg:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+            />
           </a>
 
           {/* Desktop Nav */}

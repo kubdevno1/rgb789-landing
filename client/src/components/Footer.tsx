@@ -17,17 +17,11 @@ export default function Footer() {
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
             <a href="/" className="inline-block mb-4">
-              <span
-                className="text-3xl font-black"
-                style={{
-                  fontFamily: "'Kanit', sans-serif",
-                  background: "linear-gradient(135deg, #FFD700, #FFC107)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                }}
-              >
-                RGB789
-              </span>
+              <img
+                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663187662312/VGyYopoy4jPaukwiBaCcsR/rgb789-logo_b0cfdfe9.jpg"
+                alt="RGB789 - เว็บพนันออนไลน์อันดับ 1"
+                className="h-12 w-auto object-contain"
+              />
             </a>
             <p className="text-white/50 text-sm leading-relaxed mb-4">
               {SITE_INFO.tagline}
