@@ -88,6 +88,251 @@ export default function Home() {
         }}
       />
 
+      {/* JSON-LD Article Schema for SEO Rich Snippets */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                item: {
+                  "@type": "Article",
+                  headline: "คู่มือเล่นสล็อตออนไลน์ ฉบับมือใหม่ 2567",
+                  description: "เรียนรู้วิธีเล่นสล็อตออนไลน์ตั้งแต่พื้นฐาน เทคนิคการเลือกเกม อัตรา RTP และวิธีบริหารเงินทุนอย่างมืออาชีพ",
+                  author: { "@type": "Organization", name: "RGB789" },
+                  publisher: {
+                    "@type": "Organization",
+                    name: "RGB789",
+                    url: "https://www.rgb789.com",
+                  },
+                  datePublished: "2024-12-01",
+                  dateModified: "2025-03-01",
+                  mainEntityOfPage: "https://www.rgb789.com/#slot-guide",
+                  articleSection: "สล็อตออนไลน์",
+                  keywords: ["สล็อตออนไลน์", "คู่มือสล็อต", "RTP", "วิธีเล่นสล็อต", "RGB789"],
+                  inLanguage: "th",
+                },
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                item: {
+                  "@type": "Article",
+                  headline: "10 เกมสล็อตยอดนิยม แตกง่าย จ่ายจริง 2567",
+                  description: "รวมเกมสล็อตที่ผู้เล่นนิยมมากที่สุด จากค่ายดัง PG Soft, Pragmatic Play, JILI พร้อมอัตรา RTP สูง",
+                  author: { "@type": "Organization", name: "RGB789" },
+                  publisher: {
+                    "@type": "Organization",
+                    name: "RGB789",
+                    url: "https://www.rgb789.com",
+                  },
+                  datePublished: "2024-12-15",
+                  dateModified: "2025-03-01",
+                  mainEntityOfPage: "https://www.rgb789.com/#top-slot-games",
+                  articleSection: "สล็อตออนไลน์",
+                  keywords: ["เกมสล็อตยอดนิยม", "สล็อตแตกง่าย", "PG Soft", "Pragmatic Play", "RGB789"],
+                  inLanguage: "th",
+                },
+              },
+              {
+                "@type": "ListItem",
+                position: 3,
+                item: {
+                  "@type": "Article",
+                  headline: "เทคนิคเล่นสล็อตให้ได้กำไร สูตรที่มือโปรใช้จริง",
+                  description: "เปิดเผยเทคนิคและกลยุทธ์การเล่นสล็อตที่นักเดิมพันมืออาชีพใช้ เพิ่มโอกาสชนะอย่างมีระบบ",
+                  author: { "@type": "Organization", name: "RGB789" },
+                  publisher: {
+                    "@type": "Organization",
+                    name: "RGB789",
+                    url: "https://www.rgb789.com",
+                  },
+                  datePublished: "2025-01-10",
+                  dateModified: "2025-03-01",
+                  mainEntityOfPage: "https://www.rgb789.com/#slot-tips",
+                  articleSection: "สล็อตออนไลน์",
+                  keywords: ["เทคนิคสล็อต", "สูตรสล็อต", "เล่นสล็อตให้ได้กำไร", "RGB789"],
+                  inLanguage: "th",
+                },
+              },
+              {
+                "@type": "ListItem",
+                position: 4,
+                item: {
+                  "@type": "Article",
+                  headline: "รีวิว PG Soft ค่ายสล็อตอันดับ 1 เกมแตกง่าย กราฟิกสวย",
+                  description: "ทำความรู้จักค่าย PG Soft ผู้พัฒนาเกมสล็อตชั้นนำ พร้อมรีวิวเกมเด่นและเหตุผลที่ผู้เล่นเลือก",
+                  author: { "@type": "Organization", name: "RGB789" },
+                  publisher: {
+                    "@type": "Organization",
+                    name: "RGB789",
+                    url: "https://www.rgb789.com",
+                  },
+                  datePublished: "2025-01-20",
+                  dateModified: "2025-03-01",
+                  mainEntityOfPage: "https://www.rgb789.com/#pg-soft-review",
+                  articleSection: "สล็อตออนไลน์",
+                  keywords: ["PG Soft", "รีวิว PG Soft", "ค่ายสล็อต", "Mahjong Ways", "RGB789"],
+                  inLanguage: "th",
+                },
+              },
+              {
+                "@type": "ListItem",
+                position: 5,
+                item: {
+                  "@type": "Article",
+                  headline: "คาสิโนสดออนไลน์ คู่มือฉบับสมบูรณ์ เล่นอย่างไรให้ได้เงินจริง",
+                  description: "เรียนรู้ทุกอย่างเกี่ยวกับคาสิโนสด ตั้งแต่วิธีเล่น เกมยอดนิยม เทคนิคการเดิมพัน และค่ายที่ดีที่สุดในปี 2567",
+                  author: { "@type": "Organization", name: "RGB789" },
+                  publisher: {
+                    "@type": "Organization",
+                    name: "RGB789",
+                    url: "https://www.rgb789.com",
+                  },
+                  datePublished: "2025-02-01",
+                  dateModified: "2025-03-01",
+                  mainEntityOfPage: "https://www.rgb789.com/#casino-live-guide",
+                  articleSection: "คาสิโนสด",
+                  keywords: ["คาสิโนสด", "คาสิโนออนไลน์", "บาคาร่า", "SA Gaming", "RGB789"],
+                  inLanguage: "th",
+                },
+              },
+              {
+                "@type": "ListItem",
+                position: 6,
+                item: {
+                  "@type": "Article",
+                  headline: "สูตรบาคาร่า 2567 เทคนิคอ่านเค้าไพ่ที่มือโปรใช้จริง",
+                  description: "เปิดเผยสูตรบาคาร่าและเทคนิคอ่านเค้าไพ่แบบมืออาชีพ พร้อมกลยุทธ์บริหารเงินทุนเพื่อเพิ่มโอกาสชนะ",
+                  author: { "@type": "Organization", name: "RGB789" },
+                  publisher: {
+                    "@type": "Organization",
+                    name: "RGB789",
+                    url: "https://www.rgb789.com",
+                  },
+                  datePublished: "2025-02-10",
+                  dateModified: "2025-03-01",
+                  mainEntityOfPage: "https://www.rgb789.com/#baccarat-strategy",
+                  articleSection: "คาสิโนสด",
+                  keywords: ["สูตรบาคาร่า", "เทคนิคบาคาร่า", "เค้าไพ่", "บาคาร่าออนไลน์", "RGB789"],
+                  inLanguage: "th",
+                },
+              },
+              {
+                "@type": "ListItem",
+                position: 7,
+                item: {
+                  "@type": "Article",
+                  headline: "แทงบอลออนไลน์ คู่มือฉบับสมบูรณ์สำหรับมือใหม่ 2567",
+                  description: "เรียนรู้วิธีแทงบอลออนไลน์ตั้งแต่พื้นฐาน ประเภทการเดิมพัน อ่านราคาบอล และเทคนิคเพิ่มโอกาสชนะ",
+                  author: { "@type": "Organization", name: "RGB789" },
+                  publisher: {
+                    "@type": "Organization",
+                    name: "RGB789",
+                    url: "https://www.rgb789.com",
+                  },
+                  datePublished: "2025-02-15",
+                  dateModified: "2025-03-01",
+                  mainEntityOfPage: "https://www.rgb789.com/#football-betting-guide",
+                  articleSection: "แทงบอล",
+                  keywords: ["แทงบอลออนไลน์", "วิธีแทงบอล", "ราคาบอล", "SBOBET", "RGB789"],
+                  inLanguage: "th",
+                },
+              },
+              {
+                "@type": "ListItem",
+                position: 8,
+                item: {
+                  "@type": "Article",
+                  headline: "เทคนิคแทงบอลให้ได้กำไร สูตรวิเคราะห์บอลแบบมืออาชีพ",
+                  description: "เปิดเผยเทคนิควิเคราะห์บอลและกลยุทธ์การเดิมพันที่นักแทงบอลมืออาชีพใช้จริง เพิ่มโอกาสชนะอย่างมีระบบ",
+                  author: { "@type": "Organization", name: "RGB789" },
+                  publisher: {
+                    "@type": "Organization",
+                    name: "RGB789",
+                    url: "https://www.rgb789.com",
+                  },
+                  datePublished: "2025-02-20",
+                  dateModified: "2025-03-01",
+                  mainEntityOfPage: "https://www.rgb789.com/#football-betting-tips",
+                  articleSection: "แทงบอล",
+                  keywords: ["เทคนิคแทงบอล", "วิเคราะห์บอล", "สูตรแทงบอล", "แทงบอลให้ได้กำไร", "RGB789"],
+                  inLanguage: "th",
+                },
+              },
+            ],
+          }),
+        }}
+      />
+
+      {/* JSON-LD Organization Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            name: "RGB789",
+            url: "https://www.rgb789.com",
+            description: "RGB789 เว็บพนันออนไลน์ครบวงจร คาสิโนสด สล็อต แทงบอล เกมยิงปลา รวมค่ายดังทั่วโลก",
+            contactPoint: {
+              "@type": "ContactPoint",
+              contactType: "customer service",
+              availableLanguage: ["Thai", "English"],
+              url: "https://line.me/R/ti/p/@627ixocl",
+            },
+            sameAs: ["https://line.me/R/ti/p/@627ixocl"],
+          }),
+        }}
+      />
+
+      {/* JSON-LD BreadcrumbList Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "หน้าแรก",
+                item: "https://www.rgb789.com",
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "สล็อตออนไลน์",
+                item: "https://www.rgb789.com/#slots",
+              },
+              {
+                "@type": "ListItem",
+                position: 3,
+                name: "คาสิโนสด",
+                item: "https://www.rgb789.com/#casino",
+              },
+              {
+                "@type": "ListItem",
+                position: 4,
+                name: "แทงบอล",
+                item: "https://www.rgb789.com/#sports",
+              },
+              {
+                "@type": "ListItem",
+                position: 5,
+                name: "บทความแนะนำ",
+                item: "https://www.rgb789.com/#articles",
+              },
+            ],
+          }),
+        }}
+      />
+
       <Header />
       <main>
         <HeroSection />
