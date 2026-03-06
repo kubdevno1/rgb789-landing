@@ -1,25 +1,106 @@
-import { Button } from "@/components/ui/button";
-import { Loader2 } from "lucide-react";
-import { Streamdown } from 'streamdown';
+// Design: Electric Stadium — RGB789 Landing Page
+// SEO: Comprehensive landing page with structured content
+// Colors: Deep Purple Gradient + Vivid Gold + Electric accents
 
-/**
- * All content in this page are only for example, replace with your own feature implementation
- * When building pages, remember your instructions in Frontend Best Practices, Design Guide and Common Pitfalls
- */
+import Header from "@/components/Header";
+import HeroSection from "@/components/HeroSection";
+import MarqueeBar from "@/components/MarqueeBar";
+import PromoBanner from "@/components/PromoBanner";
+import StepsSection from "@/components/StepsSection";
+import GameCategories from "@/components/GameCategories";
+import WhyChooseUs from "@/components/WhyChooseUs";
+import PaymentMethods from "@/components/PaymentMethods";
+import FAQSection from "@/components/FAQSection";
+import SEOContent from "@/components/SEOContent";
+import CTABanner from "@/components/CTABanner";
+import Footer from "@/components/Footer";
+import BottomNavBar from "@/components/BottomNavBar";
+
 export default function Home() {
-  // If theme is switchable in App.tsx, we can implement theme toggling like this:
-  // const { theme, toggleTheme } = useTheme();
-
   return (
-    <div className="min-h-screen flex flex-col">
+    <div
+      className="min-h-screen"
+      style={{
+        background: "linear-gradient(180deg, #0f0225 0%, #1a0533 10%, #0f0225 100%)",
+      }}
+    >
+      {/* JSON-LD Structured Data for SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            name: "RGB789",
+            url: "https://www.rgb789.com",
+            description: "RGB789 เว็บพนันออนไลน์ครบวงจร คาสิโนสด สล็อต แทงบอล เกมยิงปลา รวมค่ายดังทั่วโลก",
+            potentialAction: {
+              "@type": "SearchAction",
+              target: "https://www.rgb789.com/search?q={search_term_string}",
+              "query-input": "required name=search_term_string",
+            },
+          }),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: "RGB789 คืออะไร?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "RGB789 คือเว็บพนันออนไลน์ครบวงจรที่รวบรวมเกมคาสิโนจากทุกค่ายดังทั่วโลก ให้บริการทั้งคาสิโนสด สล็อตออนไลน์ แทงบอล เกมยิงปลา และโต๊ะเกม ในเว็บเดียว",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "สมัครสมาชิก RGB789 ยากไหม?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "สมัครสมาชิกง่ายมาก ใช้เวลาเพียง 3 นาที เพียงกรอกข้อมูลพื้นฐาน ยืนยันตัวตน และเริ่มเล่นได้ทันที",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "ฝาก-ถอนเงินใช้เวลานานไหม?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "RGB789 ใช้ระบบฝาก-ถอนอัตโนมัติ (Auto) ฝากเงินภายใน 30 วินาที ถอนเงินภายใน 1-3 นาที รองรับทุกธนาคาร",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "RGB789 ปลอดภัยไหม?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "RGB789 ได้รับใบอนุญาตถูกต้องตามกฎหมาย มีระบบรักษาความปลอดภัย SSL Encryption ระดับสูงสุด",
+                },
+              },
+            ],
+          }),
+        }}
+      />
+
+      <Header />
       <main>
-        {/* Example: lucide-react for icons */}
-        <Loader2 className="animate-spin" />
-        Example Page
-        {/* Example: Streamdown for markdown rendering */}
-        <Streamdown>Any **markdown** content</Streamdown>
-        <Button variant="default">Example Button</Button>
+        <HeroSection />
+        <MarqueeBar />
+        <PromoBanner />
+        <StepsSection />
+        <GameCategories />
+        <WhyChooseUs />
+        <PaymentMethods />
+        <FAQSection />
+        <SEOContent />
+        <CTABanner />
       </main>
+      <Footer />
+      <BottomNavBar />
     </div>
   );
 }
