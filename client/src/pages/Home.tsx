@@ -11,6 +11,7 @@ import GameCategories from "@/components/GameCategories";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import PaymentMethods from "@/components/PaymentMethods";
 import FAQSection from "@/components/FAQSection";
+import ArticlesSection from "@/components/ArticlesSection";
 import SEOContent from "@/components/SEOContent";
 import CTABanner from "@/components/CTABanner";
 import Footer from "@/components/Footer";
@@ -97,6 +98,7 @@ export default function Home() {
         <WhyChooseUs />
         <PaymentMethods />
         <FAQSection />
+        <ArticlesSection />
         <SEOContent />
         <CTABanner />
       </main>
