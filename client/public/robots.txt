@@ -1,0 +1,19 @@
+# RGB789 - robots.txt
+# อนุญาตให้ search engine ทุกตัวเข้าถึงเนื้อหาทั้งหมด
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://rgb789land-vgyyopoy.manus.space/sitemap.xml
+
+# Crawl-delay สำหรับ bot ที่รองรับ
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Yandex
+Allow: /
+Crawl-delay: 5
