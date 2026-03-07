@@ -2,9 +2,20 @@
 // Matches the original site's bottom nav
 
 import { SITE_INFO } from "@/lib/constants";
+import { trackRegisterClick, trackLoginClick, trackLineContactClick } from "@/lib/analytics";
 import { LogIn, UserPlus, Gift, MessageCircle } from "lucide-react";
 
 export default function BottomNavBar() {
+  const handleNavClick = (label: string, href: string) => {
+    if (href === SITE_INFO.registerUrl) {
+      trackRegisterClick("bottom-nav");
+    } else if (href === SITE_INFO.loginUrl) {
+      trackLoginClick("bottom-nav");
+    } else if (href === SITE_INFO.lineUrl) {
+      trackLineContactClick("bottom-nav");
+    }
+  };
+
   return (
     <nav
       className="fixed bottom-0 left-0 right-0 z-50 lg:hidden"
@@ -27,6 +38,7 @@ export default function BottomNavBar() {
             key={i}
             href={item.href}
             {...(item.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+            onClick={() => handleNavClick(item.label, item.href)}
             className="flex flex-col items-center justify-center gap-0.5 transition-colors"
           >
             {item.isLogo ? (

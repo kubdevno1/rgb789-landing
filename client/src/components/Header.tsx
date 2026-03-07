@@ -3,6 +3,7 @@
 
 import { useState } from "react";
 import { SITE_INFO, GAME_CATEGORIES } from "@/lib/constants";
+import { trackRegisterClick, trackLoginClick } from "@/lib/analytics";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -49,6 +50,7 @@ export default function Header() {
               href={SITE_INFO.loginUrl}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackLoginClick("header")}
               className="hidden sm:inline-flex px-5 py-2 text-sm font-semibold text-white/90 border rounded-lg transition-all duration-300 hover:bg-white/10"
               style={{
                 fontFamily: "'Kanit', sans-serif",
@@ -61,6 +63,7 @@ export default function Header() {
               href={SITE_INFO.registerUrl}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackRegisterClick("header")}
               className="inline-flex px-5 py-2.5 text-sm font-bold rounded-lg transition-all duration-300 hover:scale-105"
               style={{
                 fontFamily: "'Kanit', sans-serif",

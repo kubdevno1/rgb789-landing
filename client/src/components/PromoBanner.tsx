@@ -2,6 +2,7 @@
 // SEO: Promotion content with relevant keywords
 
 import { IMAGES, SITE_INFO } from "@/lib/constants";
+import { trackRegisterClick } from "@/lib/analytics";
 import { motion } from "framer-motion";
 
 export default function PromoBanner() {
@@ -18,6 +19,7 @@ export default function PromoBanner() {
             href={SITE_INFO.registerUrl}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackRegisterClick("promo-banner")}
             className="block relative overflow-hidden rounded-2xl group"
             style={{
               boxShadow: "0 0 40px rgba(139,92,246,0.2), 0 8px 32px rgba(0,0,0,0.4)",

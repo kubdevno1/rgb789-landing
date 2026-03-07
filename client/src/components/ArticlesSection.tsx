@@ -5,6 +5,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { SITE_INFO, IMAGES } from "@/lib/constants";
+import { trackArticleShare, trackArticleRead, trackRegisterClick } from "@/lib/analytics";
 import { BookOpen, ChevronRight, Clock, Star, Zap, TrendingUp, Sparkles, Dice1, Trophy, Target, Tv, Share2 } from "lucide-react";
 
 type TabKey = "all" | "slots" | "casino" | "sports";
@@ -352,6 +353,7 @@ export default function ArticlesSection() {
                           href={SITE_INFO.registerUrl}
                           target="_blank"
                           rel="noopener noreferrer"
+                          onClick={() => trackRegisterClick(`article-${article.id}`)}
                           className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-bold transition-all duration-300 hover:scale-105"
                           style={{
                             fontFamily: "'Kanit', sans-serif",
@@ -370,9 +372,10 @@ export default function ArticlesSection() {
                   {/* Read More & Share Buttons */}
                   <div className="flex items-center justify-between mt-2">
                     <button
-                      onClick={() =>
-                        setExpandedArticle(isExpanded ? null : article.id)
-                      }
+                      onClick={() => {
+                        setExpandedArticle(isExpanded ? null : article.id);
+                        if (!isExpanded) trackArticleRead(article.title, article.category);
+                      }}
                       className="flex items-center gap-1.5 text-sm font-medium text-purple-400 hover:text-yellow-400 transition-colors duration-300"
                       style={{ fontFamily: "'Kanit', sans-serif" }}
                     >
@@ -397,6 +400,7 @@ export default function ArticlesSection() {
                           border: "1px solid rgba(24,119,242,0.25)",
                         }}
                         title="แชร์ไปยัง Facebook"
+                        onClick={() => trackArticleShare("facebook", article.title)}
                       >
                         <svg
                           width="14"
@@ -424,6 +428,7 @@ export default function ArticlesSection() {
                           border: "1px solid rgba(6,199,85,0.25)",
                         }}
                         title="แชร์ไปยัง LINE"
+                        onClick={() => trackArticleShare("line", article.title)}
                       >
                         <svg
                           width="16"

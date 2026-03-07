@@ -2,6 +2,7 @@
 // Provides quick access to LINE customer support
 
 import { SITE_INFO } from "@/lib/constants";
+import { trackLineContactClick } from "@/lib/analytics";
 import { motion } from "framer-motion";
 
 export default function LineFloatingButton() {
@@ -10,6 +11,7 @@ export default function LineFloatingButton() {
       href={SITE_INFO.lineUrl}
       target="_blank"
       rel="noopener noreferrer"
+      onClick={() => trackLineContactClick("floating-button")}
       initial={{ scale: 0, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
       transition={{ delay: 1.5, duration: 0.4, type: "spring", stiffness: 200 }}
