@@ -5,7 +5,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { SITE_INFO, IMAGES } from "@/lib/constants";
-import { BookOpen, ChevronRight, Clock, Star, Zap, TrendingUp, Sparkles, Dice1, Trophy, Target, Tv } from "lucide-react";
+import { BookOpen, ChevronRight, Clock, Star, Zap, TrendingUp, Sparkles, Dice1, Trophy, Target, Tv, Share2 } from "lucide-react";
 
 type TabKey = "all" | "slots" | "casino" | "sports";
 
@@ -367,20 +367,80 @@ export default function ArticlesSection() {
                     </div>
                   </motion.div>
 
-                  {/* Read More / Collapse Button */}
-                  <button
-                    onClick={() =>
-                      setExpandedArticle(isExpanded ? null : article.id)
-                    }
-                    className="flex items-center gap-1.5 text-sm font-medium text-purple-400 hover:text-yellow-400 transition-colors duration-300 mt-2"
-                    style={{ fontFamily: "'Kanit', sans-serif" }}
-                  >
-                    {isExpanded ? "ย่อบทความ" : "อ่านเพิ่มเติม"}
-                    <ChevronRight
-                      size={14}
-                      className={`transition-transform duration-300 ${isExpanded ? "rotate-90" : ""}`}
-                    />
-                  </button>
+                  {/* Read More & Share Buttons */}
+                  <div className="flex items-center justify-between mt-2">
+                    <button
+                      onClick={() =>
+                        setExpandedArticle(isExpanded ? null : article.id)
+                      }
+                      className="flex items-center gap-1.5 text-sm font-medium text-purple-400 hover:text-yellow-400 transition-colors duration-300"
+                      style={{ fontFamily: "'Kanit', sans-serif" }}
+                    >
+                      {isExpanded ? "ย่อบทความ" : "อ่านเพิ่มเติม"}
+                      <ChevronRight
+                        size={14}
+                        className={`transition-transform duration-300 ${isExpanded ? "rotate-90" : ""}`}
+                      />
+                    </button>
+
+                    {/* Share Buttons */}
+                    <div className="flex items-center gap-2">
+                      <span className="text-white/30 text-xs mr-1 hidden sm:inline">แชร์</span>
+                      {/* Facebook Share */}
+                      <a
+                        href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.origin + "/#" + article.id)}&quote=${encodeURIComponent(article.title + " - RGB789")}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group/share inline-flex items-center justify-center w-8 h-8 rounded-full transition-all duration-300 hover:scale-110"
+                        style={{
+                          background: "rgba(24,119,242,0.15)",
+                          border: "1px solid rgba(24,119,242,0.25)",
+                        }}
+                        title="แชร์ไปยัง Facebook"
+                      >
+                        <svg
+                          width="14"
+                          height="14"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="text-[#1877F2] group-hover/share:text-white transition-colors duration-300"
+                        >
+                          <path
+                            d="M24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 17.9895 4.3882 22.954 10.125 23.8542V15.4688H7.07812V12H10.125V9.35625C10.125 6.34875 11.9166 4.6875 14.6576 4.6875C15.9701 4.6875 17.3438 4.92188 17.3438 4.92188V7.875H15.8306C14.34 7.875 13.875 8.80008 13.875 9.75V12H17.2031L16.6711 15.4688H13.875V23.8542C19.6118 22.954 24 17.9895 24 12Z"
+                            fill="currentColor"
+                          />
+                        </svg>
+                      </a>
+
+                      {/* LINE Share */}
+                      <a
+                        href={`https://social-plugins.line.me/lineit/share?url=${encodeURIComponent(window.location.origin + "/#" + article.id)}&text=${encodeURIComponent(article.title + " - RGB789")}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group/share inline-flex items-center justify-center w-8 h-8 rounded-full transition-all duration-300 hover:scale-110"
+                        style={{
+                          background: "rgba(6,199,85,0.15)",
+                          border: "1px solid rgba(6,199,85,0.25)",
+                        }}
+                        title="แชร์ไปยัง LINE"
+                      >
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="text-[#06C755] group-hover/share:text-white transition-colors duration-300"
+                        >
+                          <path
+                            d="M24 10.304C24 4.616 18.627 0 12 0C5.373 0 0 4.616 0 10.304C0 15.404 4.27 19.72 10.035 20.476C10.406 20.558 10.92 20.728 11.04 21.056C11.148 21.354 11.112 21.82 11.076 22.116L10.932 23.01C10.884 23.31 10.692 24.168 12 23.586C13.308 23.004 18.894 19.544 21.396 16.672C23.124 14.772 24 12.634 24 10.304ZM7.848 13.236C7.848 13.428 7.692 13.584 7.5 13.584H4.464C4.272 13.584 4.116 13.428 4.116 13.236V7.776C4.116 7.584 4.272 7.428 4.464 7.428H5.16C5.352 7.428 5.508 7.584 5.508 7.776V12.192H7.5C7.692 12.192 7.848 12.348 7.848 12.54V13.236ZM9.744 13.236C9.744 13.428 9.588 13.584 9.396 13.584H8.7C8.508 13.584 8.352 13.428 8.352 13.236V7.776C8.352 7.584 8.508 7.428 8.7 7.428H9.396C9.588 7.428 9.744 7.584 9.744 7.776V13.236ZM15.084 13.236C15.084 13.428 14.928 13.584 14.736 13.584H14.04C13.98 13.584 13.92 13.572 13.872 13.548L11.34 10.116V13.236C11.34 13.428 11.184 13.584 10.992 13.584H10.296C10.104 13.584 9.948 13.428 9.948 13.236V7.776C9.948 7.584 10.104 7.428 10.296 7.428H10.992C11.052 7.428 11.112 7.44 11.16 7.464L13.692 10.896V7.776C13.692 7.584 13.848 7.428 14.04 7.428H14.736C14.928 7.428 15.084 7.584 15.084 7.776V13.236ZM19.884 8.82C19.884 9.012 19.728 9.168 19.536 9.168H17.544V10.164H19.536C19.728 10.164 19.884 10.32 19.884 10.512V11.208C19.884 11.4 19.728 11.556 19.536 11.556H17.544V12.54H19.536C19.728 12.54 19.884 12.696 19.884 12.888V13.584C19.884 13.776 19.728 13.932 19.536 13.932H16.5C16.308 13.932 16.152 13.776 16.152 13.584V7.776C16.152 7.584 16.308 7.428 16.5 7.428H19.536C19.728 7.428 19.884 7.584 19.884 7.776V8.82Z"
+                            fill="currentColor"
+                          />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </motion.article>
             );
