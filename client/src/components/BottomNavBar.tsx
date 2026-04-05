@@ -43,22 +43,19 @@ export default function BottomNavBar() {
           >
             {item.isLogo ? (
               <div
-                className="w-12 h-12 rounded-full flex items-center justify-center -mt-6 relative"
+                className="w-14 h-14 rounded-full flex items-center justify-center -mt-6 relative overflow-hidden"
                 style={{
-                  background: "linear-gradient(135deg, #FFD700 0%, #F59E0B 100%)",
                   boxShadow: "0 0 20px rgba(255,215,0,0.4), 0 4px 12px rgba(0,0,0,0.3)",
                   border: "3px solid rgba(15,2,37,0.9)",
                 }}
               >
-                <span
-                  className="text-xs font-black"
-                  style={{
-                    fontFamily: "'Kanit', sans-serif",
-                    color: "#1a0533",
-                  }}
-                >
-                  RGB
-                </span>
+                <img
+                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663187662312/VGyYopoy4jPaukwiBaCcsR/rgb789-logo-full_e43066ad.jpg"
+                  alt="RGB789 Logo"
+                  className="w-full h-full object-cover"
+                  loading="eager"
+                  decoding="async"
+                />
               </div>
             ) : (
               <>
