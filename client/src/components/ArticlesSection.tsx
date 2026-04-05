@@ -319,7 +319,9 @@ export default function ArticlesSection() {
                     className="text-lg lg:text-xl font-bold text-white/95 mb-3 group-hover:text-yellow-400 transition-colors duration-300 leading-snug"
                     style={{ fontFamily: "'Kanit', sans-serif" }}
                   >
-                    {article.title}
+                    <a href="#" className="hover:text-yellow-400 transition-colors">
+                      {article.title}
+                    </a>
                   </h3>
 
                   {/* Excerpt */}

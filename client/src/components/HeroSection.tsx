@@ -80,8 +80,7 @@ export default function HeroSection() {
 
             {/* Description - SEO */}
             <p className="text-lg lg:text-xl text-white/70 max-w-2xl mb-8 leading-relaxed">
-              {SITE_INFO.description} SA Gaming, Sexy Gaming, PG Slot, Pretty Gaming
-              สมัครง่าย ฝากถอนออโต้ รวดเร็วภายใน 30 วินาที
+              RGB789 เว็บพนันออนไลน์อันดับ 1 ครบวงจร ให้บริการคาสิโนออนไลน์ สล็อตออนไลน์ แทงบอล เกมยิงปลา และคาสิโนสดจากค่ายดังทั่วโลก SA Gaming, Sexy Gaming, PG Slot, Pretty Gaming สมัครง่าย ฝากถอนออโต้ รวดเร็วภายใน 30 วินาที พร้อมโปรโมชั่นดีๆ มากมาย
             </p>
 
             {/* CTA Buttons */}

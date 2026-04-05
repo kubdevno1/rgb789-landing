@@ -102,7 +102,7 @@ export default function GameCategories() {
                 {/* Content */}
                 <div className="p-8 lg:p-12 flex flex-col justify-center">
                   <div className="text-4xl mb-4">{cat.icon}</div>
-                  <h3
+                  <h2
                     className="text-2xl lg:text-3xl font-bold mb-3"
                     style={{
                       fontFamily: "'Kanit', sans-serif",
@@ -112,7 +112,7 @@ export default function GameCategories() {
                     }}
                   >
                     {cat.title}
-                  </h3>
+                  </h2>
                   <p className="text-white/50 text-sm font-medium mb-4" style={{ fontFamily: "'Kanit', sans-serif" }}>
                     {cat.subtitle}
                   </p>
