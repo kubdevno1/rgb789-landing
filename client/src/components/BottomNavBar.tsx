@@ -26,7 +26,7 @@ export default function BottomNavBar() {
         boxShadow: "0 -4px 24px rgba(0,0,0,0.4)",
       }}
     >
-      <div className="grid grid-cols-5 h-16">
+      <div className="grid grid-cols-5 h-20 gap-1.5 px-2 py-2">
         {[
           { icon: LogIn, label: "เข้าสู่ระบบ", href: SITE_INFO.loginUrl },
           { icon: UserPlus, label: "สมัคร", href: SITE_INFO.registerUrl, highlight: true },
@@ -39,20 +39,25 @@ export default function BottomNavBar() {
             href={item.href}
             {...(item.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
             onClick={() => handleNavClick(item.label, item.href)}
-            className="flex flex-col items-center justify-center gap-0.5 transition-colors"
+            className="flex flex-col items-center justify-center gap-1 transition-all duration-300 rounded-lg hover:bg-white/5 active:scale-95"
+            style={{
+              background: item.isLogo ? "linear-gradient(135deg, rgba(255,215,0,0.15) 0%, rgba(255,215,0,0.08) 100%)" : "transparent",
+              border: item.isLogo ? "2px solid rgba(255,215,0,0.4)" : "1px solid transparent",
+            }}
           >
             {item.isLogo ? (
               <div
-                className="w-14 h-14 rounded-full flex items-center justify-center -mt-6 relative overflow-hidden"
+                className="w-14 h-14 rounded-lg flex items-center justify-center relative overflow-hidden"
                 style={{
-                  boxShadow: "0 0 20px rgba(255,215,0,0.4), 0 4px 12px rgba(0,0,0,0.3)",
-                  border: "3px solid rgba(15,2,37,0.9)",
+                  boxShadow: "0 0 20px rgba(255,215,0,0.5), inset 0 0 10px rgba(255,215,0,0.15)",
+                  border: "2px solid rgba(255,215,0,0.5)",
+                  background: "linear-gradient(135deg, rgba(255,215,0,0.12) 0%, rgba(255,215,0,0.06) 100%)",
                 }}
               >
                 <img
                   src="https://d2xsxph8kpxj0f.cloudfront.net/310519663187662312/VGyYopoy4jPaukwiBaCcsR/rgb789-logo-full_e43066ad.jpg"
                   alt="RGB789 Logo"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover rounded-md"
                   loading="eager"
                   decoding="async"
                 />
@@ -61,14 +66,15 @@ export default function BottomNavBar() {
               <>
                 {item.icon && (
                   <item.icon
-                    size={20}
+                    size={24}
                     style={{
                       color: item.highlight ? "#FFD700" : "rgba(255,255,255,0.6)",
+                      transition: "all 0.3s ease",
                     }}
                   />
                 )}
                 <span
-                  className="text-[10px] font-medium"
+                  className="text-[9px] font-medium leading-tight text-center"
                   style={{
                     fontFamily: "'Kanit', sans-serif",
                     color: item.highlight ? "#FFD700" : "rgba(255,255,255,0.5)",
