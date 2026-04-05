@@ -88,6 +88,7 @@ export default function GameCategories() {
                     alt={`${cat.title} RGB789 - ${cat.subtitle}`}
                     className="w-full h-64 lg:h-full object-cover transition-transform duration-500 hover:scale-105"
                     loading="lazy"
+                    decoding="async"
                   />
                   <div
                     className="absolute inset-0 pointer-events-none"

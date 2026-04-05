@@ -15,9 +15,10 @@ export default function HeroSection() {
       <div className="absolute inset-0">
         <img
           src={IMAGES.heroStadium}
-          alt="RGB789 คาสิโนออนไลน์ เว็บพนันออนไลน์"
+          alt="RGB789 คาสิโนสด เว็บพนันออนไลน์"
           className="w-full h-full object-cover"
           loading="eager"
+          decoding="async"
         />
         <div
           className="absolute inset-0"
