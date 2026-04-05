@@ -3,6 +3,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { trackCarouselSwipe } from "@/lib/analytics";
 
 const PROMOTIONS = [
   {
@@ -118,6 +119,11 @@ export default function PromotionsCarousel() {
     });
     setScrollPosition(newPosition);
     updateScrollButtons(newPosition, container);
+    
+    // Track carousel swipe
+    const swipeDirection = direction === "left" ? "left" : "right";
+    const currentIndex = Math.round(newPosition / 320);
+    trackCarouselSwipe("promotions", swipeDirection, currentIndex);
   };
 
   const updateScrollButtons = (position: number, container: HTMLElement) => {
@@ -181,6 +187,7 @@ export default function PromotionsCarousel() {
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                     loading="lazy"
                     decoding="async"
+                    fetchPriority="low"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                 </div>

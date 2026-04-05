@@ -88,3 +88,80 @@ export function trackArticleRead(articleTitle: string, category: string) {
     article_category: category,
   });
 }
+
+/**
+ * ติดตามการ swipe carousel
+ */
+export function trackCarouselSwipe(carouselName: string, direction: "left" | "right", currentIndex: number) {
+  trackEvent("carousel_swipe", {
+    event_category: "engagement",
+    carousel_name: carouselName,
+    swipe_direction: direction,
+    item_index: currentIndex,
+  });
+}
+
+/**
+ * ติดตามการคลิกรูปภาพใน gallery
+ */
+export function trackGalleryImageClick(galleryName: string, imageIndex: number) {
+  trackEvent("gallery_image_click", {
+    event_category: "engagement",
+    gallery_name: galleryName,
+    image_index: imageIndex,
+  });
+}
+
+/**
+ * ติดตามการเปิด lightbox
+ */
+export function trackLightboxOpen(galleryName: string, imageIndex: number) {
+  trackEvent("lightbox_open", {
+    event_category: "engagement",
+    gallery_name: galleryName,
+    image_index: imageIndex,
+  });
+}
+
+/**
+ * ติดตามการปิด lightbox
+ */
+export function trackLightboxClose(galleryName: string) {
+  trackEvent("lightbox_close", {
+    event_category: "engagement",
+    gallery_name: galleryName,
+  });
+}
+
+/**
+ * ติดตามการคลิกลิงค์ในบทความ
+ */
+export function trackArticleLink(articleTitle: string, linkUrl: string) {
+  trackEvent("article_link_click", {
+    event_category: "content",
+    event_label: articleTitle,
+    link_url: linkUrl,
+  });
+}
+
+/**
+ * ติดตามการคลิก FAQ accordion
+ */
+export function trackFaqClick(question: string, isOpen: boolean) {
+  trackEvent("faq_click", {
+    event_category: "engagement",
+    event_label: question,
+    is_open: isOpen,
+  });
+}
+
+/**
+ * ติดตามการคลิกปุ่มอ่านเพิ่มเติม
+ */
+export function trackReadMoreClick(articleTitle: string, location: string) {
+  trackEvent("read_more_click", {
+    event_category: "content",
+    event_label: articleTitle,
+    button_location: location,
+  });
+}

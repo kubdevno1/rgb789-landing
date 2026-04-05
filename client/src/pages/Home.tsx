@@ -2,23 +2,36 @@
 // SEO: Comprehensive landing page with structured content
 // Colors: Deep Purple Gradient + Vivid Gold + Electric accents
 
+import { lazy, Suspense } from "react";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import MarqueeBar from "@/components/MarqueeBar";
 import PromoBanner from "@/components/PromoBanner";
 import StepsSection from "@/components/StepsSection";
 import GameCategories from "@/components/GameCategories";
-import WhyChooseUs from "@/components/WhyChooseUs";
-import PaymentMethods from "@/components/PaymentMethods";
-import FAQSection from "@/components/FAQSection";
-import ArticlesSection from "@/components/ArticlesSection";
-import SEOContent from "@/components/SEOContent";
-import CTABanner from "@/components/CTABanner";
-import Footer from "@/components/Footer";
 import BottomNavBar from "@/components/BottomNavBar";
 import LineFloatingButton from "@/components/LineFloatingButton";
-import PromotionsCarousel from "@/components/PromotionsCarousel";
-import GameScreenshots from "@/components/GameScreenshots";
+
+// Lazy load non-critical components
+const WhyChooseUs = lazy(() => import("@/components/WhyChooseUs"));
+const PaymentMethods = lazy(() => import("@/components/PaymentMethods"));
+const FAQSection = lazy(() => import("@/components/FAQSection"));
+const ArticlesSection = lazy(() => import("@/components/ArticlesSection"));
+const SEOContent = lazy(() => import("@/components/SEOContent"));
+const CTABanner = lazy(() => import("@/components/CTABanner"));
+const Footer = lazy(() => import("@/components/Footer"));
+const PromotionsCarousel = lazy(() => import("@/components/PromotionsCarousel"));
+const GameScreenshots = lazy(() => import("@/components/GameScreenshots"));
+
+// Fallback component
+const SectionFallback = () => <div className="h-32" />;
+
+// Lazy loading wrapper
+const LazySection = ({ children }: { children: React.ReactNode }) => (
+  <Suspense fallback={<SectionFallback />}>
+    {children}
+  </Suspense>
+);
 
 export default function Home() {
   return (
@@ -341,17 +354,35 @@ export default function Home() {
         <MarqueeBar />
         <PromoBanner />
         <StepsSection />
-        <PromotionsCarousel />
+        <LazySection>
+          <PromotionsCarousel />
+        </LazySection>
         <GameCategories />
-        <GameScreenshots />
-        <WhyChooseUs />
-        <PaymentMethods />
-        <FAQSection />
-        <ArticlesSection />
-        <SEOContent />
-        <CTABanner />
+        <LazySection>
+          <GameScreenshots />
+        </LazySection>
+        <LazySection>
+          <WhyChooseUs />
+        </LazySection>
+        <LazySection>
+          <PaymentMethods />
+        </LazySection>
+        <LazySection>
+          <FAQSection />
+        </LazySection>
+        <LazySection>
+          <ArticlesSection />
+        </LazySection>
+        <LazySection>
+          <SEOContent />
+        </LazySection>
+        <LazySection>
+          <CTABanner />
+        </LazySection>
       </main>
-      <Footer />
+      <LazySection>
+        <Footer />
+      </LazySection>
       <BottomNavBar />
       <LineFloatingButton />
     </div>

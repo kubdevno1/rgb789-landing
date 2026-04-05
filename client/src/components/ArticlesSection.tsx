@@ -375,7 +375,9 @@ export default function ArticlesSection() {
                     <button
                       onClick={() => {
                         setExpandedArticle(isExpanded ? null : article.id);
-                        if (!isExpanded) trackArticleRead(article.title, article.category);
+                        if (!isExpanded) {
+                          trackArticleRead(article.title, article.category);
+                        }
                       }}
                       className="flex items-center gap-1.5 text-sm font-medium text-purple-400 hover:text-yellow-400 transition-colors duration-300"
                       style={{ fontFamily: "'Kanit', sans-serif" }}

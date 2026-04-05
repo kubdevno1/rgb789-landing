@@ -89,6 +89,7 @@ export default function GameCategories() {
                     className="w-full h-64 lg:h-full object-cover transition-transform duration-500 hover:scale-105"
                     loading="lazy"
                     decoding="async"
+                    fetchPriority="low"
                   />
                   <div
                     className="absolute inset-0 pointer-events-none"

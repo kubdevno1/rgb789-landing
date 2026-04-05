@@ -75,10 +75,10 @@ export default function StepsSection() {
 
                 {/* Image */}
                 <div className="w-full h-40 mb-4 rounded-lg overflow-hidden">
-                  <img
+                <img
                     src={step.image}
                     alt={step.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover rounded-lg"
                     loading="lazy"
                     decoding="async"
                   />

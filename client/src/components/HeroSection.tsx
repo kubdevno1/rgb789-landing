@@ -19,6 +19,7 @@ export default function HeroSection() {
           className="w-full h-full object-cover"
           loading="eager"
           decoding="async"
+          fetchPriority="high"
         />
         <div
           className="absolute inset-0"

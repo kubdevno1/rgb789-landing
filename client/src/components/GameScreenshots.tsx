@@ -3,7 +3,7 @@
 
 import React from "react";
 import { SITE_INFO } from "@/lib/constants";
-import { trackRegisterClick } from "@/lib/analytics";
+import { trackRegisterClick, trackGalleryImageClick, trackLightboxOpen, trackLightboxClose } from "@/lib/analytics";
 
 const GAME_IMAGES = [
   {
@@ -118,6 +118,10 @@ export default function GameScreenshots() {
                 background: "linear-gradient(135deg, rgba(139,92,246,0.2) 0%, rgba(168,85,247,0.1) 100%)",
                 border: "1px solid rgba(139,92,246,0.3)",
               }}
+              onClick={() => {
+                trackGalleryImageClick("game-screenshots", game.id);
+                trackLightboxOpen("game-screenshots", game.id);
+              }}
             >
               <div className="relative aspect-square overflow-hidden">
                 <img
@@ -126,6 +130,7 @@ export default function GameScreenshots() {
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                   loading="lazy"
                   decoding="async"
+                  fetchPriority="low"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>

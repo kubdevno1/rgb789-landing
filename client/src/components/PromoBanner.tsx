@@ -30,6 +30,7 @@ export default function PromoBanner() {
               alt="RGB789 โปรโมชั่น ทุกยอดฝากรับ 2% ทุกวัน"
               className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
               loading="lazy"
+              decoding="async"
             />
             <div
               className="absolute inset-0 flex flex-col items-center justify-center text-center p-4 sm:p-6"
