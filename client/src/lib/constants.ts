@@ -15,9 +15,9 @@ export const SITE_INFO = {
   domain: "RGB789.COM",
   tagline: "เว็บพนันออนไลน์ครบวงจร อันดับ 1 ในไทย",
   description: "เมื่ออยากเล่นคาสิโน ให้นึกถึง RGB789.COM เว็บพนันออนไลน์ ที่มีเกมส์คาสิโนจากทุกค่าย รวมเอามาไว้ให้เล่นในเว็บเดียว",
-  registerUrl: "https://bit.ly/4vcUOLW",
-  loginUrl: "https://bit.ly/4vcUOLW",
-  lineUrl: "https://line.me/R/ti/p/@627ixocl",
+  registerUrl: "line://ti/p/@627ixocl",
+  loginUrl: "line://ti/p/@627ixocl",
+  lineUrl: "line://ti/p/@627ixocl",
 } as const;
 
 export const GAME_CATEGORIES = [
