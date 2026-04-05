@@ -1,6 +1,7 @@
 // Design: Electric Stadium — Game Screenshots showcase
 // Displays game screenshots in a grid layout
 
+import React from "react";
 import { SITE_INFO } from "@/lib/constants";
 import { trackRegisterClick } from "@/lib/analytics";
 
@@ -63,6 +64,30 @@ const GAME_IMAGES = [
 ];
 
 export default function GameScreenshots() {
+  const [touchStart, setTouchStart] = React.useState(0);
+  const [touchEnd, setTouchEnd] = React.useState(0);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    setTouchEnd(e.changedTouches[0].clientX);
+    handleSwipe();
+  };
+
+  const handleSwipe = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > 50;
+    const isRightSwipe = distance < -50;
+
+    if (isLeftSwipe || isRightSwipe) {
+      // Swipe detected - can be used for future gallery navigation
+      console.log(isLeftSwipe ? "Swiped left" : "Swiped right");
+    }
+  };
+
   const handlePlayClick = () => {
     trackRegisterClick("game-screenshots");
     window.open(SITE_INFO.registerUrl, "_blank", "noopener,noreferrer");
@@ -84,7 +109,7 @@ export default function GameScreenshots() {
           ภาพเกมที่น่าตื่นเต้น
         </h2>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-8" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
           {GAME_IMAGES.map((game) => (
             <div
               key={game.id}

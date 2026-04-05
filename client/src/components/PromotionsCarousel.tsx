@@ -1,7 +1,7 @@
 // Design: Electric Stadium — Promotions Carousel with swipe support
 // Displays promotional offers in a scrollable carousel
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const PROMOTIONS = [
@@ -76,6 +76,31 @@ export default function PromotionsCarousel() {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
+  const [touchStart, setTouchStart] = useState(0);
+  const [touchEnd, setTouchEnd] = useState(0);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    setTouchEnd(e.changedTouches[0].clientX);
+    handleSwipe();
+  };
+
+  const handleSwipe = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > 50;
+    const isRightSwipe = distance < -50;
+
+    if (isLeftSwipe) {
+      scroll("right");
+    } else if (isRightSwipe) {
+      scroll("left");
+    }
+  };
 
   const scroll = (direction: "left" | "right") => {
     const container = document.getElementById("promo-carousel");
@@ -133,9 +158,12 @@ export default function PromotionsCarousel() {
         <div className="relative">
           {/* Carousel Container */}
           <div
+            ref={containerRef}
             id="promo-carousel"
             className="flex gap-4 overflow-x-auto pb-4 scroll-smooth"
             style={{ scrollBehavior: "smooth" }}
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
           >
             {PROMOTIONS.map((promo) => (
               <div

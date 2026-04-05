@@ -14,7 +14,7 @@ export default function HeroSection() {
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
-          src={IMAGES.heroStadium}
+          src="https://d2xsxph8kpxj0f.cloudfront.net/310519663187662312/VGyYopoy4jPaukwiBaCcsR/rgb789-hero-banner-GpaMrRUVqxwTt9ydtotvR8.webp"
           alt="RGB789 คาสิโนสด เว็บพนันออนไลน์"
           className="w-full h-full object-cover"
           loading="eager"
@@ -23,13 +23,7 @@ export default function HeroSection() {
         <div
           className="absolute inset-0"
           style={{
-            background: "linear-gradient(180deg, rgba(15,2,37,0.7) 0%, rgba(15,2,37,0.4) 40%, rgba(15,2,37,0.8) 100%)",
-          }}
-        />
-        <div
-          className="absolute inset-0"
-          style={{
-            background: "radial-gradient(ellipse at center top, rgba(139,92,246,0.15) 0%, transparent 60%)",
+            background: "linear-gradient(180deg, rgba(15,2,37,0.3) 0%, rgba(15,2,37,0.2) 40%, rgba(15,2,37,0.5) 100%)",
           }}
         />
       </div>
