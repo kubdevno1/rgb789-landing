@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 export default function StepsSection() {
   return (
-    <section className="py-16 lg:py-24 relative" id="how-to">
+    <section className="py-12 sm:py-16 lg:py-24 relative" id="how-to">
       {/* Background accent */}
       <div
         className="absolute inset-0 pointer-events-none"
@@ -21,10 +21,10 @@ export default function StepsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12 lg:mb-16"
+          className="text-center mb-8 sm:mb-12 lg:mb-16"
         >
           <h2
-            className="text-3xl lg:text-4xl font-bold mb-4"
+            className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4"
             style={{ fontFamily: "'Kanit', sans-serif" }}
           >
             <span className="text-white">เริ่มต้นกับ </span>
@@ -39,12 +39,12 @@ export default function StepsSection() {
             </span>
             <span className="text-white"> ง่ายๆ 3 ขั้นตอน</span>
           </h2>
-          <p className="text-white/60 text-lg max-w-2xl mx-auto">
+          <p className="text-white/60 text-sm sm:text-base lg:text-lg max-w-2xl mx-auto">
             สมัครสมาชิกและเริ่มเดิมพันได้ทันที ใช้เวลาไม่ถึง 5 นาที
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
           {STEPS.map((step, index) => (
             <motion.div
               key={step.number}
@@ -55,7 +55,7 @@ export default function StepsSection() {
               className="relative group"
             >
               <div
-                className="glass-card rounded-2xl p-8 h-full transition-all duration-300 group-hover:scale-[1.02]"
+                className="glass-card rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 h-full transition-all duration-300 group-hover:scale-[1.02]"
                 style={{
                   boxShadow: "0 4px 24px rgba(0,0,0,0.2)",
                 }}

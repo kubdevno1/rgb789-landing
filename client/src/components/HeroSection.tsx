@@ -79,13 +79,13 @@ export default function HeroSection() {
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-3 sm:gap-4">
               <a
                 href={SITE_INFO.registerUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => trackRegisterClick("hero")}
-                className="inline-flex items-center gap-2 px-8 py-4 text-lg font-bold rounded-xl transition-all duration-300 hover:scale-105"
+                className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-bold rounded-lg sm:rounded-xl transition-all duration-300 hover:scale-105"
                 style={{
                   fontFamily: "'Kanit', sans-serif",
                   background: "linear-gradient(135deg, #FFD700 0%, #F59E0B 100%)",
@@ -104,7 +104,7 @@ export default function HeroSection() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => trackLoginClick("hero")}
-                className="inline-flex items-center gap-2 px-8 py-4 text-lg font-semibold rounded-xl transition-all duration-300 hover:bg-white/10 text-white border"
+                className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-lg sm:rounded-xl transition-all duration-300 hover:bg-white/10 text-white border"
                 style={{
                   fontFamily: "'Kanit', sans-serif",
                   borderColor: "rgba(139,92,246,0.4)",
@@ -117,7 +117,7 @@ export default function HeroSection() {
             </div>
 
             {/* Stats */}
-            <div className="flex flex-wrap gap-8 mt-12 pt-8 border-t" style={{ borderColor: "rgba(139,92,246,0.2)" }}>
+            <div className="flex flex-wrap gap-4 sm:gap-8 mt-8 sm:mt-12 pt-6 sm:pt-8 border-t" style={{ borderColor: "rgba(139,92,246,0.2)" }}>
               {[
                 { value: "50,000+", label: "สมาชิกที่ไว้วางใจ" },
                 { value: "100+", label: "เกมให้เลือกเล่น" },
@@ -130,7 +130,7 @@ export default function HeroSection() {
                   transition={{ duration: 0.6, delay: 0.8 + i * 0.15 }}
                 >
                   <div
-                    className="text-2xl lg:text-3xl font-bold"
+                    className="text-xl sm:text-2xl lg:text-3xl font-bold"
                     style={{
                       fontFamily: "'Kanit', sans-serif",
                       background: "linear-gradient(135deg, #FFD700, #FFC107)",

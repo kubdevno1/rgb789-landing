@@ -45,13 +45,13 @@ export default function Header() {
           </nav>
 
           {/* CTA Buttons */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3">
             <a
               href={SITE_INFO.loginUrl}
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => trackLoginClick("header")}
-              className="hidden sm:inline-flex px-5 py-2 text-sm font-semibold text-white/90 border rounded-lg transition-all duration-300 hover:bg-white/10"
+              className="hidden sm:inline-flex px-4 sm:px-5 py-2 text-xs sm:text-sm font-semibold text-white/90 border rounded-lg transition-all duration-300 hover:bg-white/10"
               style={{
                 fontFamily: "'Kanit', sans-serif",
                 borderColor: "rgba(139,92,246,0.4)",
@@ -64,7 +64,7 @@ export default function Header() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => trackRegisterClick("header")}
-              className="inline-flex px-5 py-2.5 text-sm font-bold rounded-lg transition-all duration-300 hover:scale-105"
+              className="inline-flex px-4 sm:px-5 py-2 sm:py-2.5 text-xs sm:text-sm font-bold rounded-lg transition-all duration-300 hover:scale-105"
               style={{
                 fontFamily: "'Kanit', sans-serif",
                 background: "linear-gradient(135deg, #FFD700 0%, #F59E0B 100%)",
