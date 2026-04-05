@@ -73,8 +73,16 @@ export default function StepsSection() {
                   {step.number}
                 </div>
 
-                {/* Icon */}
-                <div className="text-4xl mb-4">{step.icon}</div>
+                {/* Image */}
+                <div className="w-full h-40 mb-4 rounded-lg overflow-hidden">
+                  <img
+                    src={step.image}
+                    alt={step.title}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
 
                 {/* Title */}
                 <h3

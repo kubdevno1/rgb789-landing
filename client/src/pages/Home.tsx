@@ -17,6 +17,8 @@ import CTABanner from "@/components/CTABanner";
 import Footer from "@/components/Footer";
 import BottomNavBar from "@/components/BottomNavBar";
 import LineFloatingButton from "@/components/LineFloatingButton";
+import PromotionsCarousel from "@/components/PromotionsCarousel";
+import GameScreenshots from "@/components/GameScreenshots";
 
 export default function Home() {
   return (
@@ -339,7 +341,9 @@ export default function Home() {
         <MarqueeBar />
         <PromoBanner />
         <StepsSection />
+        <PromotionsCarousel />
         <GameCategories />
+        <GameScreenshots />
         <WhyChooseUs />
         <PaymentMethods />
         <FAQSection />

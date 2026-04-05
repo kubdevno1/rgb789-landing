@@ -51,18 +51,21 @@ export const STEPS = [
     title: "สมัครสมาชิก",
     description: "กรอกข้อมูลและสมัครสมาชิกภายใน 3 นาที",
     icon: "📝",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663187662312/VGyYopoy4jPaukwiBaCcsR/LINE_ALBUM_วิธีใช้งาน_240723_1_2bbb30cd.jpg",
   },
   {
     number: "02",
     title: "ฝากเงินครั้งแรก",
     description: "ฝากเงินกับระบบออโต้ภายใน 30 วินาที",
     icon: "💰",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663187662312/VGyYopoy4jPaukwiBaCcsR/LINE_ALBUM_วิธีใช้งาน_240723_2_2dcf0d36.jpg",
   },
   {
     number: "03",
     title: "เข้าเดิมพันทันที",
     description: "สนุกไปกับการเดิมพันกับค่ายเกมทั่วโลก",
     icon: "🎮",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663187662312/VGyYopoy4jPaukwiBaCcsR/LINE_ALBUM_วิธีใช้งาน_240723_3_69eafb2a.jpg",
   },
 ] as const;
 
