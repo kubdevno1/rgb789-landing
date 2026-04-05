@@ -2,10 +2,13 @@
 // SEO: Internal links, sitemap-like structure
 
 import { SITE_INFO, GAME_CATEGORIES } from "@/lib/constants";
+import TrustBadges from "./TrustBadges";
 
 export default function Footer() {
   return (
-    <footer
+    <>
+      <TrustBadges />
+      <footer
       className="relative pt-16 pb-24 lg:pb-8"
       style={{
         background: "linear-gradient(180deg, rgba(15,2,37,0.5) 0%, rgba(10,1,25,1) 100%)",
@@ -129,7 +132,8 @@ export default function Footer() {
             </a>
           </div>
         </div>
-      </div>
-    </footer>
-  );
-}
+        </div>
+      </footer>
+    </>
+    );
+  }
