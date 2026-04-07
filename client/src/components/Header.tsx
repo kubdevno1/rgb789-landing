@@ -4,11 +4,13 @@
 import { useState } from "react";
 import { SITE_INFO, GAME_CATEGORIES } from "@/lib/constants";
 import { trackRegisterClick, trackLoginClick } from "@/lib/analytics";
+import { useRegisterTracking } from "@/hooks/useRegisterTracking";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { trackClick } = useRegisterTracking();
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
@@ -63,7 +65,7 @@ export default function Header() {
               href={SITE_INFO.registerUrl}
               target="_blank"
               rel="noopener noreferrer"
-              onClick={() => trackRegisterClick("header")}
+              onClick={() => { trackRegisterClick("header"); trackClick("header_register_button"); }}
               className="inline-flex px-4 sm:px-5 py-2 sm:py-2.5 text-xs sm:text-sm font-bold rounded-lg transition-all duration-300 hover:scale-105"
               style={{
                 fontFamily: "'Kanit', sans-serif",

@@ -3,12 +3,15 @@
 
 import { SITE_INFO } from "@/lib/constants";
 import { trackRegisterClick, trackLoginClick, trackLineContactClick } from "@/lib/analytics";
+import { useRegisterTracking } from "@/hooks/useRegisterTracking";
 import { LogIn, UserPlus, Gift, MessageCircle } from "lucide-react";
 
 export default function BottomNavBar() {
+  const { trackClick } = useRegisterTracking();
   const handleNavClick = (label: string, href: string) => {
     if (href === SITE_INFO.registerUrl) {
       trackRegisterClick("bottom-nav");
+      trackClick("bottom_nav_register_button");
     } else if (href === SITE_INFO.loginUrl) {
       trackLoginClick("bottom-nav");
     } else if (href === SITE_INFO.lineUrl) {
