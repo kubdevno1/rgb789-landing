@@ -7,6 +7,7 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import AdminDashboard from "./pages/AdminDashboard";
 import LoadingScreen from "./components/LoadingScreen";
+import PromoPopup from "./components/PromoPopup";
 import { useState, useCallback } from "react";
 
 function Router() {
@@ -22,12 +23,21 @@ function Router() {
 }
 
 function App() {
-  // Show loading screen only on first visit (not on /admin route)
-  const isAdminRoute = typeof window !== "undefined" && window.location.pathname.startsWith("/admin");
+  // Skip loading + popup for /admin route
+  const isAdminRoute =
+    typeof window !== "undefined" && window.location.pathname.startsWith("/admin");
+
   const [loadingDone, setLoadingDone] = useState(isAdminRoute);
+  const [showPromo, setShowPromo] = useState(false);
 
   const handleLoadingComplete = useCallback(() => {
     setLoadingDone(true);
+    // Show promo popup 400ms after loading screen fades out
+    setTimeout(() => setShowPromo(true), 400);
+  }, []);
+
+  const handlePromoClose = useCallback(() => {
+    setShowPromo(false);
   }, []);
 
   return (
@@ -35,9 +45,16 @@ function App() {
       <ThemeProvider defaultTheme="dark">
         <TooltipProvider>
           <Toaster />
+
+          {/* Loading screen — shown only on first visit, not on /admin */}
           {!loadingDone && (
             <LoadingScreen onComplete={handleLoadingComplete} duration={2800} />
           )}
+
+          {/* Promo popup — shown once after loading completes */}
+          {showPromo && <PromoPopup onClose={handlePromoClose} />}
+
+          {/* Main content fades in after loading */}
           <div
             style={{
               opacity: loadingDone ? 1 : 0,
