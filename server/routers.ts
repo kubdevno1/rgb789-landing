@@ -3,6 +3,7 @@ import { getSessionCookieOptions } from "./_core/cookies";
 import { systemRouter } from "./_core/systemRouter";
 import { protectedProcedure, publicProcedure, router } from "./_core/trpc";
 import { getRegisterClickStats, insertRegisterClick } from "./db";
+import { sendTelegramNotification, buildRegisterClickMessage } from "./telegram";
 import { TRPCError } from "@trpc/server";
 import { z } from "zod";
 
@@ -51,6 +52,29 @@ export const appRouter = router({
           userAgent: input.userAgent ?? null,
           referrer: input.referrer ?? null,
         });
+
+        // Get total count for notification
+        let totalCount: number | undefined;
+        try {
+          const stats = await getRegisterClickStats();
+          totalCount = stats.total;
+        } catch {
+          // ignore stats error
+        }
+
+        // Send Telegram notification (non-blocking)
+        const message = buildRegisterClickMessage({
+          device: input.device,
+          platform: input.platform,
+          source: input.source,
+          userAgent: input.userAgent,
+          timestamp: new Date(),
+          totalCount,
+        });
+        sendTelegramNotification(message).catch(err =>
+          console.error("[Telegram] Notification failed:", err)
+        );
+
         return { success: true };
       }),
 
