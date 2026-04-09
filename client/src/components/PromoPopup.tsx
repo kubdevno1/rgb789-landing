@@ -79,6 +79,7 @@ export default function PromoPopup({ onClose }: PromoPopupProps) {
   const [countdown, setCountdown] = useState(12);
   const [copied, setCopied] = useState(false);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const autoSlideRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const promo = PROMOS[currentIndex];
 
@@ -99,6 +100,19 @@ export default function PromoPopup({ onClose }: PromoPopupProps) {
     return () => { if (intervalRef.current) clearInterval(intervalRef.current); };
   }, []);
 
+  // Auto-slide every 3.5 seconds
+  const startAutoSlide = useCallback(() => {
+    if (autoSlideRef.current) clearInterval(autoSlideRef.current);
+    autoSlideRef.current = setInterval(() => {
+      setCurrentIndex((i) => (i + 1) % PROMOS.length);
+    }, 3500);
+  }, []);
+
+  useEffect(() => {
+    startAutoSlide();
+    return () => { if (autoSlideRef.current) clearInterval(autoSlideRef.current); };
+  }, [startAutoSlide]);
+
   const handleClose = useCallback(() => {
     setClosing(true);
     setTimeout(onClose, 350);
@@ -111,11 +125,13 @@ export default function PromoPopup({ onClose }: PromoPopupProps) {
 
   const handlePrev = useCallback(() => {
     setCurrentIndex((i) => (i - 1 + PROMOS.length) % PROMOS.length);
-  }, []);
+    startAutoSlide(); // reset timer on manual nav
+  }, [startAutoSlide]);
 
   const handleNext = useCallback(() => {
     setCurrentIndex((i) => (i + 1) % PROMOS.length);
-  }, []);
+    startAutoSlide(); // reset timer on manual nav
+  }, [startAutoSlide]);
 
   // Share handlers
   const shareMessage = `${promo.shareText} ${SHARE_URL}`;
@@ -323,7 +339,7 @@ export default function PromoPopup({ onClose }: PromoPopupProps) {
               {PROMOS.map((_, i) => (
                 <button
                   key={i}
-                  onClick={(e) => { e.stopPropagation(); setCurrentIndex(i); }}
+                  onClick={(e) => { e.stopPropagation(); setCurrentIndex(i); startAutoSlide(); }}
                   className="rounded-full transition-all"
                   style={{
                     width: i === currentIndex ? "20px" : "8px",
