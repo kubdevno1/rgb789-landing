@@ -6,6 +6,7 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import AdminDashboard from "./pages/AdminDashboard";
+import Promotions from "./pages/Promotions";
 import LoadingScreen from "./components/LoadingScreen";
 import PromoPopup from "./components/PromoPopup";
 import { useState, useCallback } from "react";
@@ -16,6 +17,7 @@ function Router() {
     <Switch>
       <Route path={"/"} component={Home} />
       <Route path={"/admin"} component={AdminDashboard} />
+      <Route path={"/promotions"} component={Promotions} />
       <Route path={"/404"} component={NotFound} />
       <Route component={NotFound} />
     </Switch>

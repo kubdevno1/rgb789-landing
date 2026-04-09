@@ -13,7 +13,7 @@ export default function Header() {
   const { trackClick } = useRegisterTracking();
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50">
+    <header className="fixed left-0 right-0 z-50" style={{ top: "36px" }}>
       <div
         className="backdrop-blur-xl border-b"
         style={{
@@ -33,6 +33,13 @@ export default function Header() {
 
           {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-1">
+            <a
+              href="/promotions"
+              className="px-4 py-2 text-sm font-medium transition-colors duration-300 rounded-lg hover:bg-white/5"
+              style={{ fontFamily: "'Kanit', sans-serif", color: "#FFD700" }}
+            >
+              🎁 โปรโมชั่น
+            </a>
             {GAME_CATEGORIES.map((cat) => (
               <a
                 key={cat.id}
@@ -105,7 +112,16 @@ export default function Header() {
             }}
           >
             <nav className="container py-4 flex flex-col gap-1">
-              {GAME_CATEGORIES.map((cat) => (
+              <a
+                href="/promotions"
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex items-center gap-3 px-4 py-3 hover:bg-white/5 rounded-lg transition-colors"
+                style={{ fontFamily: "'Kanit', sans-serif", color: "#FFD700" }}
+              >
+                <span className="text-xl">🎁</span>
+                <span className="font-medium">โปรโมชั่นทั้งหมด</span>
+              </a>
+            {GAME_CATEGORIES.map((cat) => (
                 <a
                   key={cat.id}
                   href={`#${cat.id}`}

@@ -4,6 +4,7 @@
 
 import { lazy, Suspense } from "react";
 import Header from "@/components/Header";
+import StickyPromoBar from "@/components/StickyPromoBar";
 import HeroSection from "@/components/HeroSection";
 import MarqueeBar from "@/components/MarqueeBar";
 import PromoBanner from "@/components/PromoBanner";
@@ -348,6 +349,7 @@ export default function Home() {
         }}
       />
 
+      <StickyPromoBar />
       <Header />
       <main>
         <HeroSection />
