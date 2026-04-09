@@ -7,6 +7,7 @@ import { ArrowLeft, X } from "lucide-react";
 import { SITE_INFO } from "@/lib/constants";
 import StickyPromoBar from "@/components/StickyPromoBar";
 import LineFloatingButton from "@/components/LineFloatingButton";
+import BottomNavBar from "@/components/BottomNavBar";
 
 const CDN = "https://d2xsxph8kpxj0f.cloudfront.net/310519663187662312/VGyYopoy4jPaukwiBaCcsR";
 
@@ -270,6 +271,7 @@ export default function Promotions() {
       </main>
 
       <LineFloatingButton />
+      <BottomNavBar />
 
       {/* Detail Modal */}
       {selectedPromo && (

@@ -34,7 +34,7 @@ export default function BottomNavBar() {
           { icon: LogIn, label: "เข้าสู่ระบบ", href: SITE_INFO.loginUrl },
           { icon: UserPlus, label: "สมัคร", href: SITE_INFO.registerUrl, highlight: true },
           { icon: null, label: "RGB789", href: "/", isLogo: true },
-          { icon: Gift, label: "โปรโมชั่น", href: "#promotions" },
+          { icon: Gift, label: "โปรโมชั่น", href: "/promotions" },
           { icon: MessageCircle, label: "ติดต่อเรา", href: SITE_INFO.lineUrl },
         ].map((item, i) => (
           <a

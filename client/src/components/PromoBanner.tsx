@@ -53,6 +53,22 @@ export default function PromoBanner() {
               <p className="text-white/90 text-sm sm:text-base lg:text-lg xl:text-xl font-medium" style={{ fontFamily: "'Kanit', sans-serif", textShadow: "0 2px 8px rgba(0,0,0,0.5)" }}>
                 สมัครสมาชิกวันนี้ รับโบนัสทันที!
               </p>
+              <a
+                href="/promotions"
+                onClick={(e) => e.stopPropagation()}
+                className="mt-4 inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-bold text-sm transition-all hover:scale-105 active:scale-95"
+                style={{
+                  fontFamily: "'Kanit', sans-serif",
+                  background: "linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.08) 100%)",
+                  border: "1px solid rgba(255,255,255,0.3)",
+                  color: "#fff",
+                  backdropFilter: "blur(8px)",
+                  textShadow: "none",
+                  boxShadow: "0 4px 16px rgba(0,0,0,0.3)",
+                }}
+              >
+                🎁 ดูโปรโมชั่นทั้งหมด 12 รายการ
+              </a>
             </div>
             {/* Animated border */}
             <div
