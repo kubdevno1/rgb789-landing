@@ -15,14 +15,15 @@ export default function PromoBanner() {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
         >
-          <a
-            href={SITE_INFO.registerUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => trackRegisterClick("promo-banner")}
-            className="block relative overflow-hidden rounded-xl sm:rounded-2xl group"
+          {/* Changed outer <a> to <div> to avoid nested anchor tag error */}
+          <div
+            className="block relative overflow-hidden rounded-xl sm:rounded-2xl group cursor-pointer"
             style={{
               boxShadow: "0 0 40px rgba(139,92,246,0.2), 0 8px 32px rgba(0,0,0,0.4)",
+            }}
+            onClick={() => {
+              trackRegisterClick("promo-banner");
+              window.open(SITE_INFO.registerUrl, "_blank", "noopener,noreferrer");
             }}
           >
             <img
@@ -80,7 +81,7 @@ export default function PromoBanner() {
                 maskComposite: "exclude",
               }}
             />
-          </a>
+          </div>
         </motion.div>
       </div>
     </section>

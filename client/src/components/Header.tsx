@@ -40,6 +40,13 @@ export default function Header() {
             >
               🎁 โปรโมชั่น
             </a>
+            <a
+              href="/articles"
+              className="px-4 py-2 text-sm font-medium text-white/80 hover:text-yellow-400 transition-colors duration-300 rounded-lg hover:bg-white/5"
+              style={{ fontFamily: "'Kanit', sans-serif" }}
+            >
+              📚 บทความ
+            </a>
             {GAME_CATEGORIES.map((cat) => (
               <a
                 key={cat.id}
@@ -120,6 +127,15 @@ export default function Header() {
               >
                 <span className="text-xl">🎁</span>
                 <span className="font-medium">โปรโมชั่นทั้งหมด</span>
+              </a>
+              <a
+                href="/articles"
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex items-center gap-3 px-4 py-3 text-white/80 hover:text-yellow-400 hover:bg-white/5 rounded-lg transition-colors"
+                style={{ fontFamily: "'Kanit', sans-serif" }}
+              >
+                <span className="text-xl">📚</span>
+                <span className="font-medium">บทความ</span>
               </a>
             {GAME_CATEGORIES.map((cat) => (
                 <a

@@ -318,9 +318,9 @@ export default function ArticlesSection() {
                     className="text-lg lg:text-xl font-bold text-white/95 mb-3 group-hover:text-yellow-400 transition-colors duration-300 leading-snug"
                     style={{ fontFamily: "'Kanit', sans-serif" }}
                   >
-                    <a href="#" className="hover:text-yellow-400 transition-colors">
+                    <span className="hover:text-yellow-400 transition-colors cursor-pointer">
                       {article.title}
-                    </a>
+                    </span>
                   </h3>
 
                   {/* Excerpt */}
