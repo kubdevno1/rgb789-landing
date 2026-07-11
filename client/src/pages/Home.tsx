@@ -299,9 +299,9 @@ export default function Home() {
               "@type": "ContactPoint",
               contactType: "customer service",
               availableLanguage: ["Thai", "English"],
-              url: "https://line.me/R/ti/p/@627ixocl",
+              url: "https://line.me/ti/p/@311ukzxq",
             },
-            sameAs: ["https://line.me/R/ti/p/@627ixocl"],
+            sameAs: ["https://line.me/ti/p/@311ukzxq"],
           }),
         }}
       />
