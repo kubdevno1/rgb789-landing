@@ -9,6 +9,7 @@ import BottomNavBar from "@/components/BottomNavBar";
 import LineFloatingButton from "@/components/LineFloatingButton";
 import { SITE_INFO, SLOT_PROVIDERS } from "@/lib/constants";
 import { Suspense } from "react";
+import { useSEO } from "@/hooks/useSEO";
 
 // ข้อมูลเกมสล็อตทดลองเล่น
 const DEMO_GAMES = [
@@ -142,6 +143,15 @@ export default function DemoSlot() {
   const filteredGames = activeProvider === "ทั้งหมด"
     ? DEMO_GAMES
     : DEMO_GAMES.filter((g) => g.provider === activeProvider);
+
+  useSEO({
+    title: "ทดลองเล่นสล็อตฟรี | RGB789 สล็อตทดลองเล่น 1,000+ เกม ไม่ต้องสมัคร",
+    description: "ทดลองเล่นสล็อตฟรีทุกค่ายดังที่ RGB789 PG Soft, Pragmatic Play, Joker Gaming ไม่ต้องสมัครสมาชิก ไม่ต้องฝากเงิน เล่นได้ทันที สล็อตทดลองเล่นไม่มีขั้นต่ำฟรีทุกวัน",
+    keywords: "ทดลองเล่นสล็อต, สล็อตทดลองเล่น, สล็อตฟรี, ทดลองเล่นสล็อตฟรี, PG Soft ทดลอง, สล็อตไม่ต้องสมัคร, เล่นสล็อตฟรี, RGB789 ทดลอง",
+    canonical: "https://rgb789.me/demo-slot",
+    ogType: "website",
+    ogImage: "https://d2xsxph8kpxj0f.cloudfront.net/310519663187662312/VGyYopoy4jPaukwiBaCcsR/slot-games-BfnjKuuFh4U5MGSzRcpWL5.webp",
+  });
 
   return (
     <div

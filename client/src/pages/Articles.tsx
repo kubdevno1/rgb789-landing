@@ -9,6 +9,7 @@ import Header from "@/components/Header";
 import BottomNavBar from "@/components/BottomNavBar";
 import LineFloatingButton from "@/components/LineFloatingButton";
 import { SITE_INFO } from "@/lib/constants";
+import { useSEO } from "@/hooks/useSEO";
 
 type TabKey = "all" | "slots" | "casino" | "sports";
 
@@ -128,6 +129,15 @@ export default function Articles() {
   const [activeTab, setActiveTab] = useState<TabKey>("all");
   const [search, setSearch] = useState("");
   const [selectedArticle, setSelectedArticle] = useState<(typeof ARTICLES)[0] | null>(null);
+
+  useSEO({
+    title: "บทความ RGB789 | เทคนิคสล็อต สูตรบาคาร่า แทงบอลออนไลน์ 2567",
+    description: "รวมบทความความรู้ RGB789 เทคนิคเล่นสล็อตออนไลน์ สูตรบาคาร่า 2567 รีวิวค่ายสล็อต PG Soft คู่มือแทงบอลออนไลน์ คาสิโนสด อ่านฟรีไม่มีค่าใช้จ่าย",
+    keywords: "เทคนิคสล็อต, สูตรบาคาร่า, รีวิวสล็อต, PG Soft, คู่มือแทงบอล, คาสิโนสด, บทความสล็อต, RGB789 บทความ",
+    canonical: "https://rgb789.me/articles",
+    ogType: "website",
+    ogImage: "https://d2xsxph8kpxj0f.cloudfront.net/310519663187662312/VGyYopoy4jPaukwiBaCcsR/rgb789-logo-full_e43066ad.jpg",
+  });
 
   const filtered = ARTICLES.filter((a) => {
     const matchTab = activeTab === "all" || a.category === activeTab;

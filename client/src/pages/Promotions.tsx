@@ -5,6 +5,7 @@ import { useState } from "react";
 import { Link } from "wouter";
 import { ArrowLeft, X } from "lucide-react";
 import { SITE_INFO } from "@/lib/constants";
+import { useSEO } from "@/hooks/useSEO";
 import StickyPromoBar from "@/components/StickyPromoBar";
 import LineFloatingButton from "@/components/LineFloatingButton";
 import BottomNavBar from "@/components/BottomNavBar";
@@ -124,6 +125,15 @@ const PROMOTIONS = [
 
 export default function Promotions() {
   const [selectedPromo, setSelectedPromo] = useState<typeof PROMOTIONS[0] | null>(null);
+
+  useSEO({
+    title: "โปรโมชั่น RGB789 | โบนัสสมาชิกใหม่ ฝาก100รับ200 เครดิตฟรี คืนยอดเสีย 7%",
+    description: "โปรโมชั่น RGB789 ล่าสุด สมาชิกใหม่ฝาก100รับ200 รับโบนัส 60% คืนยอดเสีย 7% ทุกวัน เครดิตฟรีไม่ต้องฝาก โปรโมชั่นฝากถอนออโต้ไว ไม่มีขั้นต่ำ อัปเดตทุกวัน",
+    keywords: "โปรโมชั่น RGB789, โบนัสสมาชิกใหม่, ฝาก100รับ200, เครดิตฟรี, คืนยอดเสีย, โปรโมชั่นสล็อต, โบนัสฟรี, สมาชิกใหม่รับโบนัส",
+    canonical: "https://rgb789.me/promotions",
+    ogType: "website",
+    ogImage: "https://d2xsxph8kpxj0f.cloudfront.net/310519663187662312/VGyYopoy4jPaukwiBaCcsR/rgb789-logo-full_e43066ad.jpg",
+  });
 
   return (
     <div
