@@ -40,7 +40,7 @@ export default function SEOContent() {
 
             <div className="space-y-6 text-white/65 leading-relaxed">
               <p>
-                <strong className="text-white/90">RGB789</strong> คือเว็บพนันออนไลน์ครบวงจรอันดับ 1 ในประเทศไทย ที่รวบรวมเกมคาสิโนออนไลน์จากทุกค่ายดังทั่วโลกไว้ในที่เดียว ไม่ว่าจะเป็น <strong className="text-white/90">SA Gaming, Sexy Gaming, PG Slot, Pretty Gaming, Dream Gaming, WM Casino</strong> และอีกมากมาย ให้บริการทั้งคาสิโนสด สล็อตออนไลน์ แทงบอลออนไลน์ เกมยิงปลา และโต๊ะเกม ครบจบในเว็บเดียว
+                <strong className="text-white/90">RGB789</strong> คือ <strong className="text-white/90">เว็บพนันออนไลน์</strong>ครบวงจรอันดับ 1 ในประเทศไทย ที่รวบรวมเกม <strong className="text-white/90">คาสิโนออนไลน์</strong>จากทุกค่ายดังทั่วโลกไว้ในที่เดียว เป็น <strong className="text-white/90">เว็บตรงไม่ผ่านเอเย่นต์</strong> 100% ไม่ว่าจะเป็น <strong className="text-white/90">SA Gaming, Sexy Gaming, PG Slot, Pretty Gaming, Dream Gaming, WM Casino</strong> และอีกมากมาย ให้บริการทั้งคาสิโนสด <strong className="text-white/90">สล็อตออนไลน์</strong> แทงบอลออนไลน์ เกมยิงปลา และโต๊ะเกม ครบจบในเว็บเดียว
               </p>
 
               <h3
@@ -90,7 +90,10 @@ export default function SEOContent() {
                 โปรโมชั่น RGB789 สุดคุ้ม
               </h3>
               <p>
-                สมาชิก <strong className="text-white/90">RGB789</strong> ทุกท่านจะได้รับโปรโมชั่นสุดพิเศษมากมาย ไม่ว่าจะเป็นโบนัสต้อนรับสมาชิกใหม่ คืนยอดเสียทุกสัปดาห์ <strong className="text-white/90">ทุกยอดฝากรับ 2% ทุกวัน</strong> และโปรโมชั่นพิเศษอื่นๆ ที่อัปเดตเป็นประจำ สมัครสมาชิกวันนี้เพื่อรับสิทธิพิเศษทั้งหมด
+                สมาชิก <strong className="text-white/90">RGB789</strong> ทุกท่านจะได้รับโปรโมชั่นสุดพิเศษมากมาย ไม่ว่าจะเป็น <strong className="text-white/90">สมาชิกใหม่ฝาก100รับ200</strong> <strong className="text-white/90">คืนยอดเสีย 7%</strong> ทุกสัปดาห์ <strong className="text-white/90">ทุกยอดฝากรับ 2% ทุกวัน</strong> โบนัสวันเกิด และโปรโมชั่นพิเศษอื่นๆ ที่อัปเดตเป็นประจำ สมัครสมาชิกวันนี้เพื่อรับสิทธิพิเศษทั้งหมด
+              </p>
+              <p>
+                นอกจากนี้ RGB789 ยังมี <strong className="text-white/90">สล็อตไม่มีขั้นต่ำ</strong> เล่นได้ตั้งแต่ 1 บาท พร้อม <strong className="text-white/90">เครดิตฟรีไม่ต้องฝาก</strong> สำหรับสมาชิกใหม่ และระบบ <strong className="text-white/90">ฝากถอนออโต้ไว</strong> ที่รองรับ True Wallet และทุกธนาคารชั้นนำ
               </p>
             </div>
           </article>
