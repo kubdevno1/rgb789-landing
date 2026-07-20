@@ -10,6 +10,7 @@ import LineFloatingButton from "@/components/LineFloatingButton";
 import { SITE_INFO, SLOT_PROVIDERS } from "@/lib/constants";
 import { Suspense } from "react";
 import { useSEO } from "@/hooks/useSEO";
+import Breadcrumb from "@/components/Breadcrumb";
 
 // ข้อมูลเกมสล็อตทดลองเล่น
 const DEMO_GAMES = [
@@ -200,13 +201,11 @@ export default function DemoSlot() {
           />
           <div className="container relative z-10">
             {/* Breadcrumb */}
-            <nav className="flex justify-center mb-6 text-sm" aria-label="breadcrumb">
-              <ol className="flex items-center gap-2" style={{ color: "rgba(255,255,255,0.5)" }}>
-                <li><Link href="/" className="hover:text-yellow-400 transition-colors">หน้าหลัก</Link></li>
-                <li>/</li>
-                <li style={{ color: "#FFD700" }}>ทดลองเล่นสล็อต</li>
-              </ol>
-            </nav>
+            <div className="flex justify-center mb-6">
+              <Breadcrumb items={[
+                { label: "ทดลองเล่นสล็อต", href: "/demo-slot" },
+              ]} />
+            </div>
 
             <h1
               className="text-3xl lg:text-5xl font-bold mb-4"

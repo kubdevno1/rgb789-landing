@@ -10,6 +10,7 @@ import BottomNavBar from "@/components/BottomNavBar";
 import LineFloatingButton from "@/components/LineFloatingButton";
 import { SITE_INFO } from "@/lib/constants";
 import { useSEO } from "@/hooks/useSEO";
+import Breadcrumb from "@/components/Breadcrumb";
 
 type TabKey = "all" | "slots" | "casino" | "sports";
 
@@ -176,13 +177,12 @@ export default function Articles() {
             }}
           />
           <div className="container relative z-10 text-center">
-            {/* Back link */}
-            <Link href="/">
-              <span className="inline-flex items-center gap-1.5 text-purple-300 hover:text-purple-200 text-sm mb-6 cursor-pointer transition-colors">
-                <ChevronLeft size={16} />
-                กลับหน้าหลัก
-              </span>
-            </Link>
+            {/* Breadcrumb */}
+            <div className="flex justify-center mb-6">
+              <Breadcrumb items={[
+                { label: "บทความ & ความรู้", href: "/articles" },
+              ]} />
+            </div>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}

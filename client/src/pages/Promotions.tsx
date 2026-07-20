@@ -6,6 +6,7 @@ import { Link } from "wouter";
 import { ArrowLeft, X } from "lucide-react";
 import { SITE_INFO } from "@/lib/constants";
 import { useSEO } from "@/hooks/useSEO";
+import Breadcrumb from "@/components/Breadcrumb";
 import StickyPromoBar from "@/components/StickyPromoBar";
 import LineFloatingButton from "@/components/LineFloatingButton";
 import BottomNavBar from "@/components/BottomNavBar";
@@ -178,6 +179,12 @@ export default function Promotions() {
 
       {/* Main Content */}
       <main className="container pt-36 pb-16">
+        {/* Breadcrumb */}
+        <div className="mb-6">
+          <Breadcrumb items={[
+            { label: "โปรโมชั่น", href: "/promotions" },
+          ]} />
+        </div>
         {/* Page Title */}
         <div className="text-center mb-10">
           <h2
