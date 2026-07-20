@@ -54,6 +54,13 @@ export default function Header() {
             >
               🎮 ทดลองเล่นสล็อต
             </a>
+            <a
+              href="/free-credit"
+              className="px-4 py-2 text-sm font-medium transition-colors duration-300 rounded-lg hover:bg-white/5"
+              style={{ fontFamily: "'Kanit', sans-serif", color: "#10b981" }}
+            >
+              🎁 เครดิตฟรี
+            </a>
             {GAME_CATEGORIES.map((cat) => (
               <a
                 key={cat.id}
@@ -152,6 +159,15 @@ export default function Header() {
               >
                 <span className="text-xl">🎮</span>
                 <span className="font-medium">ทดลองเล่นสล็อตฟรี</span>
+              </a>
+              <a
+                href="/free-credit"
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex items-center gap-3 px-4 py-3 hover:bg-white/5 rounded-lg transition-colors"
+                style={{ fontFamily: "'Kanit', sans-serif", color: "#10b981" }}
+              >
+                <span className="text-xl">🎁</span>
+                <span className="font-medium">เครดิตฟรี</span>
               </a>
             {GAME_CATEGORIES.map((cat) => (
                 <a
