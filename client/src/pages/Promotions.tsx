@@ -284,6 +284,65 @@ export default function Promotions() {
       <BottomNavBar />
 
       {/* Detail Modal */}
+      {/* Internal Links Section — SEO */}
+      <section className="py-12" style={{ background: "rgba(255,255,255,0.02)", borderTop: "1px solid rgba(255,215,0,0.1)" }}>
+        <div className="container">
+          <h2
+            className="text-xl lg:text-2xl font-bold mb-6 text-center"
+            style={{ color: "#FFD700", fontFamily: "'Kanit', sans-serif" }}
+          >
+            เนื้อหาที่เกี่ยวข้อง
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <Link href="/demo-slot">
+              <div
+                className="rounded-2xl p-5 cursor-pointer transition-all hover:scale-[1.02]"
+                style={{ background: "rgba(255,215,0,0.06)", border: "1px solid rgba(255,215,0,0.2)" }}
+              >
+                <div className="text-2xl mb-3">🎮</div>
+                <h3 className="font-bold mb-1" style={{ color: "#FFD700", fontFamily: "'Kanit', sans-serif" }}>
+                  ทดลองเล่นสล็อตฟรี
+                </h3>
+                <p className="text-sm" style={{ color: "rgba(255,255,255,0.6)", fontFamily: "'Noto Sans Thai', sans-serif" }}>
+                  สล็อตทดลองเล่น 1,000+ เกม ไม่ต้องสมัคร ไม่ต้องฝากเงิน
+                </p>
+                <span className="inline-block mt-3 text-xs font-semibold" style={{ color: "#FFD700" }}>ทดลองเล่นเลย →</span>
+              </div>
+            </Link>
+            <Link href="/articles">
+              <div
+                className="rounded-2xl p-5 cursor-pointer transition-all hover:scale-[1.02]"
+                style={{ background: "rgba(139,92,246,0.06)", border: "1px solid rgba(139,92,246,0.2)" }}
+              >
+                <div className="text-2xl mb-3">📖</div>
+                <h3 className="font-bold mb-1" style={{ color: "#A78BFA", fontFamily: "'Kanit', sans-serif" }}>
+                  เทคนิคสล็อต สูตรบาคาร่า
+                </h3>
+                <p className="text-sm" style={{ color: "rgba(255,255,255,0.6)", fontFamily: "'Noto Sans Thai', sans-serif" }}>
+                  คู่มือเล่นสล็อต สูตรบาคาร่า แทงบอล อ่านฟรี
+                </p>
+                <span className="inline-block mt-3 text-xs font-semibold" style={{ color: "#A78BFA" }}>อ่านบทความ →</span>
+              </div>
+            </Link>
+            <Link href="/">
+              <div
+                className="rounded-2xl p-5 cursor-pointer transition-all hover:scale-[1.02]"
+                style={{ background: "rgba(16,185,129,0.06)", border: "1px solid rgba(16,185,129,0.2)" }}
+              >
+                <div className="text-2xl mb-3">🏠</div>
+                <h3 className="font-bold mb-1" style={{ color: "#34D399", fontFamily: "'Kanit', sans-serif" }}>
+                  หน้าหลัก RGB789
+                </h3>
+                <p className="text-sm" style={{ color: "rgba(255,255,255,0.6)", fontFamily: "'Noto Sans Thai', sans-serif" }}>
+                  สล็อตออนไลน์ บาคาร่า แทงบอล เว็บตรงไม่ผ่านเอเย่นต์
+                </p>
+                <span className="inline-block mt-3 text-xs font-semibold" style={{ color: "#34D399" }}>ไปหน้าหลัก →</span>
+              </div>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {selectedPromo && (
         <div
           className="fixed inset-0 z-[100] flex items-center justify-center p-4"

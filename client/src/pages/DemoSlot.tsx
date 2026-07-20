@@ -568,6 +568,68 @@ export default function DemoSlot() {
         </section>
       </main>
 
+      {/* Internal Links Section — SEO */}
+      <section className="py-12" style={{ background: "rgba(255,255,255,0.02)", borderTop: "1px solid rgba(255,215,0,0.1)" }}>
+        <div className="container">
+          <h2
+            className="text-xl lg:text-2xl font-bold mb-6 text-center"
+            style={{ color: "#FFD700", fontFamily: "'Kanit', sans-serif" }}
+          >
+            เนื้อหาที่เกี่ยวข้อง
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {/* Link → Promotions */}
+            <Link href="/promotions">
+              <div
+                className="rounded-2xl p-5 cursor-pointer group transition-all hover:scale-[1.02]"
+                style={{ background: "rgba(255,215,0,0.06)", border: "1px solid rgba(255,215,0,0.2)" }}
+              >
+                <div className="text-2xl mb-3">🎁</div>
+                <h3 className="font-bold mb-1" style={{ color: "#FFD700", fontFamily: "'Kanit', sans-serif" }}>
+                  โปรโมชั่นสล็อต
+                </h3>
+                <p className="text-sm" style={{ color: "rgba(255,255,255,0.6)", fontFamily: "'Noto Sans Thai', sans-serif" }}>
+                  รับโบนัสสมาชิกใหม่ ฝาก100รับ200 เครดิตฟรี คืนยอดเสีย 7%
+                </p>
+                <span className="inline-block mt-3 text-xs font-semibold" style={{ color: "#FFD700" }}>ดูโปรโมชั่นทั้งหมด →</span>
+              </div>
+            </Link>
+            {/* Link → Articles (slot tips) */}
+            <Link href="/articles">
+              <div
+                className="rounded-2xl p-5 cursor-pointer group transition-all hover:scale-[1.02]"
+                style={{ background: "rgba(139,92,246,0.06)", border: "1px solid rgba(139,92,246,0.2)" }}
+              >
+                <div className="text-2xl mb-3">📖</div>
+                <h3 className="font-bold mb-1" style={{ color: "#A78BFA", fontFamily: "'Kanit', sans-serif" }}>
+                  เทคนิคเล่นสล็อต
+                </h3>
+                <p className="text-sm" style={{ color: "rgba(255,255,255,0.6)", fontFamily: "'Noto Sans Thai', sans-serif" }}>
+                  คู่มือสล็อตมือใหม่ เทคนิคเพิ่มโอกาสชนะ รีวิว PG Soft
+                </p>
+                <span className="inline-block mt-3 text-xs font-semibold" style={{ color: "#A78BFA" }}>อ่านบทความสล็อต →</span>
+              </div>
+            </Link>
+            {/* Link → Home */}
+            <Link href="/">
+              <div
+                className="rounded-2xl p-5 cursor-pointer group transition-all hover:scale-[1.02]"
+                style={{ background: "rgba(16,185,129,0.06)", border: "1px solid rgba(16,185,129,0.2)" }}
+              >
+                <div className="text-2xl mb-3">🏠</div>
+                <h3 className="font-bold mb-1" style={{ color: "#34D399", fontFamily: "'Kanit', sans-serif" }}>
+                  หน้าหลัก RGB789
+                </h3>
+                <p className="text-sm" style={{ color: "rgba(255,255,255,0.6)", fontFamily: "'Noto Sans Thai', sans-serif" }}>
+                  คาสิโนออนไลน์ สล็อตเว็บตรง บาคาร่า แทงบอล ฝากถอนออโต้
+                </p>
+                <span className="inline-block mt-3 text-xs font-semibold" style={{ color: "#34D399" }}>ไปหน้าหลัก →</span>
+              </div>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <Suspense fallback={<div className="h-16" />}>
         <Footer />
       </Suspense>
