@@ -47,6 +47,13 @@ export default function Header() {
             >
               📚 บทความ
             </a>
+            <a
+              href="/demo-slot"
+              className="px-4 py-2 text-sm font-medium transition-colors duration-300 rounded-lg hover:bg-white/5"
+              style={{ fontFamily: "'Kanit', sans-serif", color: "#a78bfa" }}
+            >
+              🎮 ทดลองเล่นสล็อต
+            </a>
             {GAME_CATEGORIES.map((cat) => (
               <a
                 key={cat.id}
@@ -136,6 +143,15 @@ export default function Header() {
               >
                 <span className="text-xl">📚</span>
                 <span className="font-medium">บทความ</span>
+              </a>
+              <a
+                href="/demo-slot"
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex items-center gap-3 px-4 py-3 hover:bg-white/5 rounded-lg transition-colors"
+                style={{ fontFamily: "'Kanit', sans-serif", color: "#a78bfa" }}
+              >
+                <span className="text-xl">🎮</span>
+                <span className="font-medium">ทดลองเล่นสล็อตฟรี</span>
               </a>
             {GAME_CATEGORIES.map((cat) => (
                 <a

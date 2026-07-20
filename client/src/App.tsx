@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import AdminDashboard from "./pages/AdminDashboard";
 import Promotions from "./pages/Promotions";
 import Articles from "./pages/Articles";
+import DemoSlot from "./pages/DemoSlot";
 import LoadingScreen from "./components/LoadingScreen";
 import PromoPopup from "./components/PromoPopup";
 import { useState, useCallback } from "react";
@@ -20,6 +21,8 @@ function Router() {
       <Route path={"/admin"} component={AdminDashboard} />
       <Route path={"/promotions"} component={Promotions} />
       <Route path={"/articles"} component={Articles} />
+      <Route path={"/ทดลองเล่นสล็อต"} component={DemoSlot} />
+      <Route path={"/demo-slot"} component={DemoSlot} />
       <Route path={"/404"} component={NotFound} />
       <Route component={NotFound} />
     </Switch>
