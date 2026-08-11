@@ -1,34 +1,42 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import NotFound from "@/pages/NotFound";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
-import AdminDashboard from "./pages/AdminDashboard";
-import Promotions from "./pages/Promotions";
-import Articles from "./pages/Articles";
-import DemoSlot from "./pages/DemoSlot";
-import FreeCreditPage from "./pages/FreeCreditPage";
 import LoadingScreen from "./components/LoadingScreen";
 import PromoPopup from "./components/PromoPopup";
-import { useState, useCallback } from "react";
+import { lazy, Suspense, useState, useCallback } from "react";
+
+// Route-level code splitting: โหลดเฉพาะหน้าที่ผู้ใช้เปิด เพื่อลด initial bundle
+const AdminDashboard = lazy(() => import("./pages/AdminDashboard"));
+const Promotions = lazy(() => import("./pages/Promotions"));
+const Articles = lazy(() => import("./pages/Articles"));
+const DemoSlot = lazy(() => import("./pages/DemoSlot"));
+const FreeCreditPage = lazy(() => import("./pages/FreeCreditPage"));
+const NotFound = lazy(() => import("@/pages/NotFound"));
+
+function RouteFallback() {
+  return <div className="min-h-screen" aria-busy="true" />;
+}
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
   return (
-    <Switch>
-      <Route path={"/"} component={Home} />
-      <Route path={"/admin"} component={AdminDashboard} />
-      <Route path={"/promotions"} component={Promotions} />
-      <Route path={"/articles"} component={Articles} />
-      <Route path={"/ทดลองเล่นสล็อต"} component={DemoSlot} />
-      <Route path={"/demo-slot"} component={DemoSlot} />
-      <Route path={"/free-credit"} component={FreeCreditPage} />
-      <Route path={"/เครดิตฟรี"} component={FreeCreditPage} />
-      <Route path={"/404"} component={NotFound} />
-      <Route component={NotFound} />
-    </Switch>
+    <Suspense fallback={<RouteFallback />}>
+      <Switch>
+        <Route path={"/"} component={Home} />
+        <Route path={"/admin"} component={AdminDashboard} />
+        <Route path={"/promotions"} component={Promotions} />
+        <Route path={"/articles"} component={Articles} />
+        <Route path={"/ทดลองเล่นสล็อต"} component={DemoSlot} />
+        <Route path={"/demo-slot"} component={DemoSlot} />
+        <Route path={"/free-credit"} component={FreeCreditPage} />
+        <Route path={"/เครดิตฟรี"} component={FreeCreditPage} />
+        <Route path={"/404"} component={NotFound} />
+        <Route component={NotFound} />
+      </Switch>
+    </Suspense>
   );
 }
 

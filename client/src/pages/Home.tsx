@@ -12,6 +12,7 @@ import StepsSection from "@/components/StepsSection";
 import GameCategories from "@/components/GameCategories";
 import BottomNavBar from "@/components/BottomNavBar";
 import LineFloatingButton from "@/components/LineFloatingButton";
+import Footer from "@/components/Footer";
 
 // Lazy load non-critical components
 const WhyChooseUs = lazy(() => import("@/components/WhyChooseUs"));
@@ -20,7 +21,6 @@ const FAQSection = lazy(() => import("@/components/FAQSection"));
 const ArticlesSection = lazy(() => import("@/components/ArticlesSection"));
 const SEOContent = lazy(() => import("@/components/SEOContent"));
 const CTABanner = lazy(() => import("@/components/CTABanner"));
-const Footer = lazy(() => import("@/components/Footer"));
 const PromotionsCarousel = lazy(() => import("@/components/PromotionsCarousel"));
 const GameScreenshots = lazy(() => import("@/components/GameScreenshots"));
 
