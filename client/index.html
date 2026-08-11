@@ -41,6 +41,40 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800;900&family=Noto+Sans+Thai:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <style>
+      #rgb789-app-shell {
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        padding: 24px;
+        box-sizing: border-box;
+        color: #ffffff;
+        background: linear-gradient(135deg, #0a0118 0%, #1a0533 50%, #0f0225 100%);
+        font-family: "Kanit", "Noto Sans Thai", sans-serif;
+      }
+      #rgb789-app-shell__content {
+        max-width: 680px;
+        text-align: center;
+      }
+      #rgb789-app-shell__eyebrow {
+        margin: 0 0 12px;
+        color: #ffd700;
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+      }
+      #rgb789-app-shell h1 {
+        margin: 0;
+        color: #ffd700;
+        font-size: clamp(40px, 12vw, 76px);
+        line-height: 1;
+      }
+      #rgb789-app-shell p {
+        margin: 20px 0 0;
+        color: rgba(255, 255, 255, 0.86);
+        font-size: clamp(18px, 4vw, 24px);
+      }
+    </style>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JQH95DB0KM"></script>
     <script>
@@ -52,7 +86,15 @@
   </head>
 
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <main id="rgb789-app-shell" aria-label="RGB789 คาสิโนออนไลน์ออนไลน์">
+        <div id="rgb789-app-shell__content">
+          <p id="rgb789-app-shell__eyebrow">เว็บตรง ฝากถอนไว 24 ชั่วโมง</p>
+          <h1>RGB789</h1>
+          <p>คาสิโนออนไลน์ เว็บพนันออนไลน์ครบวงจร</p>
+        </div>
+      </main>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
     <script
       defer
