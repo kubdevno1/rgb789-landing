@@ -64,7 +64,7 @@ function App() {
         <TooltipProvider>
           <Toaster />
 
-          {/* Loading screen — shown only on first visit, not on /admin */}
+          {/* Non-blocking loading overlay — shown only on first visit, not on /admin */}
           {!loadingDone && (
             <LoadingScreen onComplete={handleLoadingComplete} duration={2800} />
           )}
@@ -72,13 +72,8 @@ function App() {
           {/* Promo popup — shown once after loading completes */}
           {showPromo && <PromoPopup onClose={handlePromoClose} />}
 
-          {/* Main content fades in after loading */}
-          <div
-            style={{
-              opacity: loadingDone ? 1 : 0,
-              transition: "opacity 0.5s ease-in",
-            }}
-          >
+          {/* Render route content immediately so users and Lighthouse can record FCP */}
+          <div>
             <Router />
           </div>
         </TooltipProvider>

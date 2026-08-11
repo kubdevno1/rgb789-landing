@@ -11,3 +11,6 @@
 - [x] แก้ pnpm deployment configuration และยืนยันว่า production build สำเร็จ
 - [x] รัน Lighthouse mobile audit บนเว็บไซต์ที่เผยแพร่และบันทึก diagnostic NO_FCP
 - [x] สรุปผล Mobile audit พร้อมข้อเสนอแนะที่จัดลำดับตามผลกระทบ
+- [x] ตรวจสอบ loading flow และจุดที่ปิดกั้นการ render หน้าแรก
+- [x] ปรับ LoadingScreen เป็น overlay ที่ไม่ซ่อนเนื้อหาหลัก
+- [ ] Build และทดสอบ Mobile Lighthouse หลังปรับ loading flow
