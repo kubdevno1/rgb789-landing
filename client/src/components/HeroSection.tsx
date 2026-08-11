@@ -4,7 +4,6 @@
 import { IMAGES, SITE_INFO } from "@/lib/constants";
 import { trackRegisterClick, trackLoginClick } from "@/lib/analytics";
 import { useRegisterTracking } from "@/hooks/useRegisterTracking";
-import { motion } from "framer-motion";
 
 export default function HeroSection() {
   const { trackClick } = useRegisterTracking();
@@ -34,11 +33,7 @@ export default function HeroSection() {
       {/* Content */}
       <div className="container relative z-10 pt-24 lg:pt-32 pb-16">
         <div className="max-w-3xl">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-          >
+          <div>
             {/* Badge */}
             <div
               className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-medium mb-6"
@@ -126,12 +121,7 @@ export default function HeroSection() {
                 { value: "100+", label: "เกมให้เลือกเล่น" },
                 { value: "30 วินาที", label: "ฝาก-ถอนออโต้" },
               ].map((stat, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.8 + i * 0.15 }}
-                >
+                <div key={i}>
                   <div
                     className="text-xl sm:text-2xl lg:text-3xl font-bold"
                     style={{
@@ -144,10 +134,10 @@ export default function HeroSection() {
                     {stat.value}
                   </div>
                   <div className="text-sm text-white/50 mt-1">{stat.label}</div>
-                </motion.div>
+                </div>
               ))}
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
 

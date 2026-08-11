@@ -9,7 +9,7 @@ import PromoPopup from "./components/PromoPopup";
 import { lazy, Suspense, useState, useCallback } from "react";
 
 // Route-level code splitting: โหลดเฉพาะหน้าที่ผู้ใช้เปิด เพื่อลด initial bundle
-const AdminDashboard = lazy(() => import("./pages/AdminDashboard"));
+const AdminDashboard = lazy(() => import("./pages/AdminRoute"));
 const Promotions = lazy(() => import("./pages/Promotions"));
 const Articles = lazy(() => import("./pages/Articles"));
 const DemoSlot = lazy(() => import("./pages/DemoSlot"));
