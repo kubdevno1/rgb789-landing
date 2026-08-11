@@ -16,4 +16,4 @@
 - [x] Build และทดสอบ Mobile Lighthouse หลังปรับ loading flow
 - [x] วิเคราะห์ unused JavaScript จาก Lighthouse report และ dependency graph หน้าแรก
 - [x] ย้ายโมดูลที่ไม่จำเป็นต่อหน้าแรกไปโหลดตามการใช้งาน
-- [ ] Build, regression test และรัน Lighthouse mobile เปรียบเทียบผลหลังลด unused JS
+- [x] Build, regression test และรัน Lighthouse mobile เปรียบเทียบผลหลังลด unused JS
