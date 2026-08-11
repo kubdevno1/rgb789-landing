@@ -1,11 +1,8 @@
-import { Toaster } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import LoadingScreen from "./components/LoadingScreen";
-import PromoPopup from "./components/PromoPopup";
 import { lazy, Suspense, useState, useCallback } from "react";
 
 // Route-level code splitting: โหลดเฉพาะหน้าที่ผู้ใช้เปิด เพื่อลด initial bundle
@@ -15,6 +12,7 @@ const Articles = lazy(() => import("./pages/Articles"));
 const DemoSlot = lazy(() => import("./pages/DemoSlot"));
 const FreeCreditPage = lazy(() => import("./pages/FreeCreditPage"));
 const NotFound = lazy(() => import("@/pages/NotFound"));
+const PromoPopup = lazy(() => import("./components/PromoPopup"));
 
 function RouteFallback() {
   return <div className="min-h-screen" aria-busy="true" />;
@@ -61,22 +59,22 @@ function App() {
   return (
     <ErrorBoundary>
       <ThemeProvider defaultTheme="dark">
-        <TooltipProvider>
-          <Toaster />
-
           {/* Non-blocking loading overlay — shown only on first visit, not on /admin */}
           {!loadingDone && (
             <LoadingScreen onComplete={handleLoadingComplete} duration={2800} />
           )}
 
           {/* Promo popup — shown once after loading completes */}
-          {showPromo && <PromoPopup onClose={handlePromoClose} />}
+          {showPromo && (
+            <Suspense fallback={null}>
+              <PromoPopup onClose={handlePromoClose} />
+            </Suspense>
+          )}
 
           {/* Render route content immediately so users and Lighthouse can record FCP */}
           <div>
             <Router />
           </div>
-        </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>
   );

@@ -21,9 +21,13 @@ describe("initial bundle boundaries", () => {
       resolve(projectRoot, "client/src/hooks/useRegisterTracking.ts"),
       "utf8",
     );
+    const appSource = readFileSync(resolve(projectRoot, "client/src/App.tsx"), "utf8");
 
     expect(homeSource).toContain("const GameCategories = lazy");
     expect(homeSource).toContain("const DeferredSection");
     expect(trackingSource).toContain('import("@trpc/client")');
+    expect(appSource).toContain("const PromoPopup = lazy");
+    expect(appSource).not.toContain("<TooltipProvider>");
+    expect(appSource).not.toContain("<Toaster />");
   });
 });
