@@ -13,4 +13,4 @@
 - [x] สรุปผล Mobile audit พร้อมข้อเสนอแนะที่จัดลำดับตามผลกระทบ
 - [x] ตรวจสอบ loading flow และจุดที่ปิดกั้นการ render หน้าแรก
 - [x] ปรับ LoadingScreen เป็น overlay ที่ไม่ซ่อนเนื้อหาหลัก
-- [ ] Build และทดสอบ Mobile Lighthouse หลังปรับ loading flow
+- [x] Build และทดสอบ Mobile Lighthouse หลังปรับ loading flow
