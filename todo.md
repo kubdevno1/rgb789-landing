@@ -9,5 +9,5 @@
 - [x] แก้ไข CSS warning และปรับ code splitting เพื่อลด bundle เริ่มต้น
 - [x] Build และตรวจสอบผลลัพธ์หลังปรับปรุง
 - [x] แก้ pnpm deployment configuration และยืนยันว่า production build สำเร็จ
-- [ ] รัน Lighthouse mobile audit บนเว็บไซต์ที่เผยแพร่
-- [ ] สรุปคะแนน Lighthouse และข้อเสนอแนะที่จัดลำดับตามผลกระทบ
+- [x] รัน Lighthouse mobile audit บนเว็บไซต์ที่เผยแพร่และบันทึก diagnostic NO_FCP
+- [x] สรุปผล Mobile audit พร้อมข้อเสนอแนะที่จัดลำดับตามผลกระทบ
