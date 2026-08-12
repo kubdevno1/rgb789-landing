@@ -12,4 +12,10 @@ describe("production static delivery", () => {
     expect(source).toContain('index: false');
     expect(source).toContain("stale-while-revalidate=86400");
   });
+
+  it("includes a production build marker for deployment verification", () => {
+    const html = readFileSync(resolve(import.meta.dirname, "../client/index.html"), "utf8");
+    expect(html).toContain('name="rgb789-build-id"');
+    expect(html).toContain("promo-performance-edaed22b");
+  });
 });

@@ -26,3 +26,4 @@
 - [x] จำกัด carousel ให้โหลดภาพตามการแสดงผลและเลื่อน deferred sections ให้เหมาะสม
 - [x] เพิ่ม cache policy สำหรับ static document และ assets เพื่อช่วยลด TTFB
 - [ ] Build, regression test และรัน Lighthouse mobile เปรียบเทียบผลครบทุกการปรับ
+- [ ] ยืนยันว่า production ใช้ checkpoint ล่าสุดด้วย build marker ก่อนสรุปผล Lighthouse
