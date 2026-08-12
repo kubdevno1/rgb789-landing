@@ -6,68 +6,28 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { SITE_INFO } from "@/lib/constants";
 import { trackCarouselSwipe } from "@/lib/analytics";
 
-const CDN = "https://d2xsxph8kpxj0f.cloudfront.net/310519663187662312/VGyYopoy4jPaukwiBaCcsR";
-
+// Featured offers only: full catalog remains available at /promotions.
+// AVIF cards are sized for the 264px homepage carousel instead of using original 1040px+ images.
 const PROMOTIONS = [
   {
     id: 1,
     title: "สมาชิกใหม่ฝาก 100 รับ 200 บาท",
-    image: `${CDN}/%E0%B8%AA%E0%B8%A1%E0%B8%B2%E0%B8%8A%E0%B8%B4%E0%B8%81%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88%E0%B8%9D%E0%B8%B2%E0%B8%81100%E0%B8%A3%E0%B8%B1%E0%B8%9A200%E0%B8%9A%E0%B8%B2%E0%B8%97new_a63601a2.jpg`,
+    image: "/manus-storage/promo-01_47ab2481.avif",
   },
   {
     id: 2,
     title: "สมาชิกใหม่รับโบนัสสูงสุด 60%",
-    image: `${CDN}/%E0%B8%AA%E0%B8%A1%E0%B8%B2%E0%B8%8A%E0%B8%B4%E0%B8%81%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B9%82%E0%B8%9A%E0%B8%99%E0%B8%B1%E0%B8%AA%E0%B8%AA%E0%B8%B9%E0%B8%87%E0%B8%AA%E0%B8%B8%E0%B8%9460%25_cddafa58.jpg`,
+    image: "/manus-storage/promo-02_cf83d616.avif",
   },
   {
     id: 3,
     title: "คืนยอดเสียสูงสุด 3-7%",
-    image: `${CDN}/%E0%B8%84%E0%B8%B7%E0%B8%99%E0%B8%A2%E0%B8%AD%E0%B8%94%E0%B9%80%E0%B8%AA%E0%B8%B5%E0%B8%A2%E0%B8%AA%E0%B8%B9%E0%B8%87%E0%B8%AA%E0%B8%B8%E0%B8%947%25_2887cc55.jpg`,
+    image: "/manus-storage/promo-03_d478364e.avif",
   },
   {
     id: 4,
     title: "ทุกยอดฝากรับ 2% ทุกวัน",
-    image: `${CDN}/%E0%B8%97%E0%B8%B8%E0%B8%81%E0%B8%A2%E0%B8%AD%E0%B8%94%E0%B8%9D%E0%B8%B2%E0%B8%81%E0%B8%A3%E0%B8%B1%E0%B8%9A2%25_91b6124c.jpg`,
-  },
-  {
-    id: 5,
-    title: "สมาชิกขาประจำ นาทีทอง 5%",
-    image: `${CDN}/%E0%B8%99%E0%B8%B2%E0%B8%97%E0%B8%B5%E0%B8%97%E0%B8%AD%E0%B8%995%25_0fe3958d.jpg`,
-  },
-  {
-    id: 6,
-    title: "แนะนำเพื่อน รับค่าคอม 0.7%",
-    image: `${CDN}/%E0%B9%81%E0%B8%99%E0%B8%B0%E0%B8%99%E0%B8%B3%E0%B9%80%E0%B8%9E%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%99%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%84%E0%B9%88%E0%B8%B2%E0%B8%84%E0%B8%AD%E0%B8%A10.7%25_47df4181.jpg`,
-  },
-  {
-    id: 7,
-    title: "โปรไพ่บรรลัย บาคาร่า เสือมังกร",
-    image: `${CDN}/%E0%B9%82%E0%B8%9B%E0%B8%A3%E0%B9%84%E0%B8%9E%E0%B9%88%E0%B8%9A%E0%B8%A3%E0%B8%A3%E0%B8%A5%E0%B8%B1%E0%B8%A2_3ec6704a.jpg`,
-  },
-  {
-    id: 8,
-    title: "โปรวันเกิด รับเครดิตฟรี 500 บาท",
-    image: `${CDN}/%E0%B9%82%E0%B8%9B%E0%B8%A3%E0%B8%A7%E0%B8%B1%E0%B8%99%E0%B9%80%E0%B8%81%E0%B8%B4%E0%B8%94%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B9%80%E0%B8%84%E0%B8%A3%E0%B8%94%E0%B8%B4%E0%B8%95%E0%B8%9F%E0%B8%A3%E0%B8%B5500%E0%B8%9A%E0%B8%B2%E0%B8%97_eec5132d.jpg`,
-  },
-  {
-    id: 9,
-    title: "โปรสเต็ป ตายตัวเดียว",
-    image: `${CDN}/%E0%B9%82%E0%B8%9B%E0%B8%A3%E0%B8%AA%E0%B9%80%E0%B8%95%E0%B9%87%E0%B8%9B(1)_61623794.jpg`,
-  },
-  {
-    id: 10,
-    title: "โปรสเต็ป ตายหมด",
-    image: `${CDN}/%E0%B9%82%E0%B8%9B%E0%B8%A3%E0%B8%AA%E0%B9%80%E0%B8%95%E0%B9%87%E0%B8%9B_1258aee5.jpg`,
-  },
-  {
-    id: 11,
-    title: "ฝาก 300 บาท หมุนกงล้อฟรี",
-    image: `${CDN}/%E0%B8%9D%E0%B8%B2%E0%B8%81300%E0%B8%AB%E0%B8%A1%E0%B8%B8%E0%B8%99%E0%B8%81%E0%B8%87%E0%B8%A5%E0%B9%89%E0%B8%AD_a150bdb0.jpg`,
-  },
-  {
-    id: 12,
-    title: "โปรสิ้นเดือน รับโบนัส 10%",
-    image: `${CDN}/%E0%B9%82%E0%B8%9B%E0%B8%A3%E0%B8%AA%E0%B8%B4%E0%B9%89%E0%B8%99%E0%B9%80%E0%B8%94%E0%B8%B7%E0%B8%AD%E0%B8%99_2b271a32.jpg`,
+    image: "/manus-storage/promo-04_6392dfee.avif",
   },
 ];
 
@@ -186,7 +146,10 @@ export default function PromotionsCarousel() {
                     src={promo.image}
                     alt={promo.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-400"
-                    loading="lazy"
+                    width="640"
+                    height="640"
+                    sizes="(max-width: 640px) 76vw, 264px"
+                    loading={promo.id === 1 ? "eager" : "lazy"}
                     decoding="async"
                   />
                 </div>

@@ -52,7 +52,9 @@ const DeferredSection = ({ children }: { children: React.ReactNode }) => {
           observer.disconnect();
         }
       },
-      { rootMargin: "300px 0px" },
+      // Start only when the next section is close to view; avoid mounting
+      // image-heavy sections during the initial hero render.
+      { rootMargin: "0px 0px 80px" },
     );
 
     observer.observe(element);
