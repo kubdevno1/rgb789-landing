@@ -20,4 +20,4 @@
 - [x] ตรวจขนาด Hero image เดิมและกำหนดรูปแบบ responsive ที่ลด payload
 - [x] สร้างและอัปโหลด Hero image แบบ AVIF สำหรับมือถือและเดสก์ท็อป
 - [x] อัปเดต HeroSection ให้ใช้ picture/source set และ preload ที่ถูกต้อง
-- [ ] Build, regression test และรัน Lighthouse mobile เปรียบเทียบผลหลังปรับ Hero image
+- [x] Build, regression test และรัน Lighthouse mobile เปรียบเทียบผลหลังปรับ Hero image
