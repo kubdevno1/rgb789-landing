@@ -25,5 +25,7 @@
 - [x] ผูกภาพโปรโมชั่น AVIF ที่บีบอัดแล้วเข้ากับ featured carousel บนหน้าแรก
 - [x] จำกัด carousel ให้โหลดภาพตามการแสดงผลและเลื่อน deferred sections ให้เหมาะสม
 - [x] เพิ่ม cache policy สำหรับ static document และ assets เพื่อช่วยลด TTFB
-- [ ] Build, regression test และรัน Lighthouse mobile เปรียบเทียบผลครบทุกการปรับ
-- [ ] ยืนยันว่า production ใช้ checkpoint ล่าสุดด้วย build marker ก่อนสรุปผล Lighthouse
+- [x] Build, regression test และรัน Lighthouse mobile เปรียบเทียบผลครบทุกการปรับ
+- [x] ยืนยันว่า production ใช้ checkpoint ล่าสุดด้วย build marker ก่อนสรุปผล Lighthouse
+- [x] รอและตรวจ build marker ซ้ำหลัง production propagation เสร็จ
+- [x] ระบุข้อจำกัดของ platform cache ที่ override document policy และสรุปผล TTFB อย่างโปร่งใสในบันทึกผลการทดสอบ
