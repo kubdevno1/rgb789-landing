@@ -35,5 +35,8 @@
 - [x] Build, regression test และรัน Lighthouse Mobile หลังปรับภาพขั้นตอนสมัคร
 - [x] ตรวจสอบ Vercel integration และโครงสร้าง build/deployment ของโปรเจกต์
 - [x] เตรียม Vercel configuration ให้รองรับ frontend และ API routes
-- [ ] สร้างหรือเชื่อม Vercel project แล้ว deploy production
-- [ ] ตรวจสอบ URL และสถานะ deployment บน Vercel
+- [x] สร้างหรือเชื่อม Vercel project แล้ว deploy production
+- [x] ยืนยัน URL, deployment identifier และสถานะ Vercel project
+- [x] ยืนยันว่า Vercel URL เข้าถึงได้แบบสาธารณะ
+- [x] ยืนยัน Vercel Authentication ไม่บล็อก public URL ด้วยการทดสอบ unauthenticated HTTP 200
+- [x] ทดสอบ public access ของ root, client route และ storage asset บน Vercel
