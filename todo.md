@@ -29,3 +29,7 @@
 - [x] ยืนยันว่า production ใช้ checkpoint ล่าสุดด้วย build marker ก่อนสรุปผล Lighthouse
 - [x] รอและตรวจ build marker ซ้ำหลัง production propagation เสร็จ
 - [x] ระบุข้อจำกัดของ platform cache ที่ override document policy และสรุปผล TTFB อย่างโปร่งใสในบันทึกผลการทดสอบ
+- [x] ตรวจขนาดและอัตราส่วนภาพในส่วนขั้นตอนสมัคร
+- [x] สร้างและอัปโหลดภาพขั้นตอนสมัคร AVIF สำหรับมือถือและเดสก์ท็อป
+- [x] อัปเดต StepsSection ให้ใช้ responsive picture และ lazy loading
+- [ ] Build, regression test และรัน Lighthouse Mobile หลังปรับภาพขั้นตอนสมัคร
