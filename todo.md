@@ -32,4 +32,4 @@
 - [x] ตรวจขนาดและอัตราส่วนภาพในส่วนขั้นตอนสมัคร
 - [x] สร้างและอัปโหลดภาพขั้นตอนสมัคร AVIF สำหรับมือถือและเดสก์ท็อป
 - [x] อัปเดต StepsSection ให้ใช้ responsive picture และ lazy loading
-- [ ] Build, regression test และรัน Lighthouse Mobile หลังปรับภาพขั้นตอนสมัคร
+- [x] Build, regression test และรัน Lighthouse Mobile หลังปรับภาพขั้นตอนสมัคร
