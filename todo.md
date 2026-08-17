@@ -33,3 +33,7 @@
 - [x] สร้างและอัปโหลดภาพขั้นตอนสมัคร AVIF สำหรับมือถือและเดสก์ท็อป
 - [x] อัปเดต StepsSection ให้ใช้ responsive picture และ lazy loading
 - [x] Build, regression test และรัน Lighthouse Mobile หลังปรับภาพขั้นตอนสมัคร
+- [x] ตรวจสอบ Vercel integration และโครงสร้าง build/deployment ของโปรเจกต์
+- [x] เตรียม Vercel configuration ให้รองรับ frontend และ API routes
+- [ ] สร้างหรือเชื่อม Vercel project แล้ว deploy production
+- [ ] ตรวจสอบ URL และสถานะ deployment บน Vercel
