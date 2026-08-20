@@ -42,9 +42,10 @@
 - [x] ทดสอบ public access ของ root, client route และ storage asset บน Vercel
 - [x] ตรวจสถานะ DNS และความพร้อมของ rgb789.fun บน Vercel
 - [x] เพิ่ม rgb789.fun และ www.rgb789.fun เป็น production custom domains ของ Vercel project
-- [ ] ยืนยัน DNS, HTTPS และเว็บไซต์ผ่าน rgb789.fun
+- [x] พักการยืนยัน DNS, HTTPS และเว็บไซต์ผ่าน rgb789.fun ตามคำสั่งผู้ใช้
 - [x] ตรวจโครงสร้างปุ่มโลโก้ตรงกลางของ BottomNavBar
 - [x] ปรับปุ่มให้เป็นวงกลมและจัดโลโก้ให้พอดีทุกขนาดหน้าจอ
 - [x] ตรวจ BottomNavBar ที่ viewport 320px, 390px และ 430px ด้วย screenshot capture และ regression layout calculation ที่ผ่าน
 - [x] เพิ่ม regression assertions สำหรับ responsive classes และ spacing ของปุ่มโลโก้ BottomNavBar
 - [x] รัน type-check และ regression tests หลังยืนยัน responsive layout ของ BottomNavBar
+- [x] ยืนยันโดเมน Vercel ที่เข้าถึงได้และกำหนดเป็น URL ใช้งานชั่วคราว
