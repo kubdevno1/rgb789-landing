@@ -61,7 +61,7 @@ function App() {
       <ThemeProvider defaultTheme="dark">
           {/* Non-blocking loading overlay — shown only on first visit, not on /admin */}
           {!loadingDone && (
-            <LoadingScreen onComplete={handleLoadingComplete} duration={2800} />
+              <LoadingScreen onComplete={handleLoadingComplete} duration={1800} />
           )}
 
           {/* Promo popup — shown once after loading completes */}

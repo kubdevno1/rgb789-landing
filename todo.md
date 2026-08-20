@@ -49,3 +49,6 @@
 - [x] เพิ่ม regression assertions สำหรับ responsive classes และ spacing ของปุ่มโลโก้ BottomNavBar
 - [x] รัน type-check และ regression tests หลังยืนยัน responsive layout ของ BottomNavBar
 - [x] ยืนยันโดเมน Vercel ที่เข้าถึงได้และกำหนดเป็น URL ใช้งานชั่วคราว
+- [x] ตรวจ Loading Animation ปัจจุบันและจุดที่ควรทำให้ transition นุ่มนวลขึ้น
+- [x] ปรับ Loading Animation แบบ non-blocking โดยคง FCP ของเนื้อหาหลัก
+- [x] Build, regression test และตรวจ initial render หลังปรับ Loading Animation (รวม FCP regression assertions)

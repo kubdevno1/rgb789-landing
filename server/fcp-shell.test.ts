@@ -22,5 +22,9 @@ describe("first-contentful-paint shell", () => {
 
     expect(appSource).not.toContain("opacity: loadingDone ? 1 : 0");
     expect(overlaySource).toContain("pointer-events-none fixed inset-x-0");
+    expect(overlaySource).toContain("duration = 1800");
+    expect(overlaySource).toContain("prefers-reduced-motion: reduce");
+    expect(overlaySource).toContain("transition-[opacity,transform]");
+    expect(appSource).toContain("<LoadingScreen onComplete={handleLoadingComplete} duration={1800} />");
   });
 });
