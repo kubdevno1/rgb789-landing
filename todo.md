@@ -1,0 +1,54 @@
+# Project TODO
+
+- [x] ตรวจสอบโครงสร้างโปรเจกต์และยืนยันว่า build/run ได้
+- [x] ตรวจสอบและยืนยันว่า .gitignore ป้องกันไฟล์ลับและไฟล์ build ที่ไม่ควร commit
+- [x] ตรวจสอบ repository และการเชื่อมต่อ GitHub
+- [x] Push commit ที่พร้อมใช้งานไปยัง branch main และยืนยันผลบน GitHub
+- [x] ยืนยัน commit และไฟล์บน GitHub
+- [x] วิเคราะห์ build warnings และขนาด bundle ปัจจุบัน
+- [x] แก้ไข CSS warning และปรับ code splitting เพื่อลด bundle เริ่มต้น
+- [x] Build และตรวจสอบผลลัพธ์หลังปรับปรุง
+- [x] แก้ pnpm deployment configuration และยืนยันว่า production build สำเร็จ
+- [x] รัน Lighthouse mobile audit บนเว็บไซต์ที่เผยแพร่และบันทึก diagnostic NO_FCP
+- [x] สรุปผล Mobile audit พร้อมข้อเสนอแนะที่จัดลำดับตามผลกระทบ
+- [x] ตรวจสอบ loading flow และจุดที่ปิดกั้นการ render หน้าแรก
+- [x] ปรับ LoadingScreen เป็น overlay ที่ไม่ซ่อนเนื้อหาหลัก
+- [x] Build และทดสอบ Mobile Lighthouse หลังปรับ loading flow
+- [x] วิเคราะห์ unused JavaScript จาก Lighthouse report และ dependency graph หน้าแรก
+- [x] ย้ายโมดูลที่ไม่จำเป็นต่อหน้าแรกไปโหลดตามการใช้งาน
+- [x] Build, regression test และรัน Lighthouse mobile เปรียบเทียบผลหลังลด unused JS
+- [x] ตรวจขนาด Hero image เดิมและกำหนดรูปแบบ responsive ที่ลด payload
+- [x] สร้างและอัปโหลด Hero image แบบ AVIF สำหรับมือถือและเดสก์ท็อป
+- [x] อัปเดต HeroSection ให้ใช้ picture/source set และ preload ที่ถูกต้อง
+- [x] Build, regression test และรัน Lighthouse mobile เปรียบเทียบผลหลังปรับ Hero image
+- [x] วิเคราะห์ขนาดภาพโปรโมชั่น การโหลด carousel และ document response path
+- [x] ผูกภาพโปรโมชั่น AVIF ที่บีบอัดแล้วเข้ากับ featured carousel บนหน้าแรก
+- [x] จำกัด carousel ให้โหลดภาพตามการแสดงผลและเลื่อน deferred sections ให้เหมาะสม
+- [x] เพิ่ม cache policy สำหรับ static document และ assets เพื่อช่วยลด TTFB
+- [x] Build, regression test และรัน Lighthouse mobile เปรียบเทียบผลครบทุกการปรับ
+- [x] ยืนยันว่า production ใช้ checkpoint ล่าสุดด้วย build marker ก่อนสรุปผล Lighthouse
+- [x] รอและตรวจ build marker ซ้ำหลัง production propagation เสร็จ
+- [x] ระบุข้อจำกัดของ platform cache ที่ override document policy และสรุปผล TTFB อย่างโปร่งใสในบันทึกผลการทดสอบ
+- [x] ตรวจขนาดและอัตราส่วนภาพในส่วนขั้นตอนสมัคร
+- [x] สร้างและอัปโหลดภาพขั้นตอนสมัคร AVIF สำหรับมือถือและเดสก์ท็อป
+- [x] อัปเดต StepsSection ให้ใช้ responsive picture และ lazy loading
+- [x] Build, regression test และรัน Lighthouse Mobile หลังปรับภาพขั้นตอนสมัคร
+- [x] ตรวจสอบ Vercel integration และโครงสร้าง build/deployment ของโปรเจกต์
+- [x] เตรียม Vercel configuration ให้รองรับ frontend และ API routes
+- [x] สร้างหรือเชื่อม Vercel project แล้ว deploy production
+- [x] ยืนยัน URL, deployment identifier และสถานะ Vercel project
+- [x] ยืนยันว่า Vercel URL เข้าถึงได้แบบสาธารณะ
+- [x] ยืนยัน Vercel Authentication ไม่บล็อก public URL ด้วยการทดสอบ unauthenticated HTTP 200
+- [x] ทดสอบ public access ของ root, client route และ storage asset บน Vercel
+- [x] ตรวจสถานะ DNS และความพร้อมของ rgb789.fun บน Vercel
+- [x] เพิ่ม rgb789.fun และ www.rgb789.fun เป็น production custom domains ของ Vercel project
+- [x] พักการยืนยัน DNS, HTTPS และเว็บไซต์ผ่าน rgb789.fun ตามคำสั่งผู้ใช้
+- [x] ตรวจโครงสร้างปุ่มโลโก้ตรงกลางของ BottomNavBar
+- [x] ปรับปุ่มให้เป็นวงกลมและจัดโลโก้ให้พอดีทุกขนาดหน้าจอ
+- [x] ตรวจ BottomNavBar ที่ viewport 320px, 390px และ 430px ด้วย screenshot capture และ regression layout calculation ที่ผ่าน
+- [x] เพิ่ม regression assertions สำหรับ responsive classes และ spacing ของปุ่มโลโก้ BottomNavBar
+- [x] รัน type-check และ regression tests หลังยืนยัน responsive layout ของ BottomNavBar
+- [x] ยืนยันโดเมน Vercel ที่เข้าถึงได้และกำหนดเป็น URL ใช้งานชั่วคราว
+- [x] ตรวจ Loading Animation ปัจจุบันและจุดที่ควรทำให้ transition นุ่มนวลขึ้น
+- [x] ปรับ Loading Animation แบบ non-blocking โดยคง FCP ของเนื้อหาหลัก
+- [x] Build, regression test และตรวจ initial render หลังปรับ Loading Animation (รวม FCP regression assertions)

@@ -5,68 +5,27 @@ interface PromoPopupProps {
   onClose: () => void;
 }
 
-const CDN = "https://d2xsxph8kpxj0f.cloudfront.net/310519663187662312/VGyYopoy4jPaukwiBaCcsR";
-
+// Keep the startup popup intentionally small: users can open the full catalog at /promotions.
 const PROMOS = [
   {
-    img: `${CDN}/%E0%B8%AA%E0%B8%A1%E0%B8%B2%E0%B8%8A%E0%B8%B4%E0%B8%81%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88%E0%B8%9D%E0%B8%B2%E0%B8%81100%E0%B8%A3%E0%B8%B1%E0%B8%9A200%E0%B8%9A%E0%B8%B2%E0%B8%97new_a63601a2.jpg`,
+    img: "/manus-storage/promo-01_47ab2481.avif",
     alt: "สมาชิกใหม่ฝาก 100 รับ 200 บาท",
     shareText: "🎰 RGB789 สมาชิกใหม่ฝาก 100 รับ 200 บาท เฉพาะสล็อต! สมัครเลย 👉",
   },
   {
-    img: `${CDN}/%E0%B8%AA%E0%B8%A1%E0%B8%B2%E0%B8%8A%E0%B8%B4%E0%B8%81%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B9%82%E0%B8%9A%E0%B8%99%E0%B8%B1%E0%B8%AA%E0%B8%AA%E0%B8%B9%E0%B8%87%E0%B8%AA%E0%B8%B8%E0%B8%9460%25_cddafa58.jpg`,
+    img: "/manus-storage/promo-02_cf83d616.avif",
     alt: "สมาชิกใหม่รับโบนัสสูงสุด 60%",
     shareText: "💰 RGB789 สมาชิกใหม่รับโบนัสสูงสุด 60%! สมัครเลย 👉",
   },
   {
-    img: `${CDN}/%E0%B8%84%E0%B8%B7%E0%B8%99%E0%B8%A2%E0%B8%AD%E0%B8%94%E0%B9%80%E0%B8%AA%E0%B8%B5%E0%B8%A2%E0%B8%AA%E0%B8%B9%E0%B8%87%E0%B8%AA%E0%B8%B8%E0%B8%947%25_2887cc55.jpg`,
+    img: "/manus-storage/promo-03_d478364e.avif",
     alt: "คืนยอดเสียสูงสุด 3-7%",
     shareText: "💸 RGB789 คืนยอดเสียสูงสุด 3-7% ทุกวัน! สมัครเลย 👉",
   },
   {
-    img: `${CDN}/%E0%B8%97%E0%B8%B8%E0%B8%81%E0%B8%A2%E0%B8%AD%E0%B8%94%E0%B8%9D%E0%B8%B2%E0%B8%81%E0%B8%A3%E0%B8%B1%E0%B8%9A2%25_91b6124c.jpg`,
+    img: "/manus-storage/promo-04_6392dfee.avif",
     alt: "ทุกยอดฝากรับ 2% ทุกวัน",
     shareText: "⚡ RGB789 ทุกยอดฝากรับ 2% ทุกวัน ยอดเล่น 1 เทิร์น! สมัครเลย 👉",
-  },
-  {
-    img: `${CDN}/%E0%B8%99%E0%B8%B2%E0%B8%97%E0%B8%B5%E0%B8%97%E0%B8%AD%E0%B8%995%25_0fe3958d.jpg`,
-    alt: "สมาชิกขาประจำ นาทีทอง 5%",
-    shareText: "⭐ RGB789 สมาชิกขาประจำ ฝากแรกของวัน รับนาทีทอง 5%! สมัครเลย 👉",
-  },
-  {
-    img: `${CDN}/%E0%B9%81%E0%B8%99%E0%B8%B0%E0%B8%99%E0%B8%B3%E0%B9%80%E0%B8%9E%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%99%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%84%E0%B9%88%E0%B8%B2%E0%B8%84%E0%B8%AD%E0%B8%A10.7%25_47df4181.jpg`,
-    alt: "แนะนำเพื่อน รับค่าคอม 0.7%",
-    shareText: "👥 RGB789 แนะนำเพื่อน รับค่าคอม 0.7% ทุกยอดเดิมพัน! สมัครเลย 👉",
-  },
-  {
-    img: `${CDN}/%E0%B9%82%E0%B8%9B%E0%B8%A3%E0%B9%84%E0%B8%9E%E0%B9%88%E0%B8%9A%E0%B8%A3%E0%B8%A3%E0%B8%A5%E0%B8%B1%E0%B8%A2_3ec6704a.jpg`,
-    alt: "โปรไพ่บรรลัย บาคาร่า เสือมังกร",
-    shareText: "🃏 RGB789 โปรไพ่บรรลัย ผิดติดต่อกัน 7-10 ไม้ รับคืน 7-10 เท่า! สมัครเลย 👉",
-  },
-  {
-    img: `${CDN}/%E0%B9%82%E0%B8%9B%E0%B8%A3%E0%B8%A7%E0%B8%B1%E0%B8%99%E0%B9%80%E0%B8%81%E0%B8%B4%E0%B8%94%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B9%80%E0%B8%84%E0%B8%A3%E0%B8%94%E0%B8%B4%E0%B8%95%E0%B8%9F%E0%B8%A3%E0%B8%B5500%E0%B8%9A%E0%B8%B2%E0%B8%97_eec5132d.jpg`,
-    alt: "โปรวันเกิด รับเครดิตฟรี 500 บาท",
-    shareText: "🎂 RGB789 โปรวันเกิด รับเครดิตฟรี 500 บาท! สมัครเลย 👉",
-  },
-  {
-    img: `${CDN}/%E0%B9%82%E0%B8%9B%E0%B8%A3%E0%B8%AA%E0%B9%80%E0%B8%95%E0%B9%87%E0%B8%9B(1)_61623794.jpg`,
-    alt: "โปรสเต็ป ตายตัวเดียว",
-    shareText: "🎯 RGB789 โปรสเต็ป ตายตัวเดียว STEP 5-12 รับคืน 1-8 เท่า! สมัครเลย 👉",
-  },
-  {
-    img: `${CDN}/%E0%B9%82%E0%B8%9B%E0%B8%A3%E0%B8%AA%E0%B9%80%E0%B8%95%E0%B9%87%E0%B8%9B_1258aee5.jpg`,
-    alt: "โปรสเต็ป ตายหมด",
-    shareText: "🎲 RGB789 โปรสเต็ป ตายหมด 7-10 คู่ รับสูงสุด 20,000 บาท! สมัครเลย 👉",
-  },
-  {
-    img: `${CDN}/%E0%B8%9D%E0%B8%B2%E0%B8%81300%E0%B8%AB%E0%B8%A1%E0%B8%B8%E0%B8%99%E0%B8%81%E0%B8%87%E0%B8%A5%E0%B9%89%E0%B8%AD_a150bdb0.jpg`,
-    alt: "ฝาก 300 บาท หมุนกงล้อฟรี",
-    shareText: "🎡 RGB789 ฝาก 300 บาท หมุนกงล้อฟรีทุกวัน ลุ้นรับทองคำ! สมัครเลย 👉",
-  },
-  {
-    img: `${CDN}/%E0%B9%82%E0%B8%9B%E0%B8%A3%E0%B8%AA%E0%B8%B4%E0%B9%89%E0%B8%99%E0%B9%80%E0%B8%94%E0%B8%B7%E0%B8%AD%E0%B8%99_2b271a32.jpg`,
-    alt: "โปรสิ้นเดือน ทุกวันที่ 28-03 รับโบนัส 10%",
-    shareText: "📅 RGB789 โปรสิ้นเดือน ทุกวันที่ 28-03 ฝากแรกของวัน รับโบนัส 10%! สมัครเลย 👉",
   },
 ];
 
@@ -75,11 +34,10 @@ const SHARE_URL = "https://rgb789.me";
 export default function PromoPopup({ onClose }: PromoPopupProps) {
   const [visible, setVisible] = useState(false);
   const [closing, setClosing] = useState(false);
-  const [currentIndex, setCurrentIndex] = useState(() => Math.floor(Math.random() * PROMOS.length));
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [countdown, setCountdown] = useState(12);
   const [copied, setCopied] = useState(false);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
-  const autoSlideRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const promo = PROMOS[currentIndex];
 
@@ -100,19 +58,6 @@ export default function PromoPopup({ onClose }: PromoPopupProps) {
     return () => { if (intervalRef.current) clearInterval(intervalRef.current); };
   }, []);
 
-  // Auto-slide every 3.5 seconds
-  const startAutoSlide = useCallback(() => {
-    if (autoSlideRef.current) clearInterval(autoSlideRef.current);
-    autoSlideRef.current = setInterval(() => {
-      setCurrentIndex((i) => (i + 1) % PROMOS.length);
-    }, 3500);
-  }, []);
-
-  useEffect(() => {
-    startAutoSlide();
-    return () => { if (autoSlideRef.current) clearInterval(autoSlideRef.current); };
-  }, [startAutoSlide]);
-
   const handleClose = useCallback(() => {
     setClosing(true);
     setTimeout(onClose, 350);
@@ -125,13 +70,11 @@ export default function PromoPopup({ onClose }: PromoPopupProps) {
 
   const handlePrev = useCallback(() => {
     setCurrentIndex((i) => (i - 1 + PROMOS.length) % PROMOS.length);
-    startAutoSlide(); // reset timer on manual nav
-  }, [startAutoSlide]);
+  }, []);
 
   const handleNext = useCallback(() => {
     setCurrentIndex((i) => (i + 1) % PROMOS.length);
-    startAutoSlide(); // reset timer on manual nav
-  }, [startAutoSlide]);
+  }, []);
 
   // Share handlers
   const shareMessage = `${promo.shareText} ${SHARE_URL}`;
@@ -283,6 +226,9 @@ export default function PromoPopup({ onClose }: PromoPopupProps) {
                 className="w-full h-full object-cover"
                 style={{ animation: "fadeInImg 0.3s ease" }}
                 loading="eager"
+                width="640"
+                height="640"
+                decoding="async"
               />
 
               {/* Prev arrow */}
@@ -339,7 +285,7 @@ export default function PromoPopup({ onClose }: PromoPopupProps) {
               {PROMOS.map((_, i) => (
                 <button
                   key={i}
-                  onClick={(e) => { e.stopPropagation(); setCurrentIndex(i); startAutoSlide(); }}
+                  onClick={(e) => { e.stopPropagation(); setCurrentIndex(i); }}
                   className="rounded-full transition-all"
                   style={{
                     width: i === currentIndex ? "20px" : "8px",

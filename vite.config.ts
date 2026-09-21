@@ -167,6 +167,44 @@ export default defineConfig({
   build: {
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
+    rollupOptions: {
+      output: {
+        // แยก third-party dependencies ที่ใช้ร่วมกันออกจาก application bundle
+        // ช่วยลดขนาดไฟล์เริ่มต้นของแต่ละหน้าและให้ browser cache library ได้ข้าม route
+        manualChunks(id) {
+          if (!id.includes("node_modules")) return;
+
+          if (
+            id.includes("/react/") ||
+            id.includes("/react-dom/") ||
+            id.includes("/scheduler/") ||
+            id.includes("/use-sync-external-store/")
+          ) {
+            return "vendor-react";
+          }
+
+          if (id.includes("framer-motion") || id.includes("motion-dom") || id.includes("motion-utils")) {
+            return "vendor-motion";
+          }
+
+          if (id.includes("lucide-react")) {
+            return "vendor-icons";
+          }
+
+          if (id.includes("@radix-ui") || id.includes("@floating-ui") || id.includes("vaul") || id.includes("cmdk")) {
+            return "vendor-ui";
+          }
+
+          if (id.includes("@tanstack") || id.includes("@trpc") || id.includes("superjson")) {
+            return "vendor-data";
+          }
+
+          if (id.includes("date-fns") || id.includes("embla-carousel-react") || id.includes("react-day-picker")) {
+            return "vendor-utils";
+          }
+        },
+      },
+    },
   },
   server: {
     host: true,

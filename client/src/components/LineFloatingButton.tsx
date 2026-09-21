@@ -3,18 +3,14 @@
 
 import { SITE_INFO } from "@/lib/constants";
 import { trackLineContactClick } from "@/lib/analytics";
-import { motion } from "framer-motion";
 
 export default function LineFloatingButton() {
   return (
-    <motion.a
+    <a
       href={SITE_INFO.lineUrl}
       target="_blank"
       rel="noopener noreferrer"
       onClick={() => trackLineContactClick("floating-button")}
-      initial={{ scale: 0, opacity: 0 }}
-      animate={{ scale: 1, opacity: 1 }}
-      transition={{ delay: 1.5, duration: 0.4, type: "spring", stiffness: 200 }}
       className="fixed right-4 bottom-20 lg:bottom-6 z-50 group"
       aria-label="ติดต่อเราผ่าน LINE"
     >
@@ -54,6 +50,6 @@ export default function LineFloatingButton() {
       >
         ติดต่อเจ้าหน้าที่ LINE
       </div>
-    </motion.a>
+    </a>
   );
 }

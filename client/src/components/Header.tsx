@@ -6,7 +6,6 @@ import { SITE_INFO, GAME_CATEGORIES } from "@/lib/constants";
 import { trackRegisterClick, trackLoginClick } from "@/lib/analytics";
 import { useRegisterTracking } from "@/hooks/useRegisterTracking";
 import { Menu, X } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -125,14 +124,9 @@ export default function Header() {
       </div>
 
       {/* Mobile Menu */}
-      <AnimatePresence>
-        {mobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.2 }}
-            className="lg:hidden border-b"
+      {mobileMenuOpen && (
+          <div
+            className="lg:hidden border-b animate-in fade-in slide-in-from-top-2 duration-200"
             style={{
               background: "rgba(15,2,37,0.98)",
               backdropFilter: "blur(20px)",
@@ -207,9 +201,8 @@ export default function Header() {
                 <span className="font-medium">เข้าสู่ระบบ</span>
               </a>
             </nav>
-          </motion.div>
+          </div>
         )}
-      </AnimatePresence>
     </header>
   );
 }

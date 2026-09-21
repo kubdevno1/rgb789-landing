@@ -58,10 +58,32 @@ export function serveStatic(app: Express) {
     );
   }
 
-  app.use(express.static(distPath));
+  const assetPath = path.resolve(distPath, "assets");
+
+  // Vite asset names are content-hashed, so browsers and CDNs can cache them safely for a year.
+  app.use(
+    "/assets",
+    express.static(assetPath, {
+      immutable: true,
+      maxAge: "1y",
+    }),
+  );
+
+  // Public files such as robots.txt and favicons may be cached briefly, while index.html
+  // is handled below with a short stale-while-revalidate policy.
+  app.use(
+    express.static(distPath, {
+      index: false,
+      maxAge: "1h",
+    }),
+  );
 
   // fall through to index.html if the file doesn't exist
   app.use("*", (_req, res) => {
+    res.set(
+      "Cache-Control",
+      "public, max-age=60, s-maxage=300, stale-while-revalidate=86400",
+    );
     res.sendFile(path.resolve(distPath, "index.html"));
   });
 }

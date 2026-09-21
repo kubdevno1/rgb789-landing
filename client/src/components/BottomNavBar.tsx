@@ -42,25 +42,30 @@ export default function BottomNavBar() {
             href={item.href}
             {...(item.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
             onClick={() => handleNavClick(item.label, item.href)}
-            className="flex flex-col items-center justify-center gap-1 transition-all duration-300 rounded-lg hover:bg-white/5 active:scale-95"
+            aria-label={item.isLogo ? "หน้าหลัก RGB789" : item.label}
+            className={`flex flex-col items-center justify-center gap-1 transition-all duration-300 active:scale-95 ${
+              item.isLogo
+                ? "relative z-10 -mt-6 rounded-full sm:-mt-7"
+                : "rounded-lg hover:bg-white/5"
+            }`}
             style={{
-              background: item.isLogo ? "linear-gradient(135deg, rgba(255,215,0,0.15) 0%, rgba(255,215,0,0.08) 100%)" : "transparent",
-              border: item.isLogo ? "2px solid rgba(255,215,0,0.4)" : "1px solid transparent",
+              background: "transparent",
+              border: "1px solid transparent",
             }}
           >
             {item.isLogo ? (
               <div
-                className="w-14 h-14 rounded-lg flex items-center justify-center relative overflow-hidden"
+                className="w-14 h-14 rounded-full flex items-center justify-center relative overflow-hidden p-1.5 sm:w-16 sm:h-16"
                 style={{
-                  boxShadow: "0 0 20px rgba(255,215,0,0.5), inset 0 0 10px rgba(255,215,0,0.15)",
-                  border: "2px solid rgba(255,215,0,0.5)",
-                  background: "linear-gradient(135deg, rgba(255,215,0,0.12) 0%, rgba(255,215,0,0.06) 100%)",
+                  boxShadow: "0 0 0 3px rgba(24,4,54,0.98), 0 0 22px rgba(255,215,0,0.55), inset 0 0 12px rgba(255,215,0,0.25)",
+                  border: "2px solid rgba(255,215,0,0.9)",
+                  background: "radial-gradient(circle at 35% 25%, #5d268c 0%, #21063f 68%)",
                 }}
               >
                 <img
                   src="https://d2xsxph8kpxj0f.cloudfront.net/310519663187662312/VGyYopoy4jPaukwiBaCcsR/rgb789-logo-full_e43066ad.jpg"
                   alt="RGB789 Logo"
-                  className="w-full h-full object-cover rounded-md"
+                  className="w-full h-full rounded-full object-contain bg-[#250745]"
                   loading="eager"
                   decoding="async"
                 />

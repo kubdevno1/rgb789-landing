@@ -5,210 +5,85 @@ interface LoadingScreenProps {
   duration?: number; // ms before auto-complete
 }
 
-export default function LoadingScreen({ onComplete, duration = 2800 }: LoadingScreenProps) {
+export default function LoadingScreen({ onComplete, duration = 1800 }: LoadingScreenProps) {
   const [progress, setProgress] = useState(0);
   const [fadeOut, setFadeOut] = useState(false);
 
   useEffect(() => {
-    // Animate progress bar
-    const startTime = Date.now();
-    const totalDuration = duration - 400; // leave 400ms for fade-out
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reducedMotion) {
+      setProgress(100);
+      const completeTimer = window.setTimeout(onComplete, 120);
+      return () => window.clearTimeout(completeTimer);
+    }
 
-    const interval = setInterval(() => {
+    // Animate progress bar without hiding the route content underneath.
+    const startTime = Date.now();
+    const totalDuration = Math.max(duration - 360, 300);
+    let finishTimer: number | undefined;
+
+    const interval = window.setInterval(() => {
       const elapsed = Date.now() - startTime;
       const pct = Math.min((elapsed / totalDuration) * 100, 100);
       setProgress(pct);
       if (pct >= 100) {
         clearInterval(interval);
-        // Start fade-out
-        setTimeout(() => {
-          setFadeOut(true);
-          setTimeout(onComplete, 400);
-        }, 100);
+        setFadeOut(true);
+        finishTimer = window.setTimeout(onComplete, 360);
       }
-    }, 16);
+    }, 32);
 
-    return () => clearInterval(interval);
+    return () => {
+      clearInterval(interval);
+      if (finishTimer) window.clearTimeout(finishTimer);
+    };
   }, [duration, onComplete]);
 
   return (
     <div
-      className={`fixed inset-0 z-[9999] flex flex-col items-center justify-center transition-opacity duration-400 ${
-        fadeOut ? "opacity-0 pointer-events-none" : "opacity-100"
+      className={`pointer-events-none fixed inset-x-0 top-24 z-[60] flex justify-center px-4 transition-[opacity,transform] duration-300 ease-out motion-reduce:transition-none ${
+        fadeOut ? "-translate-y-3 opacity-0" : "translate-y-0 opacity-100"
       }`}
-      style={{
-        background: "linear-gradient(135deg, #0a0118 0%, #1a0533 40%, #0f0225 70%, #0a0118 100%)",
-      }}
+      role="status"
+      aria-live="polite"
+      aria-label="กำลังเตรียมหน้าเว็บ"
     >
-      {/* Animated background particles */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(20)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute rounded-full"
-            style={{
-              width: `${Math.random() * 6 + 2}px`,
-              height: `${Math.random() * 6 + 2}px`,
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              background: i % 3 === 0
-                ? "rgba(255, 215, 0, 0.6)"
-                : i % 3 === 1
-                ? "rgba(180, 100, 255, 0.6)"
-                : "rgba(255, 255, 255, 0.3)",
-              animation: `floatParticle ${3 + Math.random() * 4}s ease-in-out infinite`,
-              animationDelay: `${Math.random() * 3}s`,
-            }}
-          />
-        ))}
-      </div>
-
-      {/* Outer glow ring */}
       <div
-        className="absolute rounded-full"
+        className="flex w-full max-w-xs items-center gap-3 rounded-2xl px-4 py-3 animate-[loadingPanelIn_280ms_ease-out] motion-reduce:animate-none"
         style={{
-          width: "320px",
-          height: "320px",
-          background:
-            "radial-gradient(circle, rgba(147, 51, 234, 0.15) 0%, transparent 70%)",
-          animation: "pulseGlow 2s ease-in-out infinite",
+          background: "linear-gradient(135deg, rgba(26,5,51,0.92), rgba(45,10,94,0.88))",
+          border: "1px solid rgba(255,215,0,0.28)",
+          boxShadow: "0 12px 30px rgba(15,2,37,0.35)",
+          backdropFilter: "blur(12px)",
         }}
-      />
-
-      {/* Logo container */}
-      <div className="relative flex flex-col items-center gap-6">
-        {/* Logo circle with spinning border */}
-        <div className="relative">
-          {/* Spinning gradient ring */}
-          <div
-            className="absolute inset-0 rounded-full"
-            style={{
-              padding: "3px",
-              background: "conic-gradient(from 0deg, #ffd700, #9333ea, #ffd700, #9333ea, #ffd700)",
-              animation: "spinRing 2s linear infinite",
-              borderRadius: "50%",
-            }}
-          >
+      >
+        <div
+          className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-sm font-bold"
+          style={{
+            background: "conic-gradient(from 0deg, #ffd700, #9333ea, #ffd700)",
+            color: "#1a0533",
+            animation: "spinRing 1.2s linear infinite",
+          }}
+        >
+          R
+        </div>
+        <div className="min-w-0 flex-1">
+          <div className="flex items-center justify-between gap-2">
+            <span className="text-xs font-bold tracking-wide text-white" style={{ fontFamily: "'Kanit', sans-serif" }}>
+              RGB789 กำลังเตรียมหน้าเว็บ
+            </span>
+            <span className="text-xs font-semibold" style={{ color: "#ffd700" }}>{Math.round(progress)}%</span>
+          </div>
+          <div className="mt-2 h-1.5 overflow-hidden rounded-full" style={{ background: "rgba(255,255,255,0.14)" }}>
             <div
-              className="w-full h-full rounded-full"
-              style={{ background: "#1a0533" }}
+              className="h-full rounded-full transition-[width] duration-150 ease-out motion-reduce:transition-none"
+              style={{
+                width: `${progress}%`,
+                background: "linear-gradient(90deg, #9333ea, #ffd700)",
+              }}
             />
           </div>
-
-          {/* Logo image */}
-          <div
-            className="relative flex items-center justify-center rounded-full"
-            style={{
-              width: "120px",
-              height: "120px",
-              background: "linear-gradient(135deg, #2d0a5e 0%, #4a1a8a 50%, #2d0a5e 100%)",
-              boxShadow: "0 0 40px rgba(147, 51, 234, 0.5), 0 0 80px rgba(147, 51, 234, 0.2)",
-            }}
-          >
-            <img
-              src="https://cdn.manus.im/webdev-static/VGyYopoy4jPaukwiBaCcsR/rgb789-logo.png"
-              alt="RGB789"
-              className="w-20 h-20 object-contain"
-              onError={(e) => {
-                // Fallback to text if image fails
-                (e.target as HTMLImageElement).style.display = "none";
-              }}
-            />
-            {/* Fallback text logo */}
-            <span
-              className="absolute font-bold text-2xl"
-              style={{
-                background: "linear-gradient(135deg, #ffd700, #ffaa00)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                fontFamily: "'Kanit', sans-serif",
-                letterSpacing: "1px",
-              }}
-            >
-              RGB789
-            </span>
-          </div>
         </div>
-
-        {/* Brand name */}
-        <div className="text-center">
-          <h1
-            className="text-4xl font-bold tracking-widest mb-1"
-            style={{
-              background: "linear-gradient(135deg, #ffd700 0%, #ffaa00 50%, #ffd700 100%)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              fontFamily: "'Kanit', sans-serif",
-              animation: "shimmerText 2s ease-in-out infinite",
-              backgroundSize: "200% auto",
-            }}
-          >
-            RGB789
-          </h1>
-          <p
-            className="text-sm tracking-widest"
-            style={{
-              color: "rgba(200, 160, 255, 0.8)",
-              fontFamily: "'Kanit', sans-serif",
-              animation: "fadeInUp 0.8s ease-out 0.3s both",
-            }}
-          >
-            คาสิโนออนไลน์อันดับ 1
-          </p>
-        </div>
-
-        {/* Coin icons row */}
-        <div
-          className="flex gap-3 items-center"
-          style={{ animation: "fadeInUp 0.8s ease-out 0.5s both" }}
-        >
-          {["🎰", "🎲", "💰", "🃏", "⚡"].map((icon, i) => (
-            <span
-              key={i}
-              className="text-2xl"
-              style={{
-                animation: `bounce 1.2s ease-in-out infinite`,
-                animationDelay: `${i * 0.15}s`,
-                filter: "drop-shadow(0 0 8px rgba(255, 215, 0, 0.6))",
-              }}
-            >
-              {icon}
-            </span>
-          ))}
-        </div>
-
-        {/* Progress bar */}
-        <div
-          className="w-64 rounded-full overflow-hidden"
-          style={{
-            height: "4px",
-            background: "rgba(255, 255, 255, 0.1)",
-            animation: "fadeInUp 0.8s ease-out 0.6s both",
-          }}
-        >
-          <div
-            className="h-full rounded-full transition-all duration-100"
-            style={{
-              width: `${progress}%`,
-              background: "linear-gradient(90deg, #9333ea, #ffd700, #9333ea)",
-              backgroundSize: "200% auto",
-              animation: "shimmerBar 1.5s linear infinite",
-              boxShadow: "0 0 10px rgba(255, 215, 0, 0.5)",
-            }}
-          />
-        </div>
-
-        {/* Loading text */}
-        <p
-          className="text-xs tracking-widest"
-          style={{
-            color: "rgba(200, 160, 255, 0.6)",
-            fontFamily: "'Kanit', sans-serif",
-            animation: "fadeInUp 0.8s ease-out 0.7s both",
-          }}
-        >
-          กำลังโหลด... {Math.round(progress)}%
-        </p>
       </div>
 
       {/* CSS keyframes via style tag */}
@@ -217,29 +92,9 @@ export default function LoadingScreen({ onComplete, duration = 2800 }: LoadingSc
           from { transform: rotate(0deg); }
           to { transform: rotate(360deg); }
         }
-        @keyframes pulseGlow {
-          0%, 100% { transform: scale(1); opacity: 0.6; }
-          50% { transform: scale(1.2); opacity: 1; }
-        }
-        @keyframes shimmerText {
-          0% { background-position: 0% center; }
-          100% { background-position: 200% center; }
-        }
-        @keyframes shimmerBar {
-          0% { background-position: 0% center; }
-          100% { background-position: 200% center; }
-        }
-        @keyframes fadeInUp {
-          from { opacity: 0; transform: translateY(16px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes bounce {
-          0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(-8px); }
-        }
-        @keyframes floatParticle {
-          0%, 100% { transform: translateY(0) scale(1); opacity: 0.6; }
-          50% { transform: translateY(-30px) scale(1.3); opacity: 1; }
+        @keyframes loadingPanelIn {
+          from { opacity: 0; transform: translateY(-8px) scale(0.98); }
+          to { opacity: 1; transform: translateY(0) scale(1); }
         }
       `}</style>
     </div>
