@@ -1,24 +1,28 @@
 /**
- * Google Analytics Event Tracking Utility
- * ใช้สำหรับติดตาม conversion events ต่างๆ บนเว็บไซต์ RGB789
+ * Google Tag Manager event utility
+ * ส่ง conversion events เข้า dataLayer เพื่อให้ GTM จัดการปลายทางเพียงจุดเดียว
  */
 
-// ประกาศ type สำหรับ gtag
+type DataLayerEvent = Record<string, string | number | boolean> & {
+  event: string;
+};
+
 declare global {
   interface Window {
-    gtag?: (...args: unknown[]) => void;
+    dataLayer?: DataLayerEvent[];
   }
 }
 
 /**
- * ส่ง custom event ไปยัง Google Analytics
+ * ส่ง custom event เข้า Google Tag Manager dataLayer
  */
 export function trackEvent(
   eventName: string,
   params?: Record<string, string | number | boolean>
 ) {
-  if (typeof window !== "undefined" && window.gtag) {
-    window.gtag("event", eventName, params);
+  if (typeof window !== "undefined") {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: eventName, ...params });
   }
 }
 

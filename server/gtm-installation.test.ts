@@ -3,6 +3,10 @@ import { resolve } from "node:path";
 import { describe, expect, it } from "vitest";
 
 const indexHtml = readFileSync(resolve(process.cwd(), "client/index.html"), "utf8");
+const analyticsSource = readFileSync(
+  resolve(process.cwd(), "client/src/lib/analytics.ts"),
+  "utf8"
+);
 
 describe("Google Tag Manager installation", () => {
   it("places the GTM loader immediately after the opening head tag", () => {
@@ -23,5 +27,17 @@ describe("Google Tag Manager installation", () => {
     expect(noscriptIndex).toBeGreaterThan(bodyIndex);
     expect(noscriptIndex).toBeLessThan(rootIndex);
     expect(indexHtml).toContain("https://www.googletagmanager.com/ns.html?id=GTM-WV5GFZJ7");
+  });
+
+  it("does not load GA4 directly outside of the GTM container", () => {
+    expect(indexHtml).not.toContain("googletagmanager.com/gtag/js");
+    expect(indexHtml).not.toContain("G-JQH95DB0KM");
+    expect(indexHtml).not.toContain("gtag('config'");
+  });
+
+  it("routes custom events through GTM dataLayer instead of gtag", () => {
+    expect(analyticsSource).not.toContain("window.gtag");
+    expect(analyticsSource).toContain("window.dataLayer.push");
+    expect(analyticsSource).toContain("event: eventName");
   });
 });
