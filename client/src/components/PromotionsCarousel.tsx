@@ -4,7 +4,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { SITE_INFO } from "@/lib/constants";
-import { trackCarouselSwipe } from "@/lib/analytics";
+import { trackCarouselSwipe, trackRegisterClick } from "@/lib/analytics";
 
 // Featured offers only: full catalog remains available at /promotions.
 // AVIF cards are sized for the 264px homepage carousel instead of using original 1040px+ images.
@@ -131,6 +131,7 @@ export default function PromotionsCarousel() {
                 href={SITE_INFO.registerUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackRegisterClick(`promotion-carousel-${promo.id}`, promo.title)}
                 className="flex-shrink-0 rounded-xl overflow-hidden group cursor-pointer transition-transform hover:scale-105"
                 style={{
                   width: "264px",

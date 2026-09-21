@@ -5,7 +5,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { SITE_INFO, IMAGES } from "@/lib/constants";
-import { trackArticleShare, trackArticleRead, trackRegisterClick } from "@/lib/analytics";
+import { trackArticleShare, trackArticleRead, trackLineContactClick, trackRegisterClick } from "@/lib/analytics";
 import { BookOpen, ChevronRight, Clock, Star, Zap, TrendingUp, Sparkles, Dice1, Trophy, Target, Tv, Share2 } from "lucide-react";
 
 type TabKey = "all" | "slots" | "casino" | "sports";
@@ -508,6 +508,7 @@ export default function ArticlesSection() {
                 href={SITE_INFO.registerUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackRegisterClick("articles-section-final", "สมัครสมาชิก RGB789")}
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-lg text-sm font-bold transition-all duration-300 hover:scale-105"
                 style={{
                   fontFamily: "'Kanit', sans-serif",
@@ -523,6 +524,7 @@ export default function ArticlesSection() {
                 href={SITE_INFO.lineUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackLineContactClick("articles-section-final", "สอบถามเพิ่มเติม LINE")}
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-lg text-sm font-semibold text-white/80 border transition-all duration-300 hover:bg-white/5 hover:text-white"
                 style={{
                   fontFamily: "'Kanit', sans-serif",

@@ -9,6 +9,7 @@ import Header from "@/components/Header";
 import BottomNavBar from "@/components/BottomNavBar";
 import LineFloatingButton from "@/components/LineFloatingButton";
 import { SITE_INFO } from "@/lib/constants";
+import { trackRegisterClick } from "@/lib/analytics";
 import { useSEO } from "@/hooks/useSEO";
 import Breadcrumb from "@/components/Breadcrumb";
 
@@ -395,6 +396,7 @@ export default function Articles() {
               href={SITE_INFO.registerUrl}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackRegisterClick("articles-page", "สมัครสมาชิกฟรี")}
               className="inline-flex items-center gap-2 px-8 py-3 rounded-xl font-bold text-sm transition-all duration-300 hover:scale-105"
               style={{
                 background: "linear-gradient(135deg, #FFD700, #FFC107)",
@@ -476,6 +478,7 @@ export default function Articles() {
                   href={SITE_INFO.registerUrl}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => trackRegisterClick("articles-modal", "สมัครสมาชิกเลย")}
                   className="flex-1 text-center py-3 rounded-xl font-bold text-sm transition-all duration-300 hover:scale-105"
                   style={{
                     background: "linear-gradient(135deg, #FFD700, #FFC107)",

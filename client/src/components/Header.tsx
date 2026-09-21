@@ -195,6 +195,7 @@ export default function Header() {
                 href={SITE_INFO.loginUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackLoginClick("header-mobile")}
                 className="sm:hidden flex items-center gap-3 px-4 py-3 text-white/80 hover:text-yellow-400 hover:bg-white/5 rounded-lg transition-colors mt-2 border-t"
                 style={{ fontFamily: "'Kanit', sans-serif", borderColor: "rgba(139,92,246,0.15)" }}
               >

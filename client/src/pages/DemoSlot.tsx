@@ -11,6 +11,7 @@ import { SITE_INFO, SLOT_PROVIDERS } from "@/lib/constants";
 import { Suspense } from "react";
 import { useSEO } from "@/hooks/useSEO";
 import Breadcrumb from "@/components/Breadcrumb";
+import { trackPlayGameClick, trackRegisterClick } from "@/lib/analytics";
 
 // ข้อมูลเกมสล็อตทดลองเล่น
 const DEMO_GAMES = [
@@ -251,6 +252,7 @@ export default function DemoSlot() {
                 href={SITE_INFO.registerUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackRegisterClick("demo-slot-hero", "สมัครเล่นจริง รับโบนัส")}
                 className="inline-flex items-center justify-center px-8 py-4 rounded-full font-bold text-lg"
                 style={{
                   background: "linear-gradient(135deg, #FFD700, #FF8C00)",
@@ -339,6 +341,7 @@ export default function DemoSlot() {
                         href={SITE_INFO.registerUrl}
                         target="_blank"
                         rel="noopener noreferrer"
+                        onClick={() => trackPlayGameClick(game.name, "demo-slot-game-preview")}
                         className="px-4 py-2 rounded-full text-sm font-bold"
                         style={{ background: "linear-gradient(135deg, #FFD700, #FF8C00)", color: "#1a0533", fontFamily: "'Kanit', sans-serif" }}
                       >
@@ -348,6 +351,7 @@ export default function DemoSlot() {
                         href={SITE_INFO.registerUrl}
                         target="_blank"
                         rel="noopener noreferrer"
+                        onClick={() => trackRegisterClick("demo-slot-game-card", `เล่นจริง ${game.name}`)}
                         className="px-4 py-2 rounded-full text-sm font-bold border"
                         style={{ borderColor: "rgba(255,215,0,0.5)", color: "#FFD700", fontFamily: "'Kanit', sans-serif" }}
                       >
@@ -383,6 +387,7 @@ export default function DemoSlot() {
                 href={SITE_INFO.registerUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackRegisterClick("demo-slot-load-more", "สมัครฟรี เล่นได้ทุกเกม")}
                 className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-bold text-lg"
                 style={{
                   background: "linear-gradient(135deg, #FFD700, #FF8C00)",
@@ -553,6 +558,7 @@ export default function DemoSlot() {
               href={SITE_INFO.registerUrl}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackRegisterClick("demo-slot-final", "สมัครสมาชิกฟรี รับโบนัสทันที")}
               className="inline-flex items-center gap-3 px-10 py-5 rounded-full font-bold text-xl"
               style={{
                 background: "linear-gradient(135deg, #FFD700, #FF8C00)",

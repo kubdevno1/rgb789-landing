@@ -27,24 +27,28 @@ export function trackEvent(
 }
 
 /**
- * ติดตามการคลิกปุ่มสมัครสมาชิก
+ * ติดตามการคลิก CTA สมัครสมาชิก โดยแยกข้อความและตำแหน่งปุ่มใน GA4
  */
-export function trackRegisterClick(location: string) {
+export function trackRegisterClick(location: string, label = "สมัครสมาชิก") {
   trackEvent("sign_up_click", {
     event_category: "conversion",
-    event_label: location,
+    event_label: label,
     button_location: location,
+    cta_label: label,
+    cta_destination: "line",
   });
 }
 
 /**
- * ติดตามการคลิกปุ่มเข้าสู่ระบบ
+ * ติดตามการคลิก CTA เข้าสู่ระบบ
  */
-export function trackLoginClick(location: string) {
+export function trackLoginClick(location: string, label = "เข้าสู่ระบบ") {
   trackEvent("login_click", {
     event_category: "engagement",
-    event_label: location,
+    event_label: label,
     button_location: location,
+    cta_label: label,
+    cta_destination: "line",
   });
 }
 
@@ -61,13 +65,15 @@ export function trackPlayGameClick(gameCategory: string, location: string) {
 }
 
 /**
- * ติดตามการคลิกติดต่อ LINE
+ * ติดตามการคลิก CTA ติดต่อ LINE
  */
-export function trackLineContactClick(location: string) {
+export function trackLineContactClick(location: string, label = "ติดต่อ LINE") {
   trackEvent("line_contact_click", {
     event_category: "engagement",
-    event_label: location,
+    event_label: label,
     button_location: location,
+    cta_label: label,
+    cta_destination: "line",
   });
 }
 
