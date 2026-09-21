@@ -61,6 +61,13 @@ export default function Header() {
             >
               🎁 เครดิตฟรี
             </a>
+            <a
+              href="/slot789"
+              className="px-4 py-2 text-sm font-medium transition-colors duration-300 rounded-lg hover:bg-white/5"
+              style={{ fontFamily: "'Kanit', sans-serif", color: "#FFD700" }}
+            >
+              🎰 สล็อต789
+            </a>
             {GAME_CATEGORIES.map((cat) => (
               <a
                 key={cat.id}
@@ -168,6 +175,15 @@ export default function Header() {
               >
                 <span className="text-xl">🎁</span>
                 <span className="font-medium">เครดิตฟรี</span>
+              </a>
+              <a
+                href="/slot789"
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex items-center gap-3 px-4 py-3 hover:bg-white/5 rounded-lg transition-colors"
+                style={{ fontFamily: "'Kanit', sans-serif", color: "#FFD700" }}
+              >
+                <span className="text-xl">🎰</span>
+                <span className="font-medium">สล็อต789</span>
               </a>
             {GAME_CATEGORIES.map((cat) => (
                 <a

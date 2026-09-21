@@ -68,7 +68,10 @@ export default function Footer() {
               {[
                 { label: "สมัครสมาชิก", href: SITE_INFO.registerUrl },
                 { label: "เข้าสู่ระบบ", href: SITE_INFO.loginUrl },
-                { label: "โปรโมชั่น", href: "#promotions" },
+                { label: "โปรโมชั่น", href: "/promotions" },
+                { label: "ทดลองเล่นสล็อต", href: "/demo-slot" },
+                { label: "สล็อต789", href: "/slot789" },
+                { label: "เครดิตฟรี", href: "/free-credit" },
                 { label: "วิธีสมัคร", href: "#how-to" },
                 { label: "คำถามที่พบบ่อย", href: "#faq" },
               ].map((link) => (
@@ -121,7 +124,7 @@ export default function Footer() {
           style={{ borderTop: "1px solid rgba(139,92,246,0.1)" }}
         >
           <p className="text-xs text-white/30">
-            © 2567 RGB789.COM สงวนลิขสิทธิ์ทุกประการ
+            © 2567 RGB789.ME สงวนลิขสิทธิ์ทุกประการ
           </p>
           <div className="flex items-center gap-6">
             <a href="#" className="text-xs text-white/30 hover:text-white/50 transition-colors">

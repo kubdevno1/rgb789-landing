@@ -1,167 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
-
-  <!-- ===== หน้าหลัก ===== -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://rgb789.me/</loc>
-    <lastmod>2026-07-20</lastmod>
+    <lastmod>2026-09-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
-
-  <!-- ===== หน้าทดลองเล่นสล็อต (SEO keyword 201,000/เดือน) ===== -->
   <url>
     <loc>https://rgb789.me/demo-slot</loc>
-    <lastmod>2026-07-20</lastmod>
+    <lastmod>2026-09-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
-
-  <!-- ===== หน้าเครดิตฟรี (SEO keyword 90,500/เดือน) ===== -->
   <url>
     <loc>https://rgb789.me/free-credit</loc>
-    <lastmod>2026-07-21</lastmod>
+    <lastmod>2026-09-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
-
-  <!-- ===== หน้าโปรโมชั่น ===== -->
+  <url>
+    <loc>https://rgb789.me/slot789</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
   <url>
     <loc>https://rgb789.me/promotions</loc>
-    <lastmod>2026-07-20</lastmod>
+    <lastmod>2026-09-21</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.90</priority>
-  </url>
-
-  <!-- ===== หน้าบทความ (รวม) ===== -->
-  <url>
-    <loc>https://rgb789.me/articles</loc>
-    <lastmod>2026-07-20</lastmod>
-    <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
-
-  <!-- ===== บทความ: คู่มือเล่นสล็อตออนไลน์ ===== -->
   <url>
-    <loc>https://rgb789.me/articles#slot-guide</loc>
-    <lastmod>2026-07-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-
-  <!-- ===== บทความ: 10 เกมสล็อตยอดนิยม ===== -->
-  <url>
-    <loc>https://rgb789.me/articles#top-slot-games</loc>
-    <lastmod>2026-07-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-
-  <!-- ===== บทความ: เทคนิคเล่นสล็อตให้ได้กำไร ===== -->
-  <url>
-    <loc>https://rgb789.me/articles#slot-tips</loc>
-    <lastmod>2026-07-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-
-  <!-- ===== บทความ: รีวิว PG Soft ===== -->
-  <url>
-    <loc>https://rgb789.me/articles#pg-soft-review</loc>
-    <lastmod>2026-07-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
-  </url>
-
-  <!-- ===== บทความ: คาสิโนสดออนไลน์ คู่มือฉบับสมบูรณ์ ===== -->
-  <url>
-    <loc>https://rgb789.me/articles#casino-live-guide</loc>
-    <lastmod>2026-07-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
-  </url>
-
-  <!-- ===== บทความ: สูตรบาคาร่า 2567 ===== -->
-  <url>
-    <loc>https://rgb789.me/articles#baccarat-strategy</loc>
-    <lastmod>2026-07-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
-  </url>
-
-  <!-- ===== บทความ: แทงบอลออนไลน์ คู่มือฉบับสมบูรณ์ ===== -->
-  <url>
-    <loc>https://rgb789.me/articles#football-betting-guide</loc>
-    <lastmod>2026-07-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
-  </url>
-
-  <!-- ===== บทความ: เทคนิคแทงบอลให้ได้กำไร ===== -->
-  <url>
-    <loc>https://rgb789.me/articles#football-betting-tips</loc>
-    <lastmod>2026-07-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
-  </url>
-
-  <!-- ===== บทความ: แทงบอลสด ===== -->
-  <url>
-    <loc>https://rgb789.me/articles#live-sports-betting</loc>
-    <lastmod>2026-07-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
-  </url>
-
-  <!-- ===== Anchor sections บนหน้าหลัก ===== -->
-  <url>
-    <loc>https://rgb789.me/#games</loc>
-    <lastmod>2026-07-20</lastmod>
+    <loc>https://rgb789.me/articles</loc>
+    <lastmod>2026-09-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
-
-  <url>
-    <loc>https://rgb789.me/#sports</loc>
-    <lastmod>2026-07-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.75</priority>
-  </url>
-
-  <url>
-    <loc>https://rgb789.me/#casino</loc>
-    <lastmod>2026-07-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.75</priority>
-  </url>
-
-  <url>
-    <loc>https://rgb789.me/#slots</loc>
-    <lastmod>2026-07-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.75</priority>
-  </url>
-
-  <url>
-    <loc>https://rgb789.me/#why-us</loc>
-    <lastmod>2026-07-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.65</priority>
-  </url>
-
-  <url>
-    <loc>https://rgb789.me/#faq</loc>
-    <lastmod>2026-07-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.65</priority>
-  </url>
-
-  <url>
-    <loc>https://rgb789.me/#steps</loc>
-    <lastmod>2026-07-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.60</priority>
-  </url>
-
 </urlset>

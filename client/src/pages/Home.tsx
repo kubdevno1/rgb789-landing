@@ -306,49 +306,6 @@ export default function Home() {
         }}
       />
 
-      {/* JSON-LD BreadcrumbList Schema */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            itemListElement: [
-              {
-                "@type": "ListItem",
-                position: 1,
-                name: "หน้าแรก",
-                item: "https://rgb789.me",
-              },
-              {
-                "@type": "ListItem",
-                position: 2,
-                name: "สล็อตออนไลน์",
-                item: "https://rgb789.me/#slots",
-              },
-              {
-                "@type": "ListItem",
-                position: 3,
-                name: "คาสิโนสด",
-                item: "https://rgb789.me/#casino",
-              },
-              {
-                "@type": "ListItem",
-                position: 4,
-                name: "แทงบอล",
-                item: "https://rgb789.me/#sports",
-              },
-              {
-                "@type": "ListItem",
-                position: 5,
-                name: "บทความแนะนำ",
-                item: "https://rgb789.me/#articles",
-              },
-            ],
-          }),
-        }}
-      />
-
       <StickyPromoBar />
       <Header />
       <main>

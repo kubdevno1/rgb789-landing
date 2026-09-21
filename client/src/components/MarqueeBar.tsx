@@ -2,7 +2,7 @@
 // Matches the original site's marquee feature
 
 export default function MarqueeBar() {
-  const text = "🏆 เมื่ออยากเล่นคาสิโน ให้นึกถึง RGB789.COM เว็บพนันออนไลน์ ที่มีเกมส์คาสิโนจากทุกค่าย รวมเอามาไว้ให้เล่นในเว็บเดียว SA GAMING, SEXY GAMING, PG, PRETTY GAMING 🏆 ฝากถอนออโต้ รวดเร็วภายใน 30 วินาที 🏆 สมัครสมาชิกวันนี้ รับโบนัสทันที 🏆";
+  const text = "🏆 เมื่ออยากเล่นคาสิโน ให้นึกถึง RGB789.ME เว็บพนันออนไลน์ ที่มีเกมส์คาสิโนจากทุกค่าย รวมเอามาไว้ให้เล่นในเว็บเดียว SA GAMING, SEXY GAMING, PG, PRETTY GAMING 🏆 ฝากถอนออโต้ รวดเร็วภายใน 30 วินาที 🏆 สมัครสมาชิกวันนี้ รับโบนัสทันที 🏆";
 
   return (
     <div

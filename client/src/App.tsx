@@ -10,6 +10,7 @@ import Promotions from "./pages/Promotions";
 import Articles from "./pages/Articles";
 import DemoSlot from "./pages/DemoSlot";
 import FreeCreditPage from "./pages/FreeCreditPage";
+import Slot789Page from "./pages/Slot789Page";
 import LoadingScreen from "./components/LoadingScreen";
 import PromoPopup from "./components/PromoPopup";
 import { useState, useCallback } from "react";
@@ -26,6 +27,7 @@ function Router() {
       <Route path={"/demo-slot"} component={DemoSlot} />
       <Route path={"/free-credit"} component={FreeCreditPage} />
       <Route path={"/เครดิตฟรี"} component={FreeCreditPage} />
+      <Route path={"/slot789"} component={Slot789Page} />
       <Route path={"/404"} component={NotFound} />
       <Route component={NotFound} />
     </Switch>

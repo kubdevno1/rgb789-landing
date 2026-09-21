@@ -168,12 +168,12 @@ export default function DemoSlot() {
             "@type": "WebPage",
             name: "ทดลองเล่นสล็อตฟรี ไม่ต้องสมัคร ทุกค่ายดัง | RGB789",
             description: "ทดลองเล่นสล็อตฟรีกว่า 1,000 เกม จาก PG Soft, Pragmatic Play, Joker Gaming ไม่ต้องสมัครสมาชิก ไม่ต้องฝากเงิน เล่นได้ทันที",
-            url: "https://rgb789.me/ทดลองเล่นสล็อต",
+            url: "https://rgb789.me/demo-slot",
             breadcrumb: {
               "@type": "BreadcrumbList",
               itemListElement: [
                 { "@type": "ListItem", position: 1, name: "หน้าหลัก", item: "https://rgb789.me" },
-                { "@type": "ListItem", position: 2, name: "ทดลองเล่นสล็อต", item: "https://rgb789.me/ทดลองเล่นสล็อต" },
+                { "@type": "ListItem", position: 2, name: "ทดลองเล่นสล็อต", item: "https://rgb789.me/demo-slot" },
               ],
             },
           }),

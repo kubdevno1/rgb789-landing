@@ -150,7 +150,7 @@ export default function Articles() {
   });
 
   const handleShare = (article: (typeof ARTICLES)[0]) => {
-    const url = `https://www.${SITE_INFO.domain}/articles`;
+    const url = `https://${SITE_INFO.domain}/articles`;
     const text = `${article.title} - อ่านบทความดีๆ ที่ ${SITE_INFO.name}`;
     if (navigator.share) {
       navigator.share({ title: article.title, text, url });

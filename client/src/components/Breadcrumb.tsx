@@ -18,6 +18,8 @@ interface BreadcrumbProps {
 const BASE_URL = "https://rgb789.me";
 
 export default function Breadcrumb({ items, baseUrl = BASE_URL }: BreadcrumbProps) {
+  const itemSignature = JSON.stringify(items);
+
   // Inject JSON-LD BreadcrumbList schema
   useEffect(() => {
     const schemaId = "breadcrumb-schema";
@@ -48,7 +50,7 @@ export default function Breadcrumb({ items, baseUrl = BASE_URL }: BreadcrumbProp
       const el = document.getElementById(schemaId);
       if (el) el.remove();
     };
-  }, [items, baseUrl]);
+  }, [itemSignature, baseUrl]);
 
   const allItems: BreadcrumbItem[] = [{ label: "หน้าหลัก", href: "/" }, ...items.filter((i) => i.label !== "หน้าหลัก")];
 
