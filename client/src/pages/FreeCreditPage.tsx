@@ -88,7 +88,7 @@ export default function FreeCreditPage() {
     title: "เครดิตฟรี RGB789 | รับเครดิตฟรีไม่ต้องฝาก ไม่ต้องแชร์ 2025",
     description: "รับเครดิตฟรี RGB789 ไม่ต้องฝาก ไม่ต้องแชร์ สมาชิกใหม่ฝาก100รับ200 โปรวันเกิดรับ500บาท คืนยอดเสีย7%ทุกวัน สมัครฟรีใช้เวลา3นาที",
     keywords: "เครดิตฟรี, เครดิตฟรีไม่ต้องฝาก, เครดิตฟรีไม่ต้องแชร์, รับเครดิตฟรี, สล็อตเครดิตฟรี, โบนัสฟรี, ฝาก100รับ200, RGB789 เครดิตฟรี",
-    canonical: "https://rgb789.me/free-credit",
+    canonical: "https://rgb789.fun/free-credit",
     ogTitle: "เครดิตฟรี RGB789 | รับเครดิตฟรีไม่ต้องฝาก ไม่ต้องแชร์",
     ogDescription: "รับเครดิตฟรี RGB789 ไม่ต้องฝาก ไม่ต้องแชร์ สมาชิกใหม่ฝาก100รับ200 โปรวันเกิดรับ500บาท คืนยอดเสีย7%ทุกวัน",
     ogImage: "https://d2xsxph8kpxj0f.cloudfront.net/310519663187662312/VGyYopoy4jPaukwiBaCcsR/promo-banner-4ghucn5AArY73W8K5B9gjq.webp",
@@ -114,11 +114,11 @@ export default function FreeCreditPage() {
     "@type": "WebPage",
     "name": "เครดิตฟรี RGB789 | รับเครดิตฟรีไม่ต้องฝาก ไม่ต้องแชร์ 2025",
     "description": "รับเครดิตฟรี RGB789 ไม่ต้องฝาก ไม่ต้องแชร์ สมาชิกใหม่ฝาก100รับ200 โปรวันเกิดรับ500บาท คืนยอดเสีย7%ทุกวัน",
-    "url": "https://rgb789.me/free-credit",
+    "url": "https://rgb789.fun/free-credit",
     "publisher": {
       "@type": "Organization",
       "name": "RGB789",
-      "url": "https://rgb789.me",
+      "url": "https://rgb789.fun",
     },
   };
 

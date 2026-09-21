@@ -1,0 +1,62 @@
+import { readFileSync } from "node:fs";
+import { resolve } from "node:path";
+import { describe, expect, it } from "vitest";
+
+const readProjectFile = (relativePath: string) =>
+  readFileSync(resolve(process.cwd(), relativePath), "utf8");
+
+const canonicalDomain = "https://rgb789.fun";
+const seoFiles = [
+  "client/index.html",
+  "client/public/robots.txt",
+  "client/public/sitemap.xml",
+  "client/src/lib/constants.ts",
+  "client/src/components/Breadcrumb.tsx",
+  "client/src/components/PromoPopup.tsx",
+  "client/src/pages/Home.tsx",
+  "client/src/pages/DemoSlot.tsx",
+  "client/src/pages/FreeCreditPage.tsx",
+  "client/src/pages/Slot789Page.tsx",
+  "client/src/pages/Promotions.tsx",
+  "client/src/pages/Articles.tsx",
+];
+
+describe("rgb789.fun canonical SEO alignment", () => {
+  it("uses rgb789.fun throughout public metadata, schemas, and sharing URLs", () => {
+    for (const file of seoFiles) {
+      const source = readProjectFile(file);
+      expect(source, file).not.toContain("https://rgb789.me");
+    }
+
+    expect(readProjectFile("client/index.html")).toContain(
+      '<link rel="canonical" href="https://rgb789.fun/" />'
+    );
+    expect(readProjectFile("client/public/robots.txt")).toContain(
+      "Sitemap: https://rgb789.fun/sitemap.xml"
+    );
+  });
+
+  it("includes only canonical rgb789.fun URLs in the sitemap", () => {
+    const sitemap = readProjectFile("client/public/sitemap.xml");
+    const locations = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(
+      (match) => match[1]
+    );
+
+    expect(locations).toHaveLength(6);
+    expect(locations.every((url) => url?.startsWith(canonicalDomain))).toBe(true);
+    expect(sitemap).not.toContain("rgb789.me");
+  });
+
+  it("redirects Thai URL aliases to their canonical Vercel paths", () => {
+    const vercelConfig = JSON.parse(readProjectFile("vercel.json")) as {
+      redirects?: Array<{ source: string; destination: string; permanent: boolean }>;
+    };
+
+    expect(vercelConfig.redirects).toEqual(
+      expect.arrayContaining([
+        { source: "/ทดลองเล่นสล็อต", destination: "/demo-slot", permanent: true },
+        { source: "/เครดิตฟรี", destination: "/free-credit", permanent: true },
+      ])
+    );
+  });
+});

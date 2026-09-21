@@ -135,7 +135,7 @@ export default function Articles() {
     title: "บทความ RGB789 | เทคนิคสล็อต สูตรบาคาร่า แทงบอลออนไลน์ 2567",
     description: "รวมบทความความรู้ RGB789 เทคนิคเล่นสล็อตออนไลน์ สูตรบาคาร่า 2567 รีวิวค่ายสล็อต PG Soft คู่มือแทงบอลออนไลน์ คาสิโนสด อ่านฟรีไม่มีค่าใช้จ่าย",
     keywords: "เทคนิคสล็อต, สูตรบาคาร่า, รีวิวสล็อต, PG Soft, คู่มือแทงบอล, คาสิโนสด, บทความสล็อต, RGB789 บทความ",
-    canonical: "https://rgb789.me/articles",
+    canonical: "https://rgb789.fun/articles",
     ogType: "website",
     ogImage: "https://d2xsxph8kpxj0f.cloudfront.net/310519663187662312/VGyYopoy4jPaukwiBaCcsR/rgb789-logo-full_e43066ad.jpg",
   });

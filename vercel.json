@@ -3,6 +3,18 @@
   "installCommand": "pnpm install --frozen-lockfile",
   "buildCommand": "pnpm build",
   "outputDirectory": "dist/public",
+  "redirects": [
+    {
+      "source": "/ทดลองเล่นสล็อต",
+      "destination": "/demo-slot",
+      "permanent": true
+    },
+    {
+      "source": "/เครดิตฟรี",
+      "destination": "/free-credit",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/api/:path*",

@@ -15,7 +15,7 @@ interface BreadcrumbProps {
   baseUrl?: string;
 }
 
-const BASE_URL = "https://rgb789.me";
+const BASE_URL = "https://rgb789.fun";
 
 export default function Breadcrumb({ items, baseUrl = BASE_URL }: BreadcrumbProps) {
   const itemSignature = JSON.stringify(items);

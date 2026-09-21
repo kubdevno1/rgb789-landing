@@ -70,7 +70,7 @@ export default function Slot789Page() {
     title: "สล็อต789 | สล็อตเว็บตรง RGB789 เกมยอดนิยม สมัครง่ายผ่าน LINE",
     description: "สล็อต789 ที่ RGB789 รวมเกมสล็อตออนไลน์ยอดนิยม พร้อมหน้าทดลองเล่นสล็อต โปรโมชั่นสมาชิกใหม่ และบริการผ่าน LINE ใช้งานสะดวกบนมือถือ",
     keywords: "สล็อต789, สล็อต 789, สล็อต789เว็บตรง, สล็อตเว็บตรง, สล็อตออนไลน์, สล็อตมือถือ, RGB789 สล็อต",
-    canonical: "https://rgb789.me/slot789",
+    canonical: "https://rgb789.fun/slot789",
     ogTitle: "สล็อต789 | สล็อตเว็บตรง RGB789 เกมยอดนิยม",
     ogDescription: "รวมข้อมูลสล็อต789 เกมยอดนิยม ทดลองเล่นสล็อต และโปรโมชั่นที่ RGB789",
     ogImage: `${CDN}/slot-games-BfnjKuuFh4U5MGSzRcpWL5.webp`,
@@ -94,12 +94,12 @@ export default function Slot789Page() {
     "@type": "WebPage",
     name: "สล็อต789 | สล็อตเว็บตรง RGB789",
     description: "หน้าแนะนำสล็อต789 ที่รวมเกมยอดนิยม หน้าทดลองเล่นสล็อต และโปรโมชั่นของ RGB789",
-    url: "https://rgb789.me/slot789",
+    url: "https://rgb789.fun/slot789",
     inLanguage: "th-TH",
     publisher: {
       "@type": "Organization",
       name: "RGB789",
-      url: "https://rgb789.me",
+      url: "https://rgb789.fun",
     },
   };
 

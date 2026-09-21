@@ -29,7 +29,7 @@ const PROMOS = [
   },
 ];
 
-const SHARE_URL = "https://rgb789.me";
+const SHARE_URL = "https://rgb789.fun";
 
 export default function PromoPopup({ onClose }: PromoPopupProps) {
   const [visible, setVisible] = useState(false);
