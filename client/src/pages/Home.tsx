@@ -82,11 +82,6 @@ export default function Home() {
             name: "RGB789",
             url: "https://rgb789.fun",
             description: "RGB789 เว็บพนันออนไลน์อันดับ 1 สล็อตออนไลน์ บาคาร่าออนไลน์ คาสิโนสด เว็บตรงไม่ผ่านเอเย่นต์ สมาชิกใหม่ฝาก100รับ200 คืนยอดเสีย 7% ฝากถอนออโต้ไว ปลอดภัย 100%",
-            potentialAction: {
-              "@type": "SearchAction",
-              target: "https://rgb789.fun/search?q={search_term_string}",
-              "query-input": "required name=search_term_string",
-            },
           }),
         }}
       />
