@@ -3,16 +3,19 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import LoadingScreen from "./components/LoadingScreen";
+import Head from "./components/Head";
+import AdminRoute from "./pages/AdminRoute";
+import NotFound from "./pages/NotFound";
+import Promotions from "./pages/Promotions";
+import Articles from "./pages/Articles";
+import DemoSlot from "./pages/DemoSlot";
+import FreeCreditPage from "./pages/FreeCreditPage";
+import Slot789Page from "./pages/Slot789Page";
 import { lazy, Suspense, useState, useCallback } from "react";
 
-// Route-level code splitting: โหลดเฉพาะหน้าที่ผู้ใช้เปิด เพื่อลด initial bundle
+// Public routes are statically imported so renderToString emits real page HTML
+// instead of a Suspense fallback. Admin remains lazy-loaded below.
 const AdminDashboard = lazy(() => import("./pages/AdminRoute"));
-const Promotions = lazy(() => import("./pages/Promotions"));
-const Articles = lazy(() => import("./pages/Articles"));
-const DemoSlot = lazy(() => import("./pages/DemoSlot"));
-const FreeCreditPage = lazy(() => import("./pages/FreeCreditPage"));
-const Slot789Page = lazy(() => import("./pages/Slot789Page"));
-const NotFound = lazy(() => import("@/pages/NotFound"));
 
 function RouteFallback() {
   return <div className="min-h-screen" aria-busy="true" />;
@@ -52,6 +55,7 @@ function App() {
   return (
     <ErrorBoundary>
       <ThemeProvider defaultTheme="dark">
+        <Head />
         {/* Non-blocking loading overlay — shown only on first visit, not on /admin */}
         {!loadingDone && (
           <LoadingScreen onComplete={handleLoadingComplete} duration={1800} />

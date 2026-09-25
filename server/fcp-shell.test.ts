@@ -5,12 +5,14 @@ import { describe, expect, it } from "vitest";
 const projectRoot = resolve(import.meta.dirname, "..");
 
 describe("first-contentful-paint shell", () => {
-  it("keeps visible static content inside the root before client JavaScript runs", () => {
+  it("keeps the server-rendered app insertion point inside the root", () => {
     const indexHtml = readFileSync(resolve(projectRoot, "client/index.html"), "utf8");
 
     expect(indexHtml).toContain('id="root"');
-    expect(indexHtml).toContain('id="rgb789-app-shell"');
-    expect(indexHtml).toContain("คาสิโนออนไลน์ เว็บพนันออนไลน์ครบวงจร");
+    expect(indexHtml).toContain("<!--app-head-->");
+    expect(indexHtml).toContain("<!--app-html-->");
+    expect(indexHtml).toContain('src="/src/entry-client.tsx"');
+    expect(indexHtml).not.toContain('id="rgb789-app-shell"');
   });
 
   it("does not hide the router while the loading overlay is active", () => {

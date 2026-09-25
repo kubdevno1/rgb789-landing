@@ -25,6 +25,26 @@
       "destination": "https://rgb789.me/manus-storage/:path*"
     },
     {
+      "source": "/demo-slot",
+      "destination": "/demo-slot/index.html"
+    },
+    {
+      "source": "/free-credit",
+      "destination": "/free-credit/index.html"
+    },
+    {
+      "source": "/slot789",
+      "destination": "/slot789/index.html"
+    },
+    {
+      "source": "/promotions",
+      "destination": "/promotions/index.html"
+    },
+    {
+      "source": "/articles",
+      "destination": "/articles/index.html"
+    },
+    {
       "source": "/:path*",
       "destination": "/index.html"
     }

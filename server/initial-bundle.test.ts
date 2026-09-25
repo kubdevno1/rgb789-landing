@@ -15,7 +15,7 @@ describe("initial bundle boundaries", () => {
     expect(adminRouteSource).toContain("@trpc/client");
   });
 
-  it("defers below-the-fold sections and avoids a blocking startup popup", () => {
+  it("keeps public SSR content static and avoids a blocking startup popup", () => {
     const homeSource = readFileSync(resolve(projectRoot, "client/src/pages/Home.tsx"), "utf8");
     const trackingSource = readFileSync(
       resolve(projectRoot, "client/src/hooks/useRegisterTracking.ts"),
@@ -23,7 +23,8 @@ describe("initial bundle boundaries", () => {
     );
     const appSource = readFileSync(resolve(projectRoot, "client/src/App.tsx"), "utf8");
 
-    expect(homeSource).toContain("const GameCategories = lazy");
+    expect(homeSource).toContain('import GameCategories from "@/components/GameCategories"');
+    expect(homeSource).not.toContain("const GameCategories = lazy");
     expect(homeSource).toContain("const DeferredSection");
     expect(trackingSource).toContain('import("@trpc/client")');
     expect(appSource).not.toContain("PromoPopup");

@@ -5,6 +5,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { SITE_INFO, IMAGES } from "@/lib/constants";
+import { CANONICAL_ORIGIN } from "@/ssr/routeManifest";
 import { trackArticleShare, trackArticleRead, trackLineContactClick, trackRegisterClick } from "@/lib/analytics";
 import { BookOpen, ChevronRight, Clock, Star, Zap, TrendingUp, Sparkles, Dice1, Trophy, Target, Tv, Share2 } from "lucide-react";
 
@@ -394,7 +395,7 @@ export default function ArticlesSection() {
                       <span className="text-white/30 text-xs mr-1 hidden sm:inline">แชร์</span>
                       {/* Facebook Share */}
                       <a
-                        href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.origin + "/#" + article.id)}&quote=${encodeURIComponent(article.title + " - RGB789")}`}
+                        href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(CANONICAL_ORIGIN + "/#" + article.id)}&quote=${encodeURIComponent(article.title + " - RGB789")}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="group/share inline-flex items-center justify-center w-8 h-8 rounded-full transition-all duration-300 hover:scale-110"
@@ -422,7 +423,7 @@ export default function ArticlesSection() {
 
                       {/* LINE Share */}
                       <a
-                        href={`https://social-plugins.line.me/lineit/share?url=${encodeURIComponent(window.location.origin + "/#" + article.id)}&text=${encodeURIComponent(article.title + " - RGB789")}`}
+                        href={`https://social-plugins.line.me/lineit/share?url=${encodeURIComponent(CANONICAL_ORIGIN + "/#" + article.id)}&text=${encodeURIComponent(article.title + " - RGB789")}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="group/share inline-flex items-center justify-center w-8 h-8 rounded-full transition-all duration-300 hover:scale-110"

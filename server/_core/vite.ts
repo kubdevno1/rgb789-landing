@@ -60,6 +60,32 @@ export function serveStatic(app: Express) {
 
   const assetPath = path.resolve(distPath, "assets");
 
+  const prerenderedRoutes = [
+    "/",
+    "/demo-slot",
+    "/free-credit",
+    "/slot789",
+    "/promotions",
+    "/articles",
+  ] as const;
+
+  const sendPrerenderedPage = (route: (typeof prerenderedRoutes)[number]) => {
+    const filePath = route === "/"
+      ? path.resolve(distPath, "index.html")
+      : path.resolve(distPath, route.slice(1), "index.html");
+    return (_req: express.Request, res: express.Response, next: express.NextFunction) => {
+      if (!fs.existsSync(filePath)) {
+        next();
+        return;
+      }
+      res.set({
+        "Cache-Control": "public, max-age=60, s-maxage=300, stale-while-revalidate=86400",
+        "Content-Type": "text/html; charset=utf-8",
+      });
+      res.sendFile(filePath);
+    };
+  };
+
   // Vite asset names are content-hashed, so browsers and CDNs can cache them safely for a year.
   app.use(
     "/assets",
@@ -68,6 +94,11 @@ export function serveStatic(app: Express) {
       maxAge: "1y",
     }),
   );
+
+  app.get("/", sendPrerenderedPage("/"));
+  for (const route of prerenderedRoutes.slice(1)) {
+    app.get([route, `${route}/`], sendPrerenderedPage(route));
+  }
 
   // Public files such as robots.txt and favicons may be cached briefly, while index.html
   // is handled below with a short stale-while-revalidate policy.

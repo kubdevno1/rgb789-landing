@@ -39,8 +39,11 @@ describe("SEO auto-implement batch 1 regression coverage", () => {
   });
 
   it("preserves the approved canonical host and crawl-control files", () => {
-    expect(readProjectFile("client/index.html")).toContain(
-      '<link rel="canonical" href="https://rgb789.fun/" />',
+    expect(readProjectFile("client/src/ssr/routeManifest.ts")).toContain(
+      '"https://rgb789.fun"',
+    );
+    expect(readProjectFile("client/index.html")).not.toContain(
+      'rel="canonical"',
     );
     expect(readProjectFile("client/public/robots.txt")).toContain(
       "Sitemap: https://rgb789.fun/sitemap.xml",

@@ -2,67 +2,30 @@
 // SEO: Comprehensive landing page with structured content
 // Colors: Deep Purple Gradient + Vivid Gold + Electric accents
 
-import { lazy, Suspense, useEffect, useRef, useState } from "react";
 import Header from "@/components/Header";
 import StickyPromoBar from "@/components/StickyPromoBar";
 import HeroSection from "@/components/HeroSection";
 import MarqueeBar from "@/components/MarqueeBar";
 import BottomNavBar from "@/components/BottomNavBar";
 import LineFloatingButton from "@/components/LineFloatingButton";
+import PromoBanner from "@/components/PromoBanner";
+import StepsSection from "@/components/StepsSection";
+import GameCategories from "@/components/GameCategories";
+import WhyChooseUs from "@/components/WhyChooseUs";
+import PaymentMethods from "@/components/PaymentMethods";
+import FAQSection from "@/components/FAQSection";
+import ArticlesSection from "@/components/ArticlesSection";
+import SEOContent from "@/components/SEOContent";
+import CTABanner from "@/components/CTABanner";
+import PromotionsCarousel from "@/components/PromotionsCarousel";
+import GameScreenshots from "@/components/GameScreenshots";
+import Footer from "@/components/Footer";
 
-// Lazy load non-critical components
-const PromoBanner = lazy(() => import("@/components/PromoBanner"));
-const StepsSection = lazy(() => import("@/components/StepsSection"));
-const GameCategories = lazy(() => import("@/components/GameCategories"));
-const WhyChooseUs = lazy(() => import("@/components/WhyChooseUs"));
-const PaymentMethods = lazy(() => import("@/components/PaymentMethods"));
-const FAQSection = lazy(() => import("@/components/FAQSection"));
-const ArticlesSection = lazy(() => import("@/components/ArticlesSection"));
-const SEOContent = lazy(() => import("@/components/SEOContent"));
-const CTABanner = lazy(() => import("@/components/CTABanner"));
-const PromotionsCarousel = lazy(() => import("@/components/PromotionsCarousel"));
-const GameScreenshots = lazy(() => import("@/components/GameScreenshots"));
-const Footer = lazy(() => import("@/components/Footer"));
-
-// Fallback component
-const SectionFallback = () => <div className="h-32" aria-hidden="true" />;
-
-// Lazy loading wrapper
-const LazySection = ({ children }: { children: React.ReactNode }) => (
-  <Suspense fallback={<SectionFallback />}>
-    {children}
-  </Suspense>
+// Public landing-page sections are synchronously imported so prerendered HTML
+// contains the same crawlable content that users see after hydration.
+const DeferredSection = ({ children }: { children: React.ReactNode }) => (
+  <div>{children}</div>
 );
-
-const DeferredSection = ({ children }: { children: React.ReactNode }) => {
-  const [shouldLoad, setShouldLoad] = useState(false);
-  const sectionRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const element = sectionRef.current;
-    if (!element || !("IntersectionObserver" in window)) {
-      setShouldLoad(true);
-      return;
-    }
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setShouldLoad(true);
-          observer.disconnect();
-        }
-      },
-      // Start only when the next section is close to view; avoid mounting
-      // image-heavy sections during the initial hero render.
-      { rootMargin: "0px 0px 80px" },
-    );
-
-    observer.observe(element);
-    return () => observer.disconnect();
-  }, []);
-
-  return <div ref={sectionRef}>{shouldLoad ? <LazySection>{children}</LazySection> : <SectionFallback />}</div>;
-};
 
 export default function Home() {
   return (

@@ -19,6 +19,7 @@ const seoFiles = [
   "client/src/pages/Slot789Page.tsx",
   "client/src/pages/Promotions.tsx",
   "client/src/pages/Articles.tsx",
+  "client/src/ssr/routeManifest.ts",
 ];
 
 describe("rgb789.fun canonical SEO alignment", () => {
@@ -28,8 +29,11 @@ describe("rgb789.fun canonical SEO alignment", () => {
       expect(source, file).not.toContain("https://rgb789.me");
     }
 
-    expect(readProjectFile("client/index.html")).toContain(
-      '<link rel="canonical" href="https://rgb789.fun/" />'
+    expect(readProjectFile("client/src/ssr/routeManifest.ts")).toContain(
+      "CANONICAL_ORIGIN"
+    );
+    expect(readProjectFile("client/index.html")).not.toContain(
+      'rel="canonical"'
     );
     expect(readProjectFile("client/public/robots.txt")).toContain(
       "Sitemap: https://rgb789.fun/sitemap.xml"
