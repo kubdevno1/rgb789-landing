@@ -25,7 +25,7 @@ const DEMO_GAMES = [
     tag: "ยอดนิยม",
     tagColor: "#FFD700",
     description: "สล็อตไพ่นกกระจอก แตกง่าย โบนัสสูง",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663187662312/VGyYopoy4jPaukwiBaCcsR/slot-games-BfnjKuuFh4U5MGSzRcpWL5.webp",
+    image: "/images/legacy/slot-games-BfnjKuuFh4U5MGSzRcpWL5.webp",
   },
   {
     id: "pg-fortune-tiger",
@@ -37,7 +37,7 @@ const DEMO_GAMES = [
     tag: "แตกบ่อย",
     tagColor: "#FF6B35",
     description: "เสือทอง โชคลาภ ฟีเจอร์โบนัสสุดพิเศษ",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663187662312/VGyYopoy4jPaukwiBaCcsR/slot-games-BfnjKuuFh4U5MGSzRcpWL5.webp",
+    image: "/images/legacy/slot-games-BfnjKuuFh4U5MGSzRcpWL5.webp",
   },
   {
     id: "pp-gates-olympus",
@@ -49,7 +49,7 @@ const DEMO_GAMES = [
     tag: "Jackpot",
     tagColor: "#9B59B6",
     description: "ประตูแห่งโอลิมปัส โบนัส x500",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663187662312/VGyYopoy4jPaukwiBaCcsR/slot-games-BfnjKuuFh4U5MGSzRcpWL5.webp",
+    image: "/images/legacy/slot-games-BfnjKuuFh4U5MGSzRcpWL5.webp",
   },
   {
     id: "joker-roma",
@@ -61,7 +61,7 @@ const DEMO_GAMES = [
     tag: "RTP สูง",
     tagColor: "#27AE60",
     description: "สล็อตโรมัน ฟีเจอร์ฟรีสปิน",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663187662312/VGyYopoy4jPaukwiBaCcsR/slot-games-BfnjKuuFh4U5MGSzRcpWL5.webp",
+    image: "/images/legacy/slot-games-BfnjKuuFh4U5MGSzRcpWL5.webp",
   },
   {
     id: "pg-sweet-bonanza",
@@ -73,7 +73,7 @@ const DEMO_GAMES = [
     tag: "ใหม่",
     tagColor: "#E91E63",
     description: "ลูกอมหวาน โบนัสแตกง่าย",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663187662312/VGyYopoy4jPaukwiBaCcsR/slot-games-BfnjKuuFh4U5MGSzRcpWL5.webp",
+    image: "/images/legacy/slot-games-BfnjKuuFh4U5MGSzRcpWL5.webp",
   },
   {
     id: "cq9-space",
@@ -85,7 +85,7 @@ const DEMO_GAMES = [
     tag: "ฟรีสปิน",
     tagColor: "#00BCD4",
     description: "สล็อตอวกาศ ฟรีสปินสุดมันส์",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663187662312/VGyYopoy4jPaukwiBaCcsR/slot-games-BfnjKuuFh4U5MGSzRcpWL5.webp",
+    image: "/images/legacy/slot-games-BfnjKuuFh4U5MGSzRcpWL5.webp",
   },
   {
     id: "jili-boxing",
@@ -97,7 +97,7 @@ const DEMO_GAMES = [
     tag: "RTP สูง",
     tagColor: "#27AE60",
     description: "ราชามวย ชนะรับโบนัสใหญ่",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663187662312/VGyYopoy4jPaukwiBaCcsR/slot-games-BfnjKuuFh4U5MGSzRcpWL5.webp",
+    image: "/images/legacy/slot-games-BfnjKuuFh4U5MGSzRcpWL5.webp",
   },
   {
     id: "spade-fa-cai",
@@ -109,7 +109,7 @@ const DEMO_GAMES = [
     tag: "เหมาะผู้เริ่มต้น",
     tagColor: "#FF9800",
     description: "เทพเจ้าแห่งโชคลาภ เล่นง่าย",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663187662312/VGyYopoy4jPaukwiBaCcsR/slot-games-BfnjKuuFh4U5MGSzRcpWL5.webp",
+    image: "/images/legacy/slot-games-BfnjKuuFh4U5MGSzRcpWL5.webp",
   },
 ];
 
@@ -152,7 +152,7 @@ export default function DemoSlot() {
     keywords: "ทดลองเล่นสล็อต, สล็อตทดลองเล่น, สล็อตฟรี, ทดลองเล่นสล็อตฟรี, PG Soft ทดลอง, สล็อตไม่ต้องสมัคร, เล่นสล็อตฟรี, RGB789 ทดลอง",
     canonical: "https://rgb789.fun/demo-slot",
     ogType: "website",
-    ogImage: "https://d2xsxph8kpxj0f.cloudfront.net/310519663187662312/VGyYopoy4jPaukwiBaCcsR/slot-games-BfnjKuuFh4U5MGSzRcpWL5.webp",
+    ogImage: "/images/legacy/slot-games-BfnjKuuFh4U5MGSzRcpWL5.webp",
   });
 
   return (

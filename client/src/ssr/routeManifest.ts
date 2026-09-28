@@ -16,11 +16,11 @@ export const CANONICAL_ORIGIN =
     : "https://rgb789.fun";
 
 const LOGO_IMAGE =
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663187662312/VGyYopoy4jPaukwiBaCcsR/rgb789-logo-full_e43066ad.jpg";
+  "/images/legacy/rgb789-logo-full_e43066ad.jpg";
 const SLOT_IMAGE =
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663187662312/VGyYopoy4jPaukwiBaCcsR/slot-games-BfnjKuuFh4U5MGSzRcpWL5.webp";
+  "/images/legacy/slot-games-BfnjKuuFh4U5MGSzRcpWL5.webp";
 const PROMO_IMAGE =
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663187662312/VGyYopoy4jPaukwiBaCcsR/promo-banner-4ghucn5AArY73W8K5B9gjq.webp";
+  "/images/legacy/promo-banner-4ghucn5AArY73W8K5B9gjq.webp";
 
 function canonical(path: string) {
   return `${CANONICAL_ORIGIN}${path === "/" ? "/" : path}`;

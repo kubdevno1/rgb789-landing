@@ -1,4 +1,4 @@
-import { readFileSync } from "node:fs";
+import { readdirSync, readFileSync, statSync } from "node:fs";
 import { resolve } from "node:path";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { OPTIONS, POST, buildRegistrationMessage } from "../api/track-registration";
@@ -7,6 +7,17 @@ const projectRoot = resolve(import.meta.dirname, "..");
 const originalFetch = globalThis.fetch;
 const originalToken = process.env.TELEGRAM_BOT_TOKEN;
 const originalChatId = process.env.TELEGRAM_CHAT_ID;
+
+function readClientSourceTree(directory: string): string {
+  return readdirSync(directory, { withFileTypes: true })
+    .flatMap(entry => {
+      const entryPath = resolve(directory, entry.name);
+      if (entry.isDirectory()) return [readClientSourceTree(entryPath)];
+      if (!statSync(entryPath).isFile() || !/\.(?:ts|tsx|html|css)$/.test(entry.name)) return [];
+      return [readFileSync(entryPath, "utf8")];
+    })
+    .join("\n");
+}
 
 afterEach(() => {
   globalThis.fetch = originalFetch;
@@ -92,6 +103,7 @@ describe("Vercel registration notification function", () => {
       resolve(projectRoot, "client/src/hooks/useRegisterTracking.ts"),
       "utf8",
     );
+    const clientSource = readClientSourceTree(resolve(projectRoot, "client"));
 
     expect(vercelConfig).not.toContain("https://rgb789.me");
     expect(vercelConfig).toContain('"source": "/((?!api/).*)"');
@@ -99,5 +111,7 @@ describe("Vercel registration notification function", () => {
     expect(trackingHook).toContain('fetch("/api/track-registration"');
     expect(trackingHook).not.toContain("@trpc/client");
     expect(trackingHook).not.toContain("/api/trpc");
+    expect(clientSource).not.toContain("/manus-storage/");
+    expect(clientSource).not.toContain("d2xsxph8kpxj0f.cloudfront.net");
   });
 });

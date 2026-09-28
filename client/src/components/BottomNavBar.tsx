@@ -63,7 +63,7 @@ export default function BottomNavBar() {
                 }}
               >
                 <img
-                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663187662312/VGyYopoy4jPaukwiBaCcsR/rgb789-logo-full_e43066ad.jpg"
+                  src="/images/legacy/rgb789-logo-full_e43066ad.jpg"
                   alt="RGB789 Logo"
                   className="w-full h-full rounded-full object-contain bg-[#250745]"
                   loading="eager"

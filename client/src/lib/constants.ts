@@ -3,11 +3,11 @@
 // Colors: Deep Purple Gradient + Vivid Gold + Electric accents
 
 export const IMAGES = {
-  heroStadium: "https://d2xsxph8kpxj0f.cloudfront.net/310519663187662312/VGyYopoy4jPaukwiBaCcsR/hero-stadium-btJQKs9axtq6ktFKC59Euj.webp",
-  casinoLive: "https://d2xsxph8kpxj0f.cloudfront.net/310519663187662312/VGyYopoy4jPaukwiBaCcsR/casino-live-8TAgrDq9q7XNBVSTZ7UB8y.webp",
-  slotGames: "https://d2xsxph8kpxj0f.cloudfront.net/310519663187662312/VGyYopoy4jPaukwiBaCcsR/slot-games-BfnjKuuFh4U5MGSzRcpWL5.webp",
-  sportsBetting: "https://d2xsxph8kpxj0f.cloudfront.net/310519663187662312/VGyYopoy4jPaukwiBaCcsR/sports-betting-NhgRnY7cv8hS5wLG62yE6t.webp",
-  promoBanner: "https://d2xsxph8kpxj0f.cloudfront.net/310519663187662312/VGyYopoy4jPaukwiBaCcsR/promo-banner-4ghucn5AArY73W8K5B9gjq.webp",
+  heroStadium: "/images/legacy/hero-stadium-btJQKs9axtq6ktFKC59Euj.webp",
+  casinoLive: "/images/legacy/casino-live-8TAgrDq9q7XNBVSTZ7UB8y.webp",
+  slotGames: "/images/legacy/slot-games-BfnjKuuFh4U5MGSzRcpWL5.webp",
+  sportsBetting: "/images/legacy/sports-betting-NhgRnY7cv8hS5wLG62yE6t.webp",
+  promoBanner: "/images/legacy/promo-banner-4ghucn5AArY73W8K5B9gjq.webp",
 } as const;
 
 export const SITE_INFO = {
@@ -51,21 +51,21 @@ export const STEPS = [
     title: "สมัครสมาชิก",
     description: "กรอกข้อมูลและสมัครสมาชิกภายใน 3 นาที",
     icon: "📝",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663187662312/VGyYopoy4jPaukwiBaCcsR/LINE_ALBUM_วิธีใช้งาน_240723_1_2bbb30cd.jpg",
+    image: "/images/legacy/howto-step-1.jpg",
   },
   {
     number: "02",
     title: "ฝากเงินครั้งแรก",
     description: "ฝากเงินกับระบบออโต้ภายใน 30 วินาที",
     icon: "💰",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663187662312/VGyYopoy4jPaukwiBaCcsR/LINE_ALBUM_วิธีใช้งาน_240723_2_2dcf0d36.jpg",
+    image: "/images/legacy/howto-step-2.jpg",
   },
   {
     number: "03",
     title: "เข้าเดิมพันทันที",
     description: "สนุกไปกับการเดิมพันกับค่ายเกมทั่วโลก",
     icon: "🎮",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663187662312/VGyYopoy4jPaukwiBaCcsR/LINE_ALBUM_วิธีใช้งาน_240723_3_69eafb2a.jpg",
+    image: "/images/legacy/howto-step-3.jpg",
   },
 ] as const;
 

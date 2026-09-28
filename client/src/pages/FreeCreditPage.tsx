@@ -10,8 +10,6 @@ import { useSEO } from "@/hooks/useSEO";
 import { SITE_INFO } from "@/lib/constants";
 import { trackRegisterClick } from "@/lib/analytics";
 
-const CDN = "https://d2xsxph8kpxj0f.cloudfront.net/310519663187662312/VGyYopoy4jPaukwiBaCcsR";
-
 // โปรโมชั่นเครดิตฟรีที่มีอยู่
 const FREE_CREDIT_PROMOS = [
   {
@@ -21,7 +19,7 @@ const FREE_CREDIT_PROMOS = [
     badgeColor: "#FFD700",
     description: "สมัครใหม่วันนี้ ฝากเงินเพียง 100 บาท รับโบนัสทันที 200 บาท เล่นได้เลยไม่ต้องรอ",
     condition: "ฝากขั้นต่ำ 100 บาท | ทำยอด 3 เทิร์น | ถอนสูงสุด 5,000 บาท",
-    image: `${CDN}/%E0%B8%AA%E0%B8%A1%E0%B8%B2%E0%B8%8A%E0%B8%B4%E0%B8%81%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88%E0%B8%9D%E0%B8%B2%E0%B8%81100%E0%B8%A3%E0%B8%B1%E0%B8%9A200%E0%B8%9A%E0%B8%B2%E0%B8%97new_a63601a2.jpg`,
+    image: "/images/promos/promo-01.webp",
     cta: "รับโบนัสทันที",
     highlight: "รับ 200 บาท",
   },
@@ -32,7 +30,7 @@ const FREE_CREDIT_PROMOS = [
     badgeColor: "#8b5cf6",
     description: "รับเครดิตฟรี 500 บาท ในวันเกิดของคุณ แจ้งแอดมินผ่าน LINE พร้อมแนบสำเนาบัตรประชาชน",
     condition: "เป็นสมาชิก RGB789 | แจ้งแอดมินในวันเกิด | ไม่ต้องฝากเงิน",
-    image: `${CDN}/%E0%B9%82%E0%B8%9B%E0%B8%A3%E0%B8%A7%E0%B8%B1%E0%B8%99%E0%B9%80%E0%B8%81%E0%B8%B4%E0%B8%94%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B9%80%E0%B8%84%E0%B8%A3%E0%B8%94%E0%B8%B4%E0%B8%95%E0%B8%9F%E0%B8%A3%E0%B8%B5500%E0%B8%9A%E0%B8%B2%E0%B8%97_eec5132d.jpg`,
+    image: "/images/promos/promo-02.webp",
     cta: "รับเครดิตฟรีวันเกิด",
     highlight: "ฟรี 500 บาท",
   },
@@ -43,7 +41,7 @@ const FREE_CREDIT_PROMOS = [
     badgeColor: "#10b981",
     description: "เสียเท่าไหร่ก็ได้คืน 7% ทุกวัน ไม่มีขั้นต่ำ ไม่ต้องทำเทิร์น โอนเข้ากระเป๋าอัตโนมัติ",
     condition: "ไม่มีขั้นต่ำ | ไม่ต้องทำเทิร์น | รับอัตโนมัติทุกวัน",
-    image: `${CDN}/%E0%B8%84%E0%B8%B7%E0%B8%99%E0%B8%A2%E0%B8%AD%E0%B8%94%E0%B9%80%E0%B8%AA%E0%B8%B5%E0%B8%A2%E0%B8%AA%E0%B8%B9%E0%B8%87%E0%B8%AA%E0%B8%B8%E0%B8%947%25_2887cc55.jpg`,
+    image: "/images/promos/promo-03.webp",
     cta: "รับคืนยอดเสีย",
     highlight: "คืน 7%",
   },
@@ -54,7 +52,7 @@ const FREE_CREDIT_PROMOS = [
     badgeColor: "#f97316",
     description: "ฝากเงิน 300 บาทขึ้นไป รับสิทธิ์หมุนกงล้อฟรี 1 ครั้งต่อวัน ลุ้นรับรางวัลสูงสุดทองคำ 1 บาท",
     condition: "ฝากขั้นต่ำ 300 บาท | รับสิทธิ์ 1 ครั้ง/วัน | ลุ้นรับทองคำ",
-    image: `${CDN}/%E0%B8%9D%E0%B8%B2%E0%B8%81300%E0%B8%AB%E0%B8%A1%E0%B8%B8%E0%B8%99%E0%B8%81%E0%B8%87%E0%B8%A5%E0%B9%89%E0%B8%AD_a150bdb0.jpg`,
+    image: "/images/promos/promo-04.webp",
     cta: "รับสิทธิ์หมุนกงล้อ",
     highlight: "ฟรีทุกวัน",
   },
@@ -92,7 +90,7 @@ export default function FreeCreditPage() {
     canonical: "https://rgb789.fun/free-credit",
     ogTitle: "เครดิตฟรี RGB789 | รับเครดิตฟรีไม่ต้องฝาก ไม่ต้องแชร์",
     ogDescription: "รับเครดิตฟรี RGB789 ไม่ต้องฝาก ไม่ต้องแชร์ สมาชิกใหม่ฝาก100รับ200 โปรวันเกิดรับ500บาท คืนยอดเสีย7%ทุกวัน",
-    ogImage: "https://d2xsxph8kpxj0f.cloudfront.net/310519663187662312/VGyYopoy4jPaukwiBaCcsR/promo-banner-4ghucn5AArY73W8K5B9gjq.webp",
+    ogImage: "/images/legacy/promo-banner-4ghucn5AArY73W8K5B9gjq.webp",
   });
 
   // JSON-LD FAQPage schema

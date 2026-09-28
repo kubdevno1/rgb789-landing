@@ -11,7 +11,7 @@ import { useSEO } from "@/hooks/useSEO";
 import { SITE_INFO } from "@/lib/constants";
 import { trackRegisterClick } from "@/lib/analytics";
 
-const CDN = "https://d2xsxph8kpxj0f.cloudfront.net/310519663187662312/VGyYopoy4jPaukwiBaCcsR";
+const CDN = "/images/legacy";
 
 const GAME_HIGHLIGHTS = [
   {

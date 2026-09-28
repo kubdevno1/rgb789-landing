@@ -12,8 +12,6 @@ import LineFloatingButton from "@/components/LineFloatingButton";
 import BottomNavBar from "@/components/BottomNavBar";
 import { trackRegisterClick } from "@/lib/analytics";
 
-const CDN = "https://d2xsxph8kpxj0f.cloudfront.net/310519663187662312/VGyYopoy4jPaukwiBaCcsR";
-
 const PROMOTIONS = [
   {
     id: 1,
@@ -21,7 +19,7 @@ const PROMOTIONS = [
     subtitle: "เฉพาะสล็อต",
     badge: "ยอดนิยม",
     badgeColor: "#FFD700",
-    image: `${CDN}/%E0%B8%AA%E0%B8%A1%E0%B8%B2%E0%B8%8A%E0%B8%B4%E0%B8%81%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88%E0%B8%9D%E0%B8%B2%E0%B8%81100%E0%B8%A3%E0%B8%B1%E0%B8%9A200%E0%B8%9A%E0%B8%B2%E0%B8%97new_a63601a2.jpg`,
+    image: "/images/promos/promo-01.webp",
     detail: "สมาชิกใหม่ฝากครั้งแรก 100 บาท รับโบนัสทันที 200 บาท เฉพาะเกมสล็อต ต้องมียอดเล่น 5 เทิร์น ถอนได้สูงสุด 1,000 บาท",
   },
   {
@@ -30,7 +28,7 @@ const PROMOTIONS = [
     subtitle: "ฝากครั้งแรก",
     badge: "ใหม่",
     badgeColor: "#a855f7",
-    image: `${CDN}/%E0%B8%AA%E0%B8%A1%E0%B8%B2%E0%B8%8A%E0%B8%B4%E0%B8%81%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B9%82%E0%B8%9A%E0%B8%99%E0%B8%B1%E0%B8%AA%E0%B8%AA%E0%B8%B9%E0%B8%87%E0%B8%AA%E0%B8%B8%E0%B8%9460%25_cddafa58.jpg`,
+    image: "/images/promos/promo-02.webp",
     detail: "สมาชิกใหม่รับโบนัสสูงสุด 60% จากยอดฝากครั้งแรก ไม่จำกัดประเภทเกม ต้องมียอดเล่น 3 เทิร์น",
   },
   {
@@ -39,7 +37,7 @@ const PROMOTIONS = [
     subtitle: "ทุกวัน ไม่มีขั้นต่ำ",
     badge: "ประจำวัน",
     badgeColor: "#10b981",
-    image: `${CDN}/%E0%B8%84%E0%B8%B7%E0%B8%99%E0%B8%A2%E0%B8%AD%E0%B8%94%E0%B9%80%E0%B8%AA%E0%B8%B5%E0%B8%A2%E0%B8%AA%E0%B8%B9%E0%B8%87%E0%B8%AA%E0%B8%B8%E0%B8%947%25_2887cc55.jpg`,
+    image: "/images/promos/promo-03.webp",
     detail: "รับเงินคืนจากยอดเสียสูงสุด 3-7% ทุกวัน ไม่มีขั้นต่ำ โอนเข้าอัตโนมัติทุกวันเวลา 00:00 น.",
   },
   {
@@ -48,7 +46,7 @@ const PROMOTIONS = [
     subtitle: "ยอดเล่น 1 เทิร์น ถอนได้เลย",
     badge: "ทุกวัน",
     badgeColor: "#3b82f6",
-    image: `${CDN}/%E0%B8%97%E0%B8%B8%E0%B8%81%E0%B8%A2%E0%B8%AD%E0%B8%94%E0%B8%9D%E0%B8%B2%E0%B8%81%E0%B8%A3%E0%B8%B1%E0%B8%9A2%25_91b6124c.jpg`,
+    image: "/images/promos/promo-04.webp",
     detail: "ฝากทุกครั้งรับโบนัส 2% ทันที ต้องมียอดเล่น 1 เทิร์นเท่านั้น ถอนได้ทันที ไม่จำกัดจำนวนครั้ง",
   },
   {
@@ -57,7 +55,7 @@ const PROMOTIONS = [
     subtitle: "ฝากแรกของวัน",
     badge: "VIP",
     badgeColor: "#f59e0b",
-    image: `${CDN}/%E0%B8%99%E0%B8%B2%E0%B8%97%E0%B8%B5%E0%B8%97%E0%B8%AD%E0%B8%995%25_0fe3958d.jpg`,
+    image: "/images/promos/promo-02.webp",
     detail: "สมาชิกขาประจำรับโบนัส 5% จากยอดฝากแรกของวัน ต้องมียอดเล่น 1 เทิร์น สามารถถอนได้เลย",
   },
   {
@@ -66,7 +64,7 @@ const PROMOTIONS = [
     subtitle: "ทุกยอดเดิมพันของเพื่อน",
     badge: "ตลอดชีพ",
     badgeColor: "#ec4899",
-    image: `${CDN}/%E0%B9%81%E0%B8%99%E0%B8%B0%E0%B8%99%E0%B8%B3%E0%B9%80%E0%B8%9E%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%99%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%84%E0%B9%88%E0%B8%B2%E0%B8%84%E0%B8%AD%E0%B8%A10.7%25_47df4181.jpg`,
+    image: "/images/promos/promo-04.webp",
     detail: "แนะนำเพื่อนมาสมัครสมาชิก รับค่าคอมมิชชั่น 0.7% จากทุกยอดเดิมพันของเพื่อน ตลอดชีพ ไม่มีวันหมดอายุ",
   },
   {
@@ -75,7 +73,7 @@ const PROMOTIONS = [
     subtitle: "บาคาร่า เสือมังกร",
     badge: "พิเศษ",
     badgeColor: "#ef4444",
-    image: `${CDN}/%E0%B9%82%E0%B8%9B%E0%B8%A3%E0%B9%84%E0%B8%9E%E0%B9%88%E0%B8%9A%E0%B8%A3%E0%B8%A3%E0%B8%A5%E0%B8%B1%E0%B8%A2_3ec6704a.jpg`,
+    image: "/images/promos/promo-03.webp",
     detail: "ผิดติดต่อกัน 7 ไม้ รับคืน 7 เท่า | 8 ไม้ รับคืน 8 เท่า | 9 ไม้ รับคืน 9 เท่า | 10 ไม้ รับคืน 10 เท่า",
   },
   {
@@ -84,7 +82,7 @@ const PROMOTIONS = [
     subtitle: "รับเครดิตฟรี 500 บาท",
     badge: "วันเกิด",
     badgeColor: "#8b5cf6",
-    image: `${CDN}/%E0%B9%82%E0%B8%9B%E0%B8%A3%E0%B8%A7%E0%B8%B1%E0%B8%99%E0%B9%80%E0%B8%81%E0%B8%B4%E0%B8%94%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B9%80%E0%B8%84%E0%B8%A3%E0%B8%94%E0%B8%B4%E0%B8%95%E0%B8%9F%E0%B8%A3%E0%B8%B5500%E0%B8%9A%E0%B8%B2%E0%B8%97_eec5132d.jpg`,
+    image: "/images/promos/promo-01.webp",
     detail: "รับเครดิตฟรี 500 บาท ในวันเกิดของคุณ แจ้งแอดมินผ่าน LINE พร้อมแนบสำเนาบัตรประชาชน",
   },
   {
@@ -93,7 +91,7 @@ const PROMOTIONS = [
     subtitle: "STEP 5-12 รับคืน 1-8 เท่า",
     badge: "สเต็ป",
     badgeColor: "#06b6d4",
-    image: `${CDN}/%E0%B9%82%E0%B8%9B%E0%B8%A3%E0%B8%AA%E0%B9%80%E0%B8%95%E0%B9%87%E0%B8%9B(1)_61623794.jpg`,
+    image: "/images/promos/promo-04.webp",
     detail: "ตายตัวเดียว STEP 5 รับคืน 1 เท่า | STEP 6 รับคืน 2 เท่า | STEP 7 รับคืน 3 เท่า จนถึง STEP 12 รับคืน 8 เท่า",
   },
   {
@@ -102,7 +100,7 @@ const PROMOTIONS = [
     subtitle: "ตายหมด 7-10 คู่ รับ 5,000-20,000 บาท",
     badge: "สเต็ป",
     badgeColor: "#06b6d4",
-    image: `${CDN}/%E0%B9%82%E0%B8%9B%E0%B8%A3%E0%B8%AA%E0%B9%80%E0%B8%95%E0%B9%87%E0%B8%9B_1258aee5.jpg`,
+    image: "/images/promos/promo-03.webp",
     detail: "ตายหมด 7 คู่ รับ 5,000 บาท | ตายหมด 8 คู่ รับ 10,000 บาท | ตายหมด 9 คู่ รับ 15,000 บาท | ตายหมด 10 คู่ รับ 20,000 บาท",
   },
   {
@@ -111,7 +109,7 @@ const PROMOTIONS = [
     subtitle: "รับได้ทุกวัน ลุ้นรับทองคำ",
     badge: "ทุกวัน",
     badgeColor: "#10b981",
-    image: `${CDN}/%E0%B8%9D%E0%B8%B2%E0%B8%81300%E0%B8%AB%E0%B8%A1%E0%B8%B8%E0%B8%99%E0%B8%81%E0%B8%87%E0%B8%A5%E0%B9%89%E0%B8%AD_a150bdb0.jpg`,
+    image: "/images/promos/promo-02.webp",
     detail: "ฝากเงิน 300 บาทขึ้นไป รับสิทธิ์หมุนกงล้อฟรี 1 ครั้งต่อวัน ลุ้นรับรางวัลสูงสุดทองคำ 1 บาท",
   },
   {
@@ -120,7 +118,7 @@ const PROMOTIONS = [
     subtitle: "ทุกวันที่ 28-03 รับโบนัส 10%",
     badge: "สิ้นเดือน",
     badgeColor: "#f97316",
-    image: `${CDN}/%E0%B9%82%E0%B8%9B%E0%B8%A3%E0%B8%AA%E0%B8%B4%E0%B9%89%E0%B8%99%E0%B9%80%E0%B8%94%E0%B8%B7%E0%B8%AD%E0%B8%99_2b271a32.jpg`,
+    image: "/images/promos/promo-01.webp",
     detail: "ทุกวันที่ 28-03 ของทุกเดือน รับโบนัสเพิ่ม 10% จากยอดฝากแรกของวัน เฉพาะสมาชิกที่มียอดเล่นในเดือนนั้น",
   },
 ];
@@ -134,7 +132,7 @@ export default function Promotions() {
     keywords: "โปรโมชั่น RGB789, โบนัสสมาชิกใหม่, ฝาก100รับ200, เครดิตฟรี, คืนยอดเสีย, โปรโมชั่นสล็อต, โบนัสฟรี, สมาชิกใหม่รับโบนัส",
     canonical: "https://rgb789.fun/promotions",
     ogType: "website",
-    ogImage: "https://d2xsxph8kpxj0f.cloudfront.net/310519663187662312/VGyYopoy4jPaukwiBaCcsR/rgb789-logo-full_e43066ad.jpg",
+    ogImage: "/images/legacy/rgb789-logo-full_e43066ad.jpg",
   });
 
   return (

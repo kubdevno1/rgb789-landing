@@ -24,7 +24,7 @@ export default function Header() {
           {/* Logo */}
           <a href="/" className="flex items-center group">
             <img
-              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663187662312/VGyYopoy4jPaukwiBaCcsR/rgb789-logo-new_41b39511.webp"
+              src="/images/legacy/rgb789-logo-new_41b39511.webp"
               alt="RGB789 - เว็บพนันออนไลน์อันดับ 1"
               className="h-10 lg:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
             />

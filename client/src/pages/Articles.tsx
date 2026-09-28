@@ -138,7 +138,7 @@ export default function Articles() {
     keywords: "เทคนิคสล็อต, สูตรบาคาร่า, รีวิวสล็อต, PG Soft, คู่มือแทงบอล, คาสิโนสด, บทความสล็อต, RGB789 บทความ",
     canonical: "https://rgb789.fun/articles",
     ogType: "website",
-    ogImage: "https://d2xsxph8kpxj0f.cloudfront.net/310519663187662312/VGyYopoy4jPaukwiBaCcsR/rgb789-logo-full_e43066ad.jpg",
+    ogImage: "/images/legacy/rgb789-logo-full_e43066ad.jpg",
   });
 
   const filtered = ARTICLES.filter((a) => {

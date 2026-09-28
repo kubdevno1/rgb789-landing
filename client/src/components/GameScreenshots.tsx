@@ -8,58 +8,33 @@ import { trackRegisterClick, trackGalleryImageClick, trackLightboxOpen, trackLig
 const GAME_IMAGES = [
   {
     id: 1,
-    title: "เกมสล็อต 1",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663187662312/VGyYopoy4jPaukwiBaCcsR/LINE_ALBUM_อื่นๆ_240723_1_8d3e9f2a.jpg",
+    title: "เกมสล็อตยอดนิยม",
+    image: "/images/legacy/slot-games-BfnjKuuFh4U5MGSzRcpWL5.webp",
   },
   {
     id: 2,
-    title: "เกมสล็อต 2",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663187662312/VGyYopoy4jPaukwiBaCcsR/LINE_ALBUM_อื่นๆ_240723_2_9e4fa0b3.jpg",
+    title: "คาสิโนสด",
+    image: "/images/legacy/casino-live-8TAgrDq9q7XNBVSTZ7UB8y.webp",
   },
   {
     id: 3,
-    title: "เกมสล็อต 3",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663187662312/VGyYopoy4jPaukwiBaCcsR/LINE_ALBUM_อื่นๆ_240723_3_0f5ab1c4.jpg",
+    title: "เดิมพันกีฬา",
+    image: "/images/legacy/sports-betting-NhgRnY7cv8hS5wLG62yE6t.webp",
   },
   {
     id: 4,
-    title: "เกมสล็อต 4",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663187662312/VGyYopoy4jPaukwiBaCcsR/LINE_ALBUM_อื่นๆ_240723_4_1g6bc2d5.jpg",
+    title: "โปรโมชั่นพิเศษ",
+    image: "/images/legacy/promo-banner-4ghucn5AArY73W8K5B9gjq.webp",
   },
   {
     id: 5,
-    title: "เกมสล็อต 5",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663187662312/VGyYopoy4jPaukwiBaCcsR/LINE_ALBUM_อื่นๆ_240723_5_2h7cd3e6.jpg",
+    title: "ค่ายเกมชั้นนำ",
+    image: "/images/legacy/hero-stadium-btJQKs9axtq6ktFKC59Euj.webp",
   },
   {
     id: 6,
-    title: "เกมสล็อต 6",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663187662312/VGyYopoy4jPaukwiBaCcsR/LINE_ALBUM_อื่นๆ_240723_6_3i8de4f7.jpg",
-  },
-  {
-    id: 7,
-    title: "เกมสล็อต 7",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663187662312/VGyYopoy4jPaukwiBaCcsR/LINE_ALBUM_อื่นๆ_240723_7_4j9ef5g8.jpg",
-  },
-  {
-    id: 8,
-    title: "เกมสล็อต 8",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663187662312/VGyYopoy4jPaukwiBaCcsR/LINE_ALBUM_อื่นๆ_240723_8_5k0fg6h9.jpg",
-  },
-  {
-    id: 9,
-    title: "เกมสล็อต 9",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663187662312/VGyYopoy4jPaukwiBaCcsR/LINE_ALBUM_อื่นๆ_240723_9_6l1gh7i0.jpg",
-  },
-  {
-    id: 10,
-    title: "เกมสล็อต 10",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663187662312/VGyYopoy4jPaukwiBaCcsR/LINE_ALBUM_อื่นๆ_240723_10_7m2hi8j1.jpg",
-  },
-  {
-    id: 11,
-    title: "เกมสล็อต 11",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663187662312/VGyYopoy4jPaukwiBaCcsR/LINE_ALBUM_อื่นๆ_240723_11_8n3ij9k2.jpg",
+    title: "เริ่มต้นเล่นง่าย",
+    image: "/images/legacy/howto-step-3.jpg",
   },
 ];
 
