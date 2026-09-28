@@ -6,16 +6,16 @@ import { motion } from "framer-motion";
 
 const STEP_IMAGES: Record<string, { mobile: string; desktop: string }> = {
   "01": {
-    mobile: "/manus-storage/step-01-320_1f7c6864.avif",
-    desktop: "/manus-storage/step-01-640_33a0d993.avif",
+    mobile: "/images/steps/step-01-320.webp",
+    desktop: "/images/steps/step-01-640.webp",
   },
   "02": {
-    mobile: "/manus-storage/step-02-320_5bcb6ddc.avif",
-    desktop: "/manus-storage/step-02-640_9b4a824e.avif",
+    mobile: "/images/steps/step-02-320.webp",
+    desktop: "/images/steps/step-02-640.webp",
   },
   "03": {
-    mobile: "/manus-storage/step-03-320_7f9c3e85.avif",
-    desktop: "/manus-storage/step-03-640_b71cc21e.avif",
+    mobile: "/images/steps/step-03-320.webp",
+    desktop: "/images/steps/step-03-640.webp",
   },
 };
 
@@ -89,25 +89,18 @@ export default function StepsSection() {
                 </div>
 
                 {/* Image */}
-                <div className="w-full h-40 mb-4 rounded-lg overflow-hidden bg-purple-950/30">
-                  <picture className="block w-full h-full">
-                    <source
-                      media="(max-width: 639px)"
-                      srcSet={STEP_IMAGES[step.number].mobile}
-                      type="image/avif"
-                    />
-                    <source srcSet={STEP_IMAGES[step.number].desktop} type="image/avif" />
-                    <img
-                      src={step.image}
-                      alt={step.title}
-                      className="w-full h-full object-cover rounded-lg"
-                      width="640"
-                      height="640"
-                      sizes="(min-width: 1024px) 30vw, (min-width: 768px) 45vw, calc(100vw - 2rem)"
-                      loading="lazy"
-                      decoding="async"
-                    />
-                  </picture>
+                <div className="w-full aspect-square mb-4 rounded-lg overflow-hidden bg-purple-950/30">
+                  <img
+                    src={STEP_IMAGES[step.number].desktop}
+                    srcSet={`${STEP_IMAGES[step.number].mobile} 320w, ${STEP_IMAGES[step.number].desktop} 640w`}
+                    alt={step.title}
+                    className="w-full h-full object-cover rounded-lg"
+                    width="640"
+                    height="640"
+                    sizes="(min-width: 1024px) 30vw, (min-width: 768px) 45vw, calc(100vw - 2rem)"
+                    loading="lazy"
+                    decoding="async"
+                  />
                 </div>
 
                 {/* Title */}

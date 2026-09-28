@@ -8,24 +8,24 @@ interface PromoPopupProps {
 // Keep the startup popup intentionally small: users can open the full catalog at /promotions.
 const PROMOS = [
   {
-    img: "/manus-storage/promo-01_47ab2481.avif",
+    img: "/images/promos/promo-01.webp",
     alt: "สมาชิกใหม่ฝาก 100 รับ 200 บาท",
     shareText: "🎰 RGB789 สมาชิกใหม่ฝาก 100 รับ 200 บาท เฉพาะสล็อต! สมัครเลย 👉",
   },
   {
-    img: "/manus-storage/promo-02_cf83d616.avif",
+    img: "/images/promos/promo-02.webp",
     alt: "สมาชิกใหม่รับโบนัสสูงสุด 60%",
     shareText: "💰 RGB789 สมาชิกใหม่รับโบนัสสูงสุด 60%! สมัครเลย 👉",
   },
   {
-    img: "/manus-storage/promo-03_d478364e.avif",
+    img: "/images/promos/promo-03.webp",
     alt: "คืนยอดเสียสูงสุด 3-7%",
     shareText: "💸 RGB789 คืนยอดเสียสูงสุด 3-7% ทุกวัน! สมัครเลย 👉",
   },
   {
-    img: "/manus-storage/promo-04_6392dfee.avif",
+    img: "/images/promos/promo-04.webp",
     alt: "ทุกยอดฝากรับ 2% ทุกวัน",
-    shareText: "⚡ RGB789 ทุกยอดฝากรับ 2% ทุกวัน ยอดเล่น 1 เทิร์น! สมัครเลย 👉",
+    shareText: "🔥 RGB789 ทุกยอดฝากรับ 2% ทุกวัน! สมัครเลย 👉",
   },
 ];
 

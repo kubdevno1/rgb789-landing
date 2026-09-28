@@ -8,11 +8,12 @@ describe("responsive signup-step images", () => {
     "utf8",
   );
 
-  it("uses AVIF sources for mobile and desktop step images", () => {
-    expect(source).toContain('media="(max-width: 639px)"');
-    expect(source).toContain('type="image/avif"');
-    expect(source).toContain("step-01-320_1f7c6864.avif");
-    expect(source).toContain("step-03-640_b71cc21e.avif");
+  it("uses local WebP sources for mobile and desktop step images", () => {
+    expect(source).toContain("step-01-320.webp");
+    expect(source).toContain("step-03-640.webp");
+    expect(source).toContain("srcSet=");
+    expect(source).not.toContain("image/avif");
+    expect(source).not.toContain("manus-storage");
   });
 
   it("keeps a lazy-loaded fallback with intrinsic dimensions", () => {

@@ -14,28 +14,17 @@ export default function HeroSection() {
     >
       {/* Background Image */}
       <div className="absolute inset-0">
-        <picture className="block w-full h-full">
-          <source
-            media="(max-width: 767px)"
-            srcSet="/manus-storage/rgb789-hero-768_ad4a12e0.avif"
-            type="image/avif"
-          />
-          <source
-            srcSet="/manus-storage/rgb789-hero-1440_9ce727ad.avif"
-            type="image/avif"
-          />
-          <img
-            src="https://d2xsxph8kpxj0f.cloudfront.net/310519663187662312/VGyYopoy4jPaukwiBaCcsR/rgb789-hero-banner-GpaMrRUVqxwTt9ydtotvR8.webp"
-            alt="RGB789 คาสิโนสด เว็บพนันออนไลน์"
-            className="w-full h-full object-cover"
-            width="1440"
-            height="804"
-            sizes="100vw"
-            loading="eager"
-            decoding="async"
-            fetchPriority="high"
-          />
-        </picture>
+        <img
+          src="/images/hero/hero-banner.webp"
+          alt="RGB789 คาสิโนสด เว็บพนันออนไลน์"
+          className="w-full h-full object-cover"
+          width="1440"
+          height="804"
+          sizes="100vw"
+          loading="eager"
+          decoding="async"
+          fetchPriority="high"
+        />
         <div
           className="absolute inset-0"
           style={{

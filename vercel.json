@@ -17,14 +17,6 @@
   ],
   "rewrites": [
     {
-      "source": "/api/:path*",
-      "destination": "https://rgb789.me/api/:path*"
-    },
-    {
-      "source": "/manus-storage/:path*",
-      "destination": "https://rgb789.me/manus-storage/:path*"
-    },
-    {
       "source": "/demo-slot",
       "destination": "/demo-slot/index.html"
     },

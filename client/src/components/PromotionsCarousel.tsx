@@ -12,22 +12,22 @@ const PROMOTIONS = [
   {
     id: 1,
     title: "สมาชิกใหม่ฝาก 100 รับ 200 บาท",
-    image: "/manus-storage/promo-01_47ab2481.avif",
+    image: "/images/promos/promo-01.webp",
   },
   {
     id: 2,
     title: "สมาชิกใหม่รับโบนัสสูงสุด 60%",
-    image: "/manus-storage/promo-02_cf83d616.avif",
+    image: "/images/promos/promo-02.webp",
   },
   {
     id: 3,
     title: "คืนยอดเสียสูงสุด 3-7%",
-    image: "/manus-storage/promo-03_d478364e.avif",
+    image: "/images/promos/promo-03.webp",
   },
   {
     id: 4,
     title: "ทุกยอดฝากรับ 2% ทุกวัน",
-    image: "/manus-storage/promo-04_6392dfee.avif",
+    image: "/images/promos/promo-04.webp",
   },
 ];
 
