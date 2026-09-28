@@ -26,7 +26,9 @@ describe("initial bundle boundaries", () => {
     expect(homeSource).toContain('import GameCategories from "@/components/GameCategories"');
     expect(homeSource).not.toContain("const GameCategories = lazy");
     expect(homeSource).toContain("const DeferredSection");
-    expect(trackingSource).toContain('import("@trpc/client")');
+    expect(trackingSource).toContain('fetch("/api/track-registration"');
+    expect(trackingSource).not.toContain("@trpc/client");
+    expect(trackingSource).not.toContain("/api/trpc");
     expect(appSource).not.toContain("PromoPopup");
     expect(appSource).not.toContain("showPromo");
     expect(appSource).not.toContain("<TooltipProvider>");

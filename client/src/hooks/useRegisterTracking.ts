@@ -1,47 +1,17 @@
-import { trpc } from "@/lib/trpc";
-
 import { useCallback } from "react";
-import type { AppRouter } from "@/../../server/routers";
 
-type TrackingClient = {
-  tracking: {
-    recordClick: {
-      mutate: (input: {
-        device: "mobile" | "desktop" | "tablet";
-        platform: string;
-        source: string;
-        userAgent?: string;
-        referrer?: string;
-      }) => Promise<unknown>;
-    };
-  };
+type DeviceType = "mobile" | "desktop" | "tablet";
+
+type RegistrationClickPayload = {
+  device: DeviceType;
+  platform: string;
+  source: string;
+  userAgent?: string;
+  referrer?: string;
 };
 
-let trackingClientPromise: Promise<TrackingClient> | null = null;
-
-function getTrackingClient() {
-  if (!trackingClientPromise) {
-    trackingClientPromise = Promise.all([import("@trpc/client"), import("superjson")]).then(
-      ([{ createTRPCProxyClient, httpBatchLink }, { default: superjson }]) =>
-        createTRPCProxyClient<AppRouter>({
-          links: [
-            httpBatchLink({
-              url: "/api/trpc",
-              transformer: superjson,
-              fetch(input, init) {
-                return globalThis.fetch(input, { ...(init ?? {}), credentials: "include" });
-              },
-            }),
-          ],
-        }) as TrackingClient,
-    );
-  }
-
-  return trackingClientPromise;
-}
-
 // Detect device type from user agent
-function detectDevice(): "mobile" | "desktop" | "tablet" {
+function detectDevice(): DeviceType {
   const ua = navigator.userAgent.toLowerCase();
   if (/tablet|ipad|playbook|silk|(android(?!.*mobile))/i.test(ua)) return "tablet";
   if (/mobile|iphone|ipod|android|blackberry|opera|mini|windows\sce|palm|smartphone|iemobile/i.test(ua)) return "mobile";
@@ -59,19 +29,37 @@ function detectPlatform(): string {
   return "Unknown";
 }
 
+async function notifyRegistrationClick(payload: RegistrationClickPayload): Promise<void> {
+  const response = await fetch("/api/track-registration", {
+    method: "POST",
+    headers: { "content-type": "application/json" },
+    credentials: "same-origin",
+    keepalive: true,
+    body: JSON.stringify(payload),
+  });
+
+  if (!response.ok) {
+    throw new Error(`Registration notification failed with status ${response.status}`);
+  }
+}
+
+/**
+ * ส่ง event กดสมัครไปยัง Vercel Function ของ rgb789.fun โดยตรง
+ * ไม่อ้างอิง API หรือฐานข้อมูลของ rgb789.me
+ */
 export function useRegisterTracking() {
   const trackClick = useCallback((source?: string) => {
-    void getTrackingClient()
-      .then((client) =>
-        client.tracking.recordClick.mutate({
-          device: detectDevice(),
-          platform: detectPlatform(),
-          source: source ?? "unknown",
-          userAgent: navigator.userAgent,
-          referrer: document.referrer || undefined,
-        }),
-      )
-      .catch((error) => console.error("[Register Tracking Error]", error));
+    const payload: RegistrationClickPayload = {
+      device: detectDevice(),
+      platform: detectPlatform(),
+      source: source ?? "unknown",
+      userAgent: navigator.userAgent,
+      referrer: document.referrer || undefined,
+    };
+
+    void notifyRegistrationClick(payload).catch(error =>
+      console.error("[Register Tracking Error]", error),
+    );
   }, []);
 
   return { trackClick };

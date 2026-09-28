@@ -37,8 +37,13 @@
       "destination": "/articles/index.html"
     },
     {
-      "source": "/:path*",
+      "source": "/((?!api/).*)",
       "destination": "/index.html"
     }
-  ]
+  ],
+  "functions": {
+    "api/track-registration.ts": {
+      "maxDuration": 10
+    }
+  }
 }
