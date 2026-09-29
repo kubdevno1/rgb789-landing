@@ -3,7 +3,6 @@
 
 import React from "react";
 import { SITE_INFO } from "@/lib/constants";
-import { trackRegisterClick, trackGalleryImageClick, trackLightboxOpen, trackLightboxClose } from "@/lib/analytics";
 
 const GAME_IMAGES = [
   {
@@ -64,7 +63,6 @@ export default function GameScreenshots() {
   };
 
   const handlePlayClick = () => {
-    trackRegisterClick("game-screenshots");
     window.open(SITE_INFO.registerUrl, "_blank", "noopener,noreferrer");
   };
 
@@ -92,10 +90,6 @@ export default function GameScreenshots() {
               style={{
                 background: "linear-gradient(135deg, rgba(139,92,246,0.2) 0%, rgba(168,85,247,0.1) 100%)",
                 border: "1px solid rgba(139,92,246,0.3)",
-              }}
-              onClick={() => {
-                trackGalleryImageClick("game-screenshots", game.id);
-                trackLightboxOpen("game-screenshots", game.id);
               }}
             >
               <div className="relative aspect-square overflow-hidden">

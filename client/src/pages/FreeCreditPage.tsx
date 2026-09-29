@@ -8,7 +8,6 @@ import LineFloatingButton from "@/components/LineFloatingButton";
 import Breadcrumb from "@/components/Breadcrumb";
 import { useSEO } from "@/hooks/useSEO";
 import { SITE_INFO } from "@/lib/constants";
-import { trackRegisterClick } from "@/lib/analytics";
 
 // โปรโมชั่นเครดิตฟรีที่มีอยู่
 const FREE_CREDIT_PROMOS = [
@@ -207,7 +206,6 @@ export default function FreeCreditPage() {
               href={SITE_INFO.registerUrl}
               target="_blank"
               rel="noopener noreferrer"
-              onClick={() => trackRegisterClick("free-credit-hero", "รับเครดิตฟรีเลย")}
               className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-bold text-lg transition-all"
               style={{
                 background: "linear-gradient(135deg, #10b981, #059669)",
@@ -284,7 +282,6 @@ export default function FreeCreditPage() {
                       href={SITE_INFO.registerUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      onClick={() => trackRegisterClick(`free-credit-promo-${promo.id}`, promo.cta)}
                       className="block text-center py-3 rounded-xl font-bold text-sm transition-all"
                       style={{
                         background: "linear-gradient(135deg, #10b981, #059669)",
@@ -353,7 +350,6 @@ export default function FreeCreditPage() {
                 href={SITE_INFO.registerUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={() => trackRegisterClick("free-credit-how-to", "สมัครสมาชิกฟรี รับเครดิตเลย")}
                 className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-bold text-lg"
                 style={{
                   background: "linear-gradient(135deg, #FFD700, #FFA500)",

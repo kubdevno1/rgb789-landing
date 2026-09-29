@@ -2,7 +2,6 @@
 // SEO: Rich content for each game category
 
 import { IMAGES, SITE_INFO, CASINO_PROVIDERS, SLOT_PROVIDERS, SPORTS_PROVIDERS } from "@/lib/constants";
-import { trackPlayGameClick } from "@/lib/analytics";
 import { motion } from "framer-motion";
 
 const categories = [
@@ -144,7 +143,6 @@ export default function GameCategories() {
                     href={SITE_INFO.registerUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    onClick={() => trackPlayGameClick(cat.title, "game-categories")}
                     className="inline-flex items-center gap-2 px-6 py-3 text-sm font-bold rounded-xl transition-all duration-300 hover:scale-105 self-start"
                     style={{
                       fontFamily: "'Kanit', sans-serif",

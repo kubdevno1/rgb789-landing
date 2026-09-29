@@ -2,18 +2,9 @@
 // SEO: Internal links, sitemap-like structure
 
 import { SITE_INFO, GAME_CATEGORIES } from "@/lib/constants";
-import { trackLineContactClick, trackLoginClick, trackRegisterClick } from "@/lib/analytics";
 import TrustBadges from "./TrustBadges";
 
 export default function Footer() {
-  const trackQuickLinkClick = (label: string) => {
-    if (label === "สมัครสมาชิก") trackRegisterClick("footer", label);
-    if (label === "เข้าสู่ระบบ") trackLoginClick("footer", label);
-  };
-
-  const trackInfoLinkClick = (label: string) => {
-    if (label === "ติดต่อเรา (LINE)") trackLineContactClick("footer", label);
-  };
 
   return (
     <>
@@ -89,7 +80,6 @@ export default function Footer() {
                   <a
                     href={link.href}
                     {...(link.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-                    onClick={() => trackQuickLinkClick(link.label)}
                     className="text-sm text-white/50 hover:text-yellow-400 transition-colors"
                   >
                     {link.label}
@@ -116,7 +106,6 @@ export default function Footer() {
                   <a
                     href={link.href}
                     {...(link.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-                    onClick={() => trackInfoLinkClick(link.label)}
                     className="text-sm text-white/50 hover:text-yellow-400 transition-colors"
                   >
                     {link.label}

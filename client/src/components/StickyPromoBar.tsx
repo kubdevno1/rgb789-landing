@@ -3,7 +3,6 @@
 
 import { useState, useCallback } from "react";
 import { SITE_INFO } from "@/lib/constants";
-import { trackRegisterClick } from "@/lib/analytics";
 import { X } from "lucide-react";
 
 const PROMO_MESSAGES = [
@@ -75,7 +74,6 @@ export default function StickyPromoBar() {
         href={SITE_INFO.registerUrl}
         target="_blank"
         rel="noopener noreferrer"
-        onClick={() => trackRegisterClick("sticky-promo-bar", "สมัครเลย")}
         className="flex-shrink-0 flex items-center gap-1.5 px-3 py-1 mr-2 rounded-md font-bold text-xs transition-all hover:scale-105 active:scale-95"
         style={{
           background: "linear-gradient(135deg, #ffd700 0%, #f59e0b 100%)",

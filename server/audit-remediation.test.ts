@@ -20,8 +20,11 @@ describe("audit remediation contract", () => {
   });
 
   it("keeps the public build free of retired analytics placeholders and stale domain copy", () => {
+    expect(existsSync(resolve(projectRoot, "client/src/lib/analytics.ts"))).toBe(false);
     expect(read("client/index.html")).not.toContain("%VITE_");
     expect(read("client/index.html")).not.toContain("umami");
+    expect(read("client/index.html")).not.toContain("googletagmanager");
+    expect(read("client/index.html")).not.toContain("dataLayer");
     for (const relativePath of [
       "client/src/lib/constants.ts",
       "client/src/components/Footer.tsx",

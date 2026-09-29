@@ -2,7 +2,6 @@
 // Provides quick access to LINE customer support
 
 import { SITE_INFO } from "@/lib/constants";
-import { trackLineContactClick } from "@/lib/analytics";
 
 export default function LineFloatingButton() {
   return (
@@ -10,7 +9,6 @@ export default function LineFloatingButton() {
       href={SITE_INFO.lineUrl}
       target="_blank"
       rel="noopener noreferrer"
-      onClick={() => trackLineContactClick("floating-button")}
       className="fixed right-4 bottom-20 lg:bottom-6 z-50 group"
       aria-label="ติดต่อเราผ่าน LINE"
     >

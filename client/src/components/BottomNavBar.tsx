@@ -2,19 +2,9 @@
 // Matches the original site's bottom nav
 
 import { SITE_INFO } from "@/lib/constants";
-import { trackRegisterClick, trackLoginClick, trackLineContactClick } from "@/lib/analytics";
 import { LogIn, UserPlus, Gift, MessageCircle } from "lucide-react";
 
 export default function BottomNavBar() {
-  const handleNavClick = (label: string, href: string) => {
-    if (href === SITE_INFO.registerUrl) {
-      trackRegisterClick("bottom-nav");
-    } else if (href === SITE_INFO.loginUrl) {
-      trackLoginClick("bottom-nav");
-    } else if (href === SITE_INFO.lineUrl) {
-      trackLineContactClick("bottom-nav");
-    }
-  };
 
   return (
     <nav
@@ -38,7 +28,6 @@ export default function BottomNavBar() {
             key={i}
             href={item.href}
             {...(item.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-            onClick={() => handleNavClick(item.label, item.href)}
             aria-label={item.isLogo ? "หน้าหลัก RGB789" : item.label}
             className={`flex flex-col items-center justify-center gap-1 transition-all duration-300 active:scale-95 ${
               item.isLogo

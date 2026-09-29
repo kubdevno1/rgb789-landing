@@ -10,7 +10,6 @@ import Breadcrumb from "@/components/Breadcrumb";
 import StickyPromoBar from "@/components/StickyPromoBar";
 import LineFloatingButton from "@/components/LineFloatingButton";
 import BottomNavBar from "@/components/BottomNavBar";
-import { trackRegisterClick } from "@/lib/analytics";
 
 const PROMOTIONS = [
   {
@@ -267,7 +266,6 @@ export default function Promotions() {
             href={SITE_INFO.registerUrl}
             target="_blank"
             rel="noopener noreferrer"
-            onClick={() => trackRegisterClick("promotions-page", "สมัครสมาชิกรับโปรโมชั่นเลย")}
             className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-bold text-lg transition-all hover:scale-105"
             style={{
               fontFamily: "'Kanit', sans-serif",
@@ -415,7 +413,6 @@ export default function Promotions() {
                 href={SITE_INFO.registerUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={() => trackRegisterClick(`promotions-modal-${selectedPromo.id}`, "รับโปรโมชั่นนี้เลย")}
                 className="flex items-center justify-center w-full py-3 rounded-xl font-bold text-base transition-all hover:scale-105"
                 style={{
                   fontFamily: "'Kanit', sans-serif",
