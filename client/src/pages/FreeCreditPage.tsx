@@ -8,6 +8,7 @@ import LineFloatingButton from "@/components/LineFloatingButton";
 import Breadcrumb from "@/components/Breadcrumb";
 import { useSEO } from "@/hooks/useSEO";
 import { SITE_INFO } from "@/lib/constants";
+import { ROUTE_SEO } from "@/ssr/routeManifest";
 
 // โปรโมชั่นเครดิตฟรีที่มีอยู่
 const FREE_CREDIT_PROMOS = [
@@ -82,15 +83,7 @@ const FAQ_ITEMS = [
 ];
 
 export default function FreeCreditPage() {
-  useSEO({
-    title: "เครดิตฟรี RGB789 | รับเครดิตฟรีไม่ต้องฝาก ไม่ต้องแชร์ 2025",
-    description: "รับเครดิตฟรี RGB789 ไม่ต้องฝาก ไม่ต้องแชร์ สมาชิกใหม่ฝาก100รับ200 โปรวันเกิดรับ500บาท คืนยอดเสีย7%ทุกวัน สมัครฟรีใช้เวลา3นาที",
-    keywords: "เครดิตฟรี, เครดิตฟรีไม่ต้องฝาก, เครดิตฟรีไม่ต้องแชร์, รับเครดิตฟรี, สล็อตเครดิตฟรี, โบนัสฟรี, ฝาก100รับ200, RGB789 เครดิตฟรี",
-    canonical: "https://rgb789.fun/free-credit",
-    ogTitle: "เครดิตฟรี RGB789 | รับเครดิตฟรีไม่ต้องฝาก ไม่ต้องแชร์",
-    ogDescription: "รับเครดิตฟรี RGB789 ไม่ต้องฝาก ไม่ต้องแชร์ สมาชิกใหม่ฝาก100รับ200 โปรวันเกิดรับ500บาท คืนยอดเสีย7%ทุกวัน",
-    ogImage: "/images/legacy/promo-banner-4ghucn5AArY73W8K5B9gjq.webp",
-  });
+  useSEO(ROUTE_SEO["/free-credit"]);
 
   // JSON-LD FAQPage schema
   const faqSchema = {
@@ -110,8 +103,8 @@ export default function FreeCreditPage() {
   const webPageSchema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "เครดิตฟรี RGB789 | รับเครดิตฟรีไม่ต้องฝาก ไม่ต้องแชร์ 2025",
-    "description": "รับเครดิตฟรี RGB789 ไม่ต้องฝาก ไม่ต้องแชร์ สมาชิกใหม่ฝาก100รับ200 โปรวันเกิดรับ500บาท คืนยอดเสีย7%ทุกวัน",
+    "name": ROUTE_SEO["/free-credit"].title,
+    "description": ROUTE_SEO["/free-credit"].description,
     "url": "https://rgb789.fun/free-credit",
     "publisher": {
       "@type": "Organization",
@@ -165,7 +158,7 @@ export default function FreeCreditPage() {
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border mb-5"
               style={{ borderColor: "rgba(16,185,129,0.4)", background: "rgba(16,185,129,0.1)" }}>
               <span className="text-xs font-bold tracking-wider uppercase" style={{ color: "#10b981", fontFamily: "'Kanit', sans-serif" }}>
-                🎁 โปรโมชั่นพิเศษ 2025
+                🎁 โปรโมชั่นล่าสุด
               </span>
             </div>
 

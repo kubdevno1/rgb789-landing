@@ -49,13 +49,16 @@ function buildHead(seo) {
     meta("property", "og:site_name", SITE_NAME),
     meta("property", "og:locale", OG_LOCALE),
     seo.ogImage ? meta("property", "og:image", seo.ogImage) : "",
+    seo.ogImage && seo.ogImageAlt ? meta("property", "og:image:alt", seo.ogImageAlt) : "",
     seo.ogImage ? meta("property", "og:image:width", String(OG_IMAGE_WIDTH)) : "",
     seo.ogImage ? meta("property", "og:image:height", String(OG_IMAGE_HEIGHT)) : "",
     `<link rel="canonical" href="${escapeHtml(seo.canonical)}" />`,
+    `<link rel="alternate" hreflang="th" href="${escapeHtml(seo.canonical)}" />`,
     meta("name", "twitter:card", "summary_large_image"),
     meta("name", "twitter:title", ogTitle),
     meta("name", "twitter:description", ogDescription),
     seo.ogImage ? meta("name", "twitter:image", seo.ogImage) : "",
+    seo.ogImage && seo.ogImageAlt ? meta("name", "twitter:image:alt", seo.ogImageAlt) : "",
   ];
   return tags.filter(Boolean).join("\n    ");
 }

@@ -10,6 +10,7 @@ import BottomNavBar from "@/components/BottomNavBar";
 import LineFloatingButton from "@/components/LineFloatingButton";
 import { SITE_INFO } from "@/lib/constants";
 import { useSEO } from "@/hooks/useSEO";
+import { ROUTE_SEO } from "@/ssr/routeManifest";
 import Breadcrumb from "@/components/Breadcrumb";
 
 type TabKey = "all" | "slots" | "casino" | "sports";
@@ -131,14 +132,21 @@ export default function Articles() {
   const [search, setSearch] = useState("");
   const [selectedArticle, setSelectedArticle] = useState<(typeof ARTICLES)[0] | null>(null);
 
-  useSEO({
-    title: "บทความ RGB789 | เทคนิคสล็อต สูตรบาคาร่า แทงบอลออนไลน์ 2567",
-    description: "รวมบทความความรู้ RGB789 เทคนิคเล่นสล็อตออนไลน์ สูตรบาคาร่า 2567 รีวิวค่ายสล็อต PG Soft คู่มือแทงบอลออนไลน์ คาสิโนสด อ่านฟรีไม่มีค่าใช้จ่าย",
-    keywords: "เทคนิคสล็อต, สูตรบาคาร่า, รีวิวสล็อต, PG Soft, คู่มือแทงบอล, คาสิโนสด, บทความสล็อต, RGB789 บทความ",
-    canonical: "https://rgb789.fun/articles",
-    ogType: "website",
-    ogImage: "/images/legacy/rgb789-logo-full_e43066ad.jpg",
-  });
+  useSEO(ROUTE_SEO["/articles"]);
+
+  const collectionSchema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: "บทความและความรู้",
+    description: ROUTE_SEO["/articles"].description,
+    url: ROUTE_SEO["/articles"].canonical,
+    inLanguage: "th-TH",
+    isPartOf: {
+      "@type": "WebSite",
+      name: "RGB789",
+      url: "https://rgb789.fun",
+    },
+  };
 
   const filtered = ARTICLES.filter((a) => {
     const matchTab = activeTab === "all" || a.category === activeTab;
@@ -164,6 +172,7 @@ export default function Articles() {
       className="min-h-screen"
       style={{ background: "linear-gradient(180deg, #0f0225 0%, #1a0533 10%, #0f0225 100%)" }}
     >
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }} />
       <Header />
 
       <main className="pt-20 pb-24 lg:pb-16">

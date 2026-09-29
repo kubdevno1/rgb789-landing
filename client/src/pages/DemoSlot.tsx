@@ -10,6 +10,7 @@ import LineFloatingButton from "@/components/LineFloatingButton";
 import { SITE_INFO, SLOT_PROVIDERS } from "@/lib/constants";
 import { Suspense } from "react";
 import { useSEO } from "@/hooks/useSEO";
+import { ROUTE_SEO } from "@/ssr/routeManifest";
 import Breadcrumb from "@/components/Breadcrumb";
 
 // ข้อมูลเกมสล็อตทดลองเล่น
@@ -145,14 +146,7 @@ export default function DemoSlot() {
     ? DEMO_GAMES
     : DEMO_GAMES.filter((g) => g.provider === activeProvider);
 
-  useSEO({
-    title: "ทดลองเล่นสล็อตฟรี | RGB789 สล็อตทดลองเล่น 1,000+ เกม ไม่ต้องสมัคร",
-    description: "ทดลองเล่นสล็อตฟรีทุกค่ายดังที่ RGB789 PG Soft, Pragmatic Play, Joker Gaming ไม่ต้องสมัครสมาชิก ไม่ต้องฝากเงิน เล่นได้ทันที สล็อตทดลองเล่นไม่มีขั้นต่ำฟรีทุกวัน",
-    keywords: "ทดลองเล่นสล็อต, สล็อตทดลองเล่น, สล็อตฟรี, ทดลองเล่นสล็อตฟรี, PG Soft ทดลอง, สล็อตไม่ต้องสมัคร, เล่นสล็อตฟรี, RGB789 ทดลอง",
-    canonical: "https://rgb789.fun/demo-slot",
-    ogType: "website",
-    ogImage: "/images/legacy/slot-games-BfnjKuuFh4U5MGSzRcpWL5.webp",
-  });
+  useSEO(ROUTE_SEO["/demo-slot"]);
 
   return (
     <div
@@ -166,9 +160,10 @@ export default function DemoSlot() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "WebPage",
-            name: "ทดลองเล่นสล็อตฟรี ไม่ต้องสมัคร ทุกค่ายดัง | RGB789",
-            description: "ทดลองเล่นสล็อตฟรีกว่า 1,000 เกม จาก PG Soft, Pragmatic Play, Joker Gaming ไม่ต้องสมัครสมาชิก ไม่ต้องฝากเงิน เล่นได้ทันที",
+            name: ROUTE_SEO["/demo-slot"].title,
+            description: ROUTE_SEO["/demo-slot"].description,
             url: "https://rgb789.fun/demo-slot",
+            inLanguage: "th-TH",
             breadcrumb: {
               "@type": "BreadcrumbList",
               itemListElement: [

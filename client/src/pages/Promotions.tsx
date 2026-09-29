@@ -6,6 +6,7 @@ import { Link } from "wouter";
 import { ArrowLeft, X } from "lucide-react";
 import { SITE_INFO } from "@/lib/constants";
 import { useSEO } from "@/hooks/useSEO";
+import { ROUTE_SEO } from "@/ssr/routeManifest";
 import Breadcrumb from "@/components/Breadcrumb";
 import StickyPromoBar from "@/components/StickyPromoBar";
 import LineFloatingButton from "@/components/LineFloatingButton";
@@ -125,20 +126,28 @@ const PROMOTIONS = [
 export default function Promotions() {
   const [selectedPromo, setSelectedPromo] = useState<typeof PROMOTIONS[0] | null>(null);
 
-  useSEO({
-    title: "โปรโมชั่น RGB789 | โบนัสสมาชิกใหม่ ฝาก100รับ200 เครดิตฟรี คืนยอดเสีย 7%",
-    description: "โปรโมชั่น RGB789 ล่าสุด สมาชิกใหม่ฝาก100รับ200 รับโบนัส 60% คืนยอดเสีย 7% ทุกวัน เครดิตฟรีไม่ต้องฝาก โปรโมชั่นฝากถอนออโต้ไว ไม่มีขั้นต่ำ อัปเดตทุกวัน",
-    keywords: "โปรโมชั่น RGB789, โบนัสสมาชิกใหม่, ฝาก100รับ200, เครดิตฟรี, คืนยอดเสีย, โปรโมชั่นสล็อต, โบนัสฟรี, สมาชิกใหม่รับโบนัส",
-    canonical: "https://rgb789.fun/promotions",
-    ogType: "website",
-    ogImage: "/images/legacy/rgb789-logo-full_e43066ad.jpg",
-  });
+  useSEO(ROUTE_SEO["/promotions"]);
+
+  const collectionSchema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: "โปรโมชั่นทั้งหมด",
+    description: ROUTE_SEO["/promotions"].description,
+    url: ROUTE_SEO["/promotions"].canonical,
+    inLanguage: "th-TH",
+    isPartOf: {
+      "@type": "WebSite",
+      name: "RGB789",
+      url: "https://rgb789.fun",
+    },
+  };
 
   return (
     <div
       className="min-h-screen"
       style={{ background: "linear-gradient(180deg, #0f0225 0%, #1a0533 10%, #0f0225 100%)" }}
     >
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }} />
       <StickyPromoBar />
 
       {/* Header */}

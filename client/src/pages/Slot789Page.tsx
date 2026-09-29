@@ -9,6 +9,7 @@ import StickyPromoBar from "@/components/StickyPromoBar";
 import Breadcrumb from "@/components/Breadcrumb";
 import { useSEO } from "@/hooks/useSEO";
 import { SITE_INFO } from "@/lib/constants";
+import { ROUTE_SEO } from "@/ssr/routeManifest";
 
 const CDN = "/images/legacy";
 
@@ -66,15 +67,7 @@ const FAQ_ITEMS = [
 ] as const;
 
 export default function Slot789Page() {
-  useSEO({
-    title: "สล็อต789 | สล็อตเว็บตรง RGB789 เกมยอดนิยม สมัครง่ายผ่าน LINE",
-    description: "สล็อต789 ที่ RGB789 รวมเกมสล็อตออนไลน์ยอดนิยม พร้อมหน้าทดลองเล่นสล็อต โปรโมชั่นสมาชิกใหม่ และบริการผ่าน LINE ใช้งานสะดวกบนมือถือ",
-    keywords: "สล็อต789, สล็อต 789, สล็อต789เว็บตรง, สล็อตเว็บตรง, สล็อตออนไลน์, สล็อตมือถือ, RGB789 สล็อต",
-    canonical: "https://rgb789.fun/slot789",
-    ogTitle: "สล็อต789 | สล็อตเว็บตรง RGB789 เกมยอดนิยม",
-    ogDescription: "รวมข้อมูลสล็อต789 เกมยอดนิยม ทดลองเล่นสล็อต และโปรโมชั่นที่ RGB789",
-    ogImage: `${CDN}/slot-games-BfnjKuuFh4U5MGSzRcpWL5.webp`,
-  });
+  useSEO(ROUTE_SEO["/slot789"]);
 
   const faqSchema = {
     "@context": "https://schema.org",
@@ -92,8 +85,8 @@ export default function Slot789Page() {
   const webPageSchema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "สล็อต789 | สล็อตเว็บตรง RGB789",
-    description: "หน้าแนะนำสล็อต789 ที่รวมเกมยอดนิยม หน้าทดลองเล่นสล็อต และโปรโมชั่นของ RGB789",
+    name: ROUTE_SEO["/slot789"].title,
+    description: ROUTE_SEO["/slot789"].description,
     url: "https://rgb789.fun/slot789",
     inLanguage: "th-TH",
     publisher: {

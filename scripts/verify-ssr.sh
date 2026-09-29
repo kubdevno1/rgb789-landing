@@ -279,12 +279,12 @@ echo "== SSR crawler verification against $BASE =="
 #     hard error, not a silent skip.
 #   - 5th arg (paginated rows): substring the canonical href VALUE must contain,
 #     so a canonical collapsing back to page 1 turns the row red.
-check "/"             "RGB789 คือเว็บพนันออนไลน์ครบวงจร" "RGB789 | สล็อตออนไลน์"   ogimage
-check "/demo-slot"    "วิธีทดลองเล่นสล็อตฟรีที่ RGB789"   "ทดลองเล่นสล็อตฟรี | RGB789" ogimage
-check "/free-credit"  "โปรโมชั่นพิเศษ 2025"              "เครดิตฟรี RGB789 |"       ogimage
-check "/slot789"      "เกมสล็อต789ที่ผู้เล่นค้นหาบ่อย"     "สล็อต789 | สล็อตเว็บตรง"  ogimage
-check "/promotions"   "โปรโมชั่นพิเศษ RGB789"             "โปรโมชั่น RGB789 |"       ogimage
-check "/articles"     "บทความทั้งหมด"                      "บทความ RGB789 |"         ogimage
+check "/"             "คำถามที่พบบ่อย"                    "RGB789 | ข้อมูลสล็อต"                   ogimage
+check "/demo-slot"    "ทดลองเล่นสล็อตฟรี"                 "ทดลองเล่นสล็อต | ข้อมูลเกม"             ogimage
+check "/free-credit"  "เครดิตฟรีสูงสุด"                   "เครดิตฟรี RGB789 | รายละเอียด"           ogimage
+check "/slot789"      "สล็อต789 เว็บรวมเกมยอดนิยม"        "สล็อต789 | เกมยอดนิยม"                  ogimage
+check "/promotions"   "โปรโมชั่นทั้งหมด"                  "โปรโมชั่น RGB789 | รายละเอียด"           ogimage
+check "/articles"     "บทความทั้งหมด"                     "บทความ RGB789 | ความรู้"                ogimage
 # ---------------------------------------------------------------------------
 
 echo "== Result: PASS=$PASS FAIL=$FAIL =="

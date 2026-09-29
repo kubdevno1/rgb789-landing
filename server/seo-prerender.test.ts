@@ -6,6 +6,11 @@ const repoRoot = resolve(import.meta.dirname, "..");
 const routeManifest = readFileSync(resolve(repoRoot, "client/src/ssr/routeManifest.ts"), "utf8");
 const indexHtml = readFileSync(resolve(repoRoot, "client/index.html"), "utf8");
 const appSource = readFileSync(resolve(repoRoot, "client/src/App.tsx"), "utf8");
+const seoHook = readFileSync(resolve(repoRoot, "client/src/hooks/useSEO.ts"), "utf8");
+const homeSource = readFileSync(resolve(repoRoot, "client/src/pages/Home.tsx"), "utf8");
+const promotionsSource = readFileSync(resolve(repoRoot, "client/src/pages/Promotions.tsx"), "utf8");
+const articlesSource = readFileSync(resolve(repoRoot, "client/src/pages/Articles.tsx"), "utf8");
+const sitemap = readFileSync(resolve(repoRoot, "client/public/sitemap.xml"), "utf8");
 
 const routes = ["/", "/demo-slot", "/free-credit", "/slot789", "/promotions", "/articles"];
 
@@ -35,5 +40,28 @@ describe("SEO prerender contract", () => {
     expect(appSource).not.toContain("const DemoSlot = lazy");
     expect(appSource).not.toContain("const FreeCreditPage = lazy");
     expect(appSource).not.toContain("const Slot789Page = lazy");
+  });
+
+  it("keeps social images absolute and route metadata centralized", () => {
+    expect(routeManifest).toContain("ogImageAlt");
+    expect(routeManifest).not.toMatch(/ogImage:\s*"\//);
+    expect(seoHook).toContain('hreflang="th"');
+    expect(indexHtml).not.toContain('rel="alternate"');
+  });
+
+  it("does not publish stale article dates or unsupported FAQ schema from the home page", () => {
+    expect(homeSource).not.toContain('"@type": "FAQPage"');
+    expect(homeSource).not.toContain("datePublished");
+    expect(homeSource).not.toContain("dateModified");
+  });
+
+  it("provides collection schema for the two collection pages", () => {
+    expect(promotionsSource).toContain('"@type": "CollectionPage"');
+    expect(articlesSource).toContain('"@type": "CollectionPage"');
+  });
+
+  it("keeps sitemap freshness aligned with this remediation", () => {
+    expect(sitemap).not.toContain("2026-09-21");
+    expect(sitemap.match(/<loc>/g)).toHaveLength(6);
   });
 });
