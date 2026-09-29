@@ -7,9 +7,9 @@ describe("production static delivery", () => {
     const source = readFileSync(resolve(import.meta.dirname, "_core/vite.ts"), "utf8");
 
     expect(source).toContain('"/assets"');
-    expect(source).toContain('immutable: true');
+    expect(source).toContain("immutable: true");
     expect(source).toContain('maxAge: "1y"');
-    expect(source).toContain('index: false');
+    expect(source).toContain("index: false");
     expect(source).toContain("stale-while-revalidate=86400");
   });
 
@@ -17,5 +17,14 @@ describe("production static delivery", () => {
     const html = readFileSync(resolve(import.meta.dirname, "../client/index.html"), "utf8");
     expect(html).toContain('name="rgb789-build-id"');
     expect(html).toContain("promo-performance-edaed22b");
+  });
+
+  it("keeps rgb789.me as a host-specific single Sale Page without changing Vercel routes", () => {
+    const source = readFileSync(resolve(import.meta.dirname, "_core/vite.ts"), "utf8");
+
+    expect(source).toContain('"rgb789-me-sale.html"');
+    expect(source).toContain("shouldServeRgb789MeSalePage");
+    expect(source).toContain('app.get(["/robots.txt", "/sitemap.xml"], serveRgb789MeCrawlerFileProduction)');
+    expect(source).toContain('app.get("*", serveRgb789MeSalePageProduction)');
   });
 });
