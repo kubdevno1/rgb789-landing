@@ -2,11 +2,8 @@
 // SEO: H1 tag with primary keywords, descriptive text
 
 import { IMAGES, SITE_INFO } from "@/lib/constants";
-import { trackRegisterClick, trackLoginClick } from "@/lib/analytics";
-import { useRegisterTracking } from "@/hooks/useRegisterTracking";
 
 export default function HeroSection() {
-  const { trackClick } = useRegisterTracking();
   return (
     <section
       className="relative min-h-[90vh] lg:min-h-screen flex items-center overflow-hidden"
@@ -85,7 +82,6 @@ export default function HeroSection() {
                 href={SITE_INFO.registerUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={() => { trackRegisterClick("hero"); trackClick("hero_register_button"); }}
                 className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-bold rounded-lg sm:rounded-xl transition-all duration-300 hover:scale-105"
                 style={{
                   fontFamily: "'Kanit', sans-serif",
@@ -104,7 +100,6 @@ export default function HeroSection() {
                 href={SITE_INFO.loginUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={() => trackLoginClick("hero")}
                 className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-lg sm:rounded-xl transition-all duration-300 hover:bg-white/10 text-white border"
                 style={{
                   fontFamily: "'Kanit', sans-serif",

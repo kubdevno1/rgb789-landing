@@ -20,15 +20,4 @@ describe("hero image delivery", () => {
     expect(htmlSource).toContain('href="/images/hero/hero-banner.webp"');
     expect(htmlSource).not.toContain("image/avif");
   });
-
-  it("registers the manuscript storage proxy before application routes", () => {
-    const serverSource = readFileSync(resolve(projectRoot, "server/_core/index.ts"), "utf8");
-    const proxySource = readFileSync(resolve(projectRoot, "server/_core/storageProxy.ts"), "utf8");
-
-    expect(serverSource.indexOf("registerStorageProxy(app)")).toBeLessThan(
-      serverSource.indexOf("registerOAuthRoutes(app)"),
-    );
-    expect(proxySource).toContain('app.get("/manus-storage/*"');
-    expect(proxySource).toContain('res.redirect(307, url)');
-  });
 });

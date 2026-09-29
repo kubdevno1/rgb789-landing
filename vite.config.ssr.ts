@@ -13,13 +13,9 @@ export default defineConfig({
     alias: {
       "@": path.resolve(projectRoot, "client", "src"),
       "@shared": path.resolve(projectRoot, "shared"),
-      "@assets": path.resolve(projectRoot, "attached_assets"),
     },
   },
   envDir: projectRoot,
-  ssr: {
-    noExternal: ["streamdown"],
-  },
   build: {
     ssr: path.resolve(projectRoot, "client/src/entry-server.tsx"),
     outDir: path.resolve(projectRoot, "dist/server-ssr"),

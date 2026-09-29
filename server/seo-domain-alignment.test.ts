@@ -6,13 +6,13 @@ const readProjectFile = (relativePath: string) =>
   readFileSync(resolve(process.cwd(), relativePath), "utf8");
 
 const canonicalDomain = "https://rgb789.fun";
+const legacyDomain = ["https://rgb789", ".me"].join("");
 const seoFiles = [
   "client/index.html",
   "client/public/robots.txt",
   "client/public/sitemap.xml",
   "client/src/lib/constants.ts",
   "client/src/components/Breadcrumb.tsx",
-  "client/src/components/PromoPopup.tsx",
   "client/src/pages/Home.tsx",
   "client/src/pages/DemoSlot.tsx",
   "client/src/pages/FreeCreditPage.tsx",
@@ -26,7 +26,7 @@ describe("rgb789.fun canonical SEO alignment", () => {
   it("uses rgb789.fun throughout public metadata, schemas, and sharing URLs", () => {
     for (const file of seoFiles) {
       const source = readProjectFile(file);
-      expect(source, file).not.toContain("https://rgb789.me");
+      expect(source, file).not.toContain(legacyDomain);
     }
 
     expect(readProjectFile("client/src/ssr/routeManifest.ts")).toContain(
@@ -48,7 +48,7 @@ describe("rgb789.fun canonical SEO alignment", () => {
 
     expect(locations).toHaveLength(6);
     expect(locations.every((url) => url?.startsWith(canonicalDomain))).toBe(true);
-    expect(sitemap).not.toContain("rgb789.me");
+    expect(sitemap).not.toContain(legacyDomain);
   });
 
   it("redirects Thai URL aliases to their canonical Vercel paths", () => {

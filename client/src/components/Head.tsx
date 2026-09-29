@@ -22,12 +22,33 @@ function upsertCanonical(href: string) {
   element.href = href;
 }
 
+function upsertThaiAlternate(href?: string) {
+  let element = document.head.querySelector<HTMLLinkElement>('link[rel="alternate"][hreflang="th"]');
+  if (!href) {
+    element?.remove();
+    return;
+  }
+  if (!element) {
+    element = document.createElement("link");
+    element.rel = "alternate";
+    element.hreflang = "th";
+    document.head.appendChild(element);
+  }
+  element.href = href;
+}
+
 export default function Head() {
   const [location] = useLocation();
 
   useEffect(() => {
     const seo = getRouteSeo(location);
-    if (!seo) return;
+    if (!seo) {
+      document.title = "Page Not Found | RGB789";
+      upsertMeta("name", "robots", "noindex, nofollow");
+      document.head.querySelector('link[rel="canonical"]')?.remove();
+      upsertThaiAlternate();
+      return;
+    }
 
     const ogTitle = seo.ogTitle ?? seo.title;
     const ogDescription = seo.ogDescription ?? seo.description;
@@ -43,12 +64,15 @@ export default function Head() {
     upsertMeta("property", "og:locale", "th_TH");
     if (seo.ogImage) {
       upsertMeta("property", "og:image", seo.ogImage);
+      if (seo.ogImageAlt) upsertMeta("property", "og:image:alt", seo.ogImageAlt);
       upsertMeta("name", "twitter:image", seo.ogImage);
+      if (seo.ogImageAlt) upsertMeta("name", "twitter:image:alt", seo.ogImageAlt);
     }
     upsertMeta("name", "twitter:card", "summary_large_image");
     upsertMeta("name", "twitter:title", ogTitle);
     upsertMeta("name", "twitter:description", ogDescription);
     upsertCanonical(seo.canonical);
+    upsertThaiAlternate(seo.canonical);
   }, [location]);
 
   return null;

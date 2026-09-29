@@ -9,7 +9,7 @@ import StickyPromoBar from "@/components/StickyPromoBar";
 import Breadcrumb from "@/components/Breadcrumb";
 import { useSEO } from "@/hooks/useSEO";
 import { SITE_INFO } from "@/lib/constants";
-import { trackRegisterClick } from "@/lib/analytics";
+import { ROUTE_SEO } from "@/ssr/routeManifest";
 
 const CDN = "/images/legacy";
 
@@ -67,15 +67,7 @@ const FAQ_ITEMS = [
 ] as const;
 
 export default function Slot789Page() {
-  useSEO({
-    title: "สล็อต789 | สล็อตเว็บตรง RGB789 เกมยอดนิยม สมัครง่ายผ่าน LINE",
-    description: "สล็อต789 ที่ RGB789 รวมเกมสล็อตออนไลน์ยอดนิยม พร้อมหน้าทดลองเล่นสล็อต โปรโมชั่นสมาชิกใหม่ และบริการผ่าน LINE ใช้งานสะดวกบนมือถือ",
-    keywords: "สล็อต789, สล็อต 789, สล็อต789เว็บตรง, สล็อตเว็บตรง, สล็อตออนไลน์, สล็อตมือถือ, RGB789 สล็อต",
-    canonical: "https://rgb789.fun/slot789",
-    ogTitle: "สล็อต789 | สล็อตเว็บตรง RGB789 เกมยอดนิยม",
-    ogDescription: "รวมข้อมูลสล็อต789 เกมยอดนิยม ทดลองเล่นสล็อต และโปรโมชั่นที่ RGB789",
-    ogImage: `${CDN}/slot-games-BfnjKuuFh4U5MGSzRcpWL5.webp`,
-  });
+  useSEO(ROUTE_SEO["/slot789"]);
 
   const faqSchema = {
     "@context": "https://schema.org",
@@ -93,8 +85,8 @@ export default function Slot789Page() {
   const webPageSchema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "สล็อต789 | สล็อตเว็บตรง RGB789",
-    description: "หน้าแนะนำสล็อต789 ที่รวมเกมยอดนิยม หน้าทดลองเล่นสล็อต และโปรโมชั่นของ RGB789",
+    name: ROUTE_SEO["/slot789"].title,
+    description: ROUTE_SEO["/slot789"].description,
     url: "https://rgb789.fun/slot789",
     inLanguage: "th-TH",
     publisher: {
@@ -134,7 +126,7 @@ export default function Slot789Page() {
                 เลือกดูเกม<strong className="text-yellow-300">สล็อต789</strong>ยอดนิยม พร้อมข้อมูลสำหรับผู้เริ่มต้น หน้าทดลองเล่นสล็อต และโปรโมชั่นจาก RGB789 เพื่อประกอบการตัดสินใจอย่างรอบคอบ
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <a href={SITE_INFO.registerUrl} target="_blank" rel="noopener noreferrer" onClick={() => trackRegisterClick("slot789-hero", "สมัครผ่าน LINE")} className="inline-flex items-center justify-center rounded-full px-7 py-3.5 text-base font-bold transition-transform hover:scale-[1.02]" style={{ background: "linear-gradient(135deg, #FFD700, #F59E0B)", color: "#18042f", fontFamily: "'Kanit', sans-serif", boxShadow: "0 8px 28px rgba(255,215,0,0.28)" }}>
+                <a href={SITE_INFO.registerUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-full px-7 py-3.5 text-base font-bold transition-transform hover:scale-[1.02]" style={{ background: "linear-gradient(135deg, #FFD700, #F59E0B)", color: "#18042f", fontFamily: "'Kanit', sans-serif", boxShadow: "0 8px 28px rgba(255,215,0,0.28)" }}>
                   สมัครผ่าน LINE
                 </a>
                 <Link href="/demo-slot" className="inline-flex items-center justify-center rounded-full border px-7 py-3.5 text-base font-bold text-yellow-300 transition-colors hover:bg-yellow-300/10" style={{ borderColor: "rgba(255,215,0,0.45)", fontFamily: "'Kanit', sans-serif" }}>

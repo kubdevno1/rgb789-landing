@@ -2,7 +2,6 @@
 // SEO: Final conversion section
 
 import { SITE_INFO } from "@/lib/constants";
-import { trackRegisterClick, trackLineContactClick } from "@/lib/analytics";
 import { motion } from "framer-motion";
 
 export default function CTABanner() {
@@ -56,7 +55,6 @@ export default function CTABanner() {
               href={SITE_INFO.registerUrl}
               target="_blank"
               rel="noopener noreferrer"
-              onClick={() => trackRegisterClick("cta-banner")}
               className="inline-flex items-center gap-2 px-10 py-4 text-lg font-bold rounded-xl transition-all duration-300 hover:scale-105"
               style={{
                 fontFamily: "'Kanit', sans-serif",
@@ -75,7 +73,6 @@ export default function CTABanner() {
               href={SITE_INFO.lineUrl}
               target="_blank"
               rel="noopener noreferrer"
-              onClick={() => trackLineContactClick("cta-banner")}
               className="inline-flex items-center gap-2 px-8 py-4 text-lg font-semibold rounded-xl transition-all duration-300 hover:bg-white/10 text-white"
               style={{
                 fontFamily: "'Kanit', sans-serif",

@@ -4,18 +4,13 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import LoadingScreen from "./components/LoadingScreen";
 import Head from "./components/Head";
-import AdminRoute from "./pages/AdminRoute";
 import NotFound from "./pages/NotFound";
 import Promotions from "./pages/Promotions";
 import Articles from "./pages/Articles";
 import DemoSlot from "./pages/DemoSlot";
 import FreeCreditPage from "./pages/FreeCreditPage";
 import Slot789Page from "./pages/Slot789Page";
-import { lazy, Suspense, useState, useCallback } from "react";
-
-// Public routes are statically imported so renderToString emits real page HTML
-// instead of a Suspense fallback. Admin remains lazy-loaded below.
-const AdminDashboard = lazy(() => import("./pages/AdminRoute"));
+import { Suspense, useState, useCallback } from "react";
 
 function RouteFallback() {
   return <div className="min-h-screen" aria-busy="true" />;
@@ -26,7 +21,6 @@ function Router() {
     <Suspense fallback={<RouteFallback />}>
       <Switch>
         <Route path={"/"} component={Home} />
-        <Route path={"/admin"} component={AdminDashboard} />
         <Route path={"/promotions"} component={Promotions} />
         <Route path={"/articles"} component={Articles} />
         <Route path={"/ทดลองเล่นสล็อต"} component={DemoSlot} />
@@ -42,11 +36,7 @@ function Router() {
 }
 
 function App() {
-  // Skip the loading overlay for the admin route.
-  const isAdminRoute =
-    typeof window !== "undefined" && window.location.pathname.startsWith("/admin");
-
-  const [loadingDone, setLoadingDone] = useState(isAdminRoute);
+  const [loadingDone, setLoadingDone] = useState(false);
 
   const handleLoadingComplete = useCallback(() => {
     setLoadingDone(true);
@@ -56,7 +46,7 @@ function App() {
     <ErrorBoundary>
       <ThemeProvider defaultTheme="dark">
         <Head />
-        {/* Non-blocking loading overlay — shown only on first visit, not on /admin */}
+        {/* Non-blocking loading overlay — shown only on first visit */}
         {!loadingDone && (
           <LoadingScreen onComplete={handleLoadingComplete} duration={1800} />
         )}

@@ -35,15 +35,6 @@
     {
       "source": "/articles",
       "destination": "/articles/index.html"
-    },
-    {
-      "source": "/((?!api/).*)",
-      "destination": "/index.html"
     }
-  ],
-  "functions": {
-    "api/track-registration.ts": {
-      "maxDuration": 10
-    }
-  }
+  ]
 }

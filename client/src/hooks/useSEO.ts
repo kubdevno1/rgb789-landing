@@ -12,6 +12,7 @@ interface SEOProps {
   ogTitle?: string;
   ogDescription?: string;
   ogImage?: string;
+  ogImageAlt?: string;
   ogType?: "website" | "article";
   noIndex?: boolean;
 }
@@ -24,6 +25,7 @@ export function useSEO({
   ogTitle,
   ogDescription,
   ogImage,
+  ogImageAlt,
   ogType = "website",
   noIndex = false,
 }: SEOProps) {
@@ -59,6 +61,21 @@ export function useSEO({
       el.href = href;
     };
 
+    const setThaiAlternate = (href?: string) => {
+      let el = document.head.querySelector<HTMLLinkElement>('link[rel="alternate"][hreflang="th"]');
+      if (!href) {
+        el?.remove();
+        return;
+      }
+      if (!el) {
+        el = document.createElement("link");
+        el.rel = "alternate";
+        el.hreflang = "th";
+        document.head.appendChild(el);
+      }
+      el.href = href;
+    };
+
     // Standard meta
     setMeta('[name="description"]', description);
     if (keywords) setMeta('[name="keywords"]', keywords);
@@ -68,20 +85,27 @@ export function useSEO({
     setMeta('[property="og:title"]', ogTitle ?? title);
     setMeta('[property="og:description"]', ogDescription ?? description);
     setMeta('[property="og:type"]', ogType);
-    if (ogImage) setMeta('[property="og:image"]', ogImage);
+    if (ogImage) {
+      setMeta('[property="og:image"]', ogImage);
+      if (ogImageAlt) setMeta('[property="og:image:alt"]', ogImageAlt);
+    }
     if (canonical) {
       setMeta('[property="og:url"]', canonical);
       setLink("canonical", canonical);
+      setThaiAlternate(canonical);
     }
 
     // Twitter Card
     setMeta('[name="twitter:title"]', ogTitle ?? title);
     setMeta('[name="twitter:description"]', ogDescription ?? description);
-    if (ogImage) setMeta('[name="twitter:image"]', ogImage);
+    if (ogImage) {
+      setMeta('[name="twitter:image"]', ogImage);
+      if (ogImageAlt) setMeta('[name="twitter:image:alt"]', ogImageAlt);
+    }
 
     // Cleanup: restore default title on unmount
     return () => {
-      document.title = "RGB789 | สล็อตออนไลน์ คาสิโนออนไลน์ เว็บตรง ฝากถอนไว 24 ชั่วโมง";
+      document.title = "RGB789 | ข้อมูลสล็อต คาสิโนสด และบริการออนไลน์";
     };
-  }, [title, description, keywords, canonical, ogTitle, ogDescription, ogImage, ogType, noIndex]);
+  }, [title, description, keywords, canonical, ogTitle, ogDescription, ogImage, ogImageAlt, ogType, noIndex]);
 }

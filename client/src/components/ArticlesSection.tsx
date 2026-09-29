@@ -6,7 +6,6 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { SITE_INFO, IMAGES } from "@/lib/constants";
 import { CANONICAL_ORIGIN } from "@/ssr/routeManifest";
-import { trackArticleShare, trackArticleRead, trackLineContactClick, trackRegisterClick } from "@/lib/analytics";
 import { BookOpen, ChevronRight, Clock, Star, Zap, TrendingUp, Sparkles, Dice1, Trophy, Target, Tv, Share2 } from "lucide-react";
 
 type TabKey = "all" | "slots" | "casino" | "sports";
@@ -355,7 +354,6 @@ export default function ArticlesSection() {
                           href={SITE_INFO.registerUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          onClick={() => trackRegisterClick(`article-${article.id}`)}
                           className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-bold transition-all duration-300 hover:scale-105"
                           style={{
                             fontFamily: "'Kanit', sans-serif",
@@ -376,9 +374,6 @@ export default function ArticlesSection() {
                     <button
                       onClick={() => {
                         setExpandedArticle(isExpanded ? null : article.id);
-                        if (!isExpanded) {
-                          trackArticleRead(article.title, article.category);
-                        }
                       }}
                       className="flex items-center gap-1.5 text-sm font-medium text-purple-400 hover:text-yellow-400 transition-colors duration-300"
                       style={{ fontFamily: "'Kanit', sans-serif" }}
@@ -404,7 +399,6 @@ export default function ArticlesSection() {
                           border: "1px solid rgba(24,119,242,0.25)",
                         }}
                         title="แชร์ไปยัง Facebook"
-                        onClick={() => trackArticleShare("facebook", article.title)}
                       >
                         <svg
                           width="14"
@@ -432,7 +426,6 @@ export default function ArticlesSection() {
                           border: "1px solid rgba(6,199,85,0.25)",
                         }}
                         title="แชร์ไปยัง LINE"
-                        onClick={() => trackArticleShare("line", article.title)}
                       >
                         <svg
                           width="16"
@@ -509,7 +502,6 @@ export default function ArticlesSection() {
                 href={SITE_INFO.registerUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={() => trackRegisterClick("articles-section-final", "สมัครสมาชิก RGB789")}
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-lg text-sm font-bold transition-all duration-300 hover:scale-105"
                 style={{
                   fontFamily: "'Kanit', sans-serif",
@@ -525,7 +517,6 @@ export default function ArticlesSection() {
                 href={SITE_INFO.lineUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={() => trackLineContactClick("articles-section-final", "สอบถามเพิ่มเติม LINE")}
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-lg text-sm font-semibold text-white/80 border transition-all duration-300 hover:bg-white/5 hover:text-white"
                 style={{
                   fontFamily: "'Kanit', sans-serif",

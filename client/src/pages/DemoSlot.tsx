@@ -10,8 +10,8 @@ import LineFloatingButton from "@/components/LineFloatingButton";
 import { SITE_INFO, SLOT_PROVIDERS } from "@/lib/constants";
 import { Suspense } from "react";
 import { useSEO } from "@/hooks/useSEO";
+import { ROUTE_SEO } from "@/ssr/routeManifest";
 import Breadcrumb from "@/components/Breadcrumb";
-import { trackPlayGameClick, trackRegisterClick } from "@/lib/analytics";
 
 // ข้อมูลเกมสล็อตทดลองเล่น
 const DEMO_GAMES = [
@@ -146,14 +146,7 @@ export default function DemoSlot() {
     ? DEMO_GAMES
     : DEMO_GAMES.filter((g) => g.provider === activeProvider);
 
-  useSEO({
-    title: "ทดลองเล่นสล็อตฟรี | RGB789 สล็อตทดลองเล่น 1,000+ เกม ไม่ต้องสมัคร",
-    description: "ทดลองเล่นสล็อตฟรีทุกค่ายดังที่ RGB789 PG Soft, Pragmatic Play, Joker Gaming ไม่ต้องสมัครสมาชิก ไม่ต้องฝากเงิน เล่นได้ทันที สล็อตทดลองเล่นไม่มีขั้นต่ำฟรีทุกวัน",
-    keywords: "ทดลองเล่นสล็อต, สล็อตทดลองเล่น, สล็อตฟรี, ทดลองเล่นสล็อตฟรี, PG Soft ทดลอง, สล็อตไม่ต้องสมัคร, เล่นสล็อตฟรี, RGB789 ทดลอง",
-    canonical: "https://rgb789.fun/demo-slot",
-    ogType: "website",
-    ogImage: "/images/legacy/slot-games-BfnjKuuFh4U5MGSzRcpWL5.webp",
-  });
+  useSEO(ROUTE_SEO["/demo-slot"]);
 
   return (
     <div
@@ -167,9 +160,10 @@ export default function DemoSlot() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "WebPage",
-            name: "ทดลองเล่นสล็อตฟรี ไม่ต้องสมัคร ทุกค่ายดัง | RGB789",
-            description: "ทดลองเล่นสล็อตฟรีกว่า 1,000 เกม จาก PG Soft, Pragmatic Play, Joker Gaming ไม่ต้องสมัครสมาชิก ไม่ต้องฝากเงิน เล่นได้ทันที",
+            name: ROUTE_SEO["/demo-slot"].title,
+            description: ROUTE_SEO["/demo-slot"].description,
             url: "https://rgb789.fun/demo-slot",
+            inLanguage: "th-TH",
             breadcrumb: {
               "@type": "BreadcrumbList",
               itemListElement: [
@@ -252,7 +246,6 @@ export default function DemoSlot() {
                 href={SITE_INFO.registerUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={() => trackRegisterClick("demo-slot-hero", "สมัครเล่นจริง รับโบนัส")}
                 className="inline-flex items-center justify-center px-8 py-4 rounded-full font-bold text-lg"
                 style={{
                   background: "linear-gradient(135deg, #FFD700, #FF8C00)",
@@ -341,7 +334,6 @@ export default function DemoSlot() {
                         href={SITE_INFO.registerUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        onClick={() => trackPlayGameClick(game.name, "demo-slot-game-preview")}
                         className="px-4 py-2 rounded-full text-sm font-bold"
                         style={{ background: "linear-gradient(135deg, #FFD700, #FF8C00)", color: "#1a0533", fontFamily: "'Kanit', sans-serif" }}
                       >
@@ -351,7 +343,6 @@ export default function DemoSlot() {
                         href={SITE_INFO.registerUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        onClick={() => trackRegisterClick("demo-slot-game-card", `เล่นจริง ${game.name}`)}
                         className="px-4 py-2 rounded-full text-sm font-bold border"
                         style={{ borderColor: "rgba(255,215,0,0.5)", color: "#FFD700", fontFamily: "'Kanit', sans-serif" }}
                       >
@@ -387,7 +378,6 @@ export default function DemoSlot() {
                 href={SITE_INFO.registerUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={() => trackRegisterClick("demo-slot-load-more", "สมัครฟรี เล่นได้ทุกเกม")}
                 className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-bold text-lg"
                 style={{
                   background: "linear-gradient(135deg, #FFD700, #FF8C00)",
@@ -558,7 +548,6 @@ export default function DemoSlot() {
               href={SITE_INFO.registerUrl}
               target="_blank"
               rel="noopener noreferrer"
-              onClick={() => trackRegisterClick("demo-slot-final", "สมัครสมาชิกฟรี รับโบนัสทันที")}
               className="inline-flex items-center gap-3 px-10 py-5 rounded-full font-bold text-xl"
               style={{
                 background: "linear-gradient(135deg, #FFD700, #FF8C00)",

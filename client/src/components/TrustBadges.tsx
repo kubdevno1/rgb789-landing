@@ -14,22 +14,22 @@ const BADGES = [
   {
     id: 2,
     icon: CheckCircle,
-    title: "Verified",
-    description: "Licensed & Regulated",
+    title: "ตรวจสอบข้อมูล",
+    description: "อ่านเงื่อนไขก่อนใช้งาน",
     color: "from-blue-500 to-cyan-600",
   },
   {
     id: 3,
     icon: Award,
-    title: "Award Winner",
-    description: "Best Online Casino 2024",
+    title: "ข้อมูลชัดเจน",
+    description: "แสดงรายละเอียดบริการ",
     color: "from-yellow-500 to-amber-600",
   },
   {
     id: 4,
     icon: Shield,
-    title: "Safe & Secure",
-    description: "Player Protection",
+    title: "ใช้งานอย่างรับผิดชอบ",
+    description: "กำหนดขอบเขตการใช้งาน",
     color: "from-purple-500 to-pink-600",
   },
 ];
@@ -95,8 +95,7 @@ export default function TrustBadges() {
         {/* Trust Statement */}
         <div className="mt-8 text-center">
           <p className="text-white/70 text-sm" style={{ fontFamily: "'Kanit', sans-serif" }}>
-            RGB789 ยึดมั่นในการให้บริการที่ปลอดภัยและเชื่อถือได้ เราได้รับการรับรองจากหน่วยงานระหว่างประเทศ
-            และมีมาตรการป้องกันข้อมูลส่วนบุคคลของผู้เล่นในระดับสูงสุด
+            โปรดตรวจสอบข้อมูลและเงื่อนไขล่าสุดจากหน้าเว็บไซต์ก่อนตัดสินใจใช้งาน
           </p>
         </div>
       </div>
