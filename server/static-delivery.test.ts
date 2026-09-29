@@ -18,4 +18,14 @@ describe("production static delivery", () => {
     expect(html).toContain('name="rgb789-build-id"');
     expect(html).toContain("promo-performance-edaed22b");
   });
+
+  it("uses a noindex custom 404 document and does not rewrite unknown routes to the SPA", () => {
+    const source = readFileSync(resolve(import.meta.dirname, "_core/vite.ts"), "utf8");
+    const notFound = readFileSync(resolve(import.meta.dirname, "../client/public/404.html"), "utf8");
+
+    expect(source).toContain("res.status(404)");
+    expect(source).toContain("404.html");
+    expect(notFound).toContain('name="robots" content="noindex, nofollow"');
+    expect(notFound).toContain("ไม่พบหน้าที่คุณกำลังค้นหา");
+  });
 });

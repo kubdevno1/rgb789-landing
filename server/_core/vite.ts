@@ -59,6 +59,7 @@ export function serveStatic(app: Express) {
   }
 
   const assetPath = path.resolve(distPath, "assets");
+  const notFoundPath = path.resolve(distPath, "404.html");
 
   const prerenderedRoutes = [
     "/",
@@ -109,12 +110,16 @@ export function serveStatic(app: Express) {
     }),
   );
 
-  // fall through to index.html if the file doesn't exist
+  // Unknown routes must remain real 404s instead of becoming indexable SPA soft-404s.
   app.use("*", (_req, res) => {
-    res.set(
-      "Cache-Control",
-      "public, max-age=60, s-maxage=300, stale-while-revalidate=86400",
-    );
-    res.sendFile(path.resolve(distPath, "index.html"));
+    res.status(404).set({
+      "Cache-Control": "public, max-age=60, s-maxage=300, stale-while-revalidate=86400",
+      "Content-Type": "text/html; charset=utf-8",
+    });
+    if (fs.existsSync(notFoundPath)) {
+      res.sendFile(notFoundPath);
+      return;
+    }
+    res.end("Not Found");
   });
 }

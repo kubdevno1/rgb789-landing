@@ -12,7 +12,7 @@ export const IMAGES = {
 
 export const SITE_INFO = {
   name: "RGB789",
-  domain: "rgb789.me",
+  domain: "rgb789.fun",
   tagline: "เว็บพนันออนไลน์ครบวงจร อันดับ 1 ในไทย",
   description: "เมื่ออยากเล่นคาสิโน ให้นึกถึง RGB789 เว็บพนันออนไลน์ที่รวมเกมจากค่ายชั้นนำไว้ในเว็บเดียว",
   registerUrl: "https://line.me/ti/p/@311ukzxq",

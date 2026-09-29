@@ -24,17 +24,3 @@ export const users = mysqlTable("users", {
 
 export type User = typeof users.$inferSelect;
 export type InsertUser = typeof users.$inferInsert;
-
-// Table for tracking register button click events
-export const registerClicks = mysqlTable("register_clicks", {
-  id: int("id").autoincrement().primaryKey(),
-  clickedAt: timestamp("clickedAt").defaultNow().notNull(),
-  device: varchar("device", { length: 32 }).notNull().default("unknown"),
-  platform: varchar("platform", { length: 64 }),
-  source: varchar("source", { length: 128 }),
-  userAgent: text("userAgent"),
-  referrer: varchar("referrer", { length: 512 }),
-});
-
-export type RegisterClick = typeof registerClicks.$inferSelect;
-export type InsertRegisterClick = typeof registerClicks.$inferInsert;

@@ -27,7 +27,12 @@ export default function Head() {
 
   useEffect(() => {
     const seo = getRouteSeo(location);
-    if (!seo) return;
+    if (!seo) {
+      document.title = "Page Not Found | RGB789";
+      upsertMeta("name", "robots", "noindex, nofollow");
+      document.head.querySelector('link[rel="canonical"]')?.remove();
+      return;
+    }
 
     const ogTitle = seo.ogTitle ?? seo.title;
     const ogDescription = seo.ogDescription ?? seo.description;

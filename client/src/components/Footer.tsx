@@ -110,9 +110,6 @@ export default function Footer() {
             <ul className="space-y-2.5">
               {[
                 { label: "เกี่ยวกับเรา", href: "#about" },
-                { label: "ข้อตกลงและกติกา", href: "#" },
-                { label: "นโยบายความเป็นส่วนตัว", href: "#" },
-                { label: "วิธีการใช้งานเว็บไซต์", href: "#" },
                 { label: "ติดต่อเรา (LINE)", href: SITE_INFO.lineUrl },
               ].map((link) => (
                 <li key={link.label}>
@@ -132,20 +129,12 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div
-          className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4"
+          className="pt-8 flex items-center justify-center"
           style={{ borderTop: "1px solid rgba(139,92,246,0.1)" }}
         >
           <p className="text-xs text-white/30">
-            © 2567 RGB789.ME สงวนลิขสิทธิ์ทุกประการ
+            © 2567 RGB789.FUN สงวนลิขสิทธิ์ทุกประการ
           </p>
-          <div className="flex items-center gap-6">
-            <a href="#" className="text-xs text-white/30 hover:text-white/50 transition-colors">
-              ข้อตกลงและกติกา
-            </a>
-            <a href="#" className="text-xs text-white/30 hover:text-white/50 transition-colors">
-              นโยบายความเป็นส่วนตัว
-            </a>
-          </div>
         </div>
         </div>
       </footer>
