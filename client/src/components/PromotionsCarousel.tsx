@@ -1,5 +1,5 @@
 // Design: Electric Stadium — Promotions Carousel with real promo images
-// Uses the same CDN images as PromoPopup for consistency
+// Uses the local promotion assets consistently across the carousel.
 
 import { useState, useEffect, useRef, useCallback } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";

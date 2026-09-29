@@ -121,12 +121,11 @@ check() {
     fi
     ok=1; why=""
     [ "$CODE" = "200" ] || { ok=0; why=" status=$CODE"; }
-    # Body slice: content inside #root, with the state script (and everything
+    # Body slice: content inside #root, with any state script (and everything
     # after it) cut off, so the needle can only match server-rendered body HTML.
     # PERF: containment + slicing use grep/awk, NOT bash case-globs/parameter
-    # expansion — bash 3.2 glob matching is ~16s PER CHECK on the template's
-    # ~370KB prod HTML (inline manus-runtime script), turning a 14-row table
-    # into an 8-minute run; the awk slice is ~2000x faster with identical cuts.
+    # expansion — the awk slice keeps this multi-route check fast on large
+    # prerendered HTML documents.
     if printf '%s' "$HTML" | grep -qF '<div id="root"></div>'; then
       ok=0; why="$why empty-root"
     fi

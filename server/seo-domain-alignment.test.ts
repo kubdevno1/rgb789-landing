@@ -13,7 +13,6 @@ const seoFiles = [
   "client/public/sitemap.xml",
   "client/src/lib/constants.ts",
   "client/src/components/Breadcrumb.tsx",
-  "client/src/components/PromoPopup.tsx",
   "client/src/pages/Home.tsx",
   "client/src/pages/DemoSlot.tsx",
   "client/src/pages/FreeCreditPage.tsx",

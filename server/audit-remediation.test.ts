@@ -3,19 +3,19 @@ import { resolve } from "node:path";
 import { describe, expect, it } from "vitest";
 
 const projectRoot = resolve(import.meta.dirname, "..");
-const read = (relativePath: string) => readFileSync(resolve(projectRoot, relativePath), "utf8");
+const read = (relativePath: string) =>
+  readFileSync(resolve(projectRoot, relativePath), "utf8");
 const legacyDomain = ["rgb789", ".me"].join("");
 
 describe("audit remediation contract", () => {
-  it("removes the retired admin, click-tracking, and Telegram runtime surfaces", () => {
+  it("removes the retired admin, click-tracking, Telegram, and backend runtime surfaces", () => {
     expect(existsSync(resolve(projectRoot, "client/src/pages/AdminRoute.tsx"))).toBe(false);
     expect(existsSync(resolve(projectRoot, "client/src/pages/AdminDashboard.tsx"))).toBe(false);
     expect(existsSync(resolve(projectRoot, "client/src/hooks/useRegisterTracking.ts"))).toBe(false);
     expect(existsSync(resolve(projectRoot, "api/track-registration.ts"))).toBe(false);
     expect(existsSync(resolve(projectRoot, "server/telegram.ts"))).toBe(false);
+    expect(existsSync(resolve(projectRoot, "server/routers.ts"))).toBe(false);
     expect(read("client/src/App.tsx")).not.toContain("/admin");
-    expect(read("server/routers.ts")).not.toContain("adminLogin");
-    expect(read("server/routers.ts")).not.toContain("tracking:");
     expect(read("vercel.json")).not.toContain("track-registration");
   });
 
@@ -38,6 +38,8 @@ describe("audit remediation contract", () => {
   it("removes placeholder legal links and provides a noindex 404 document", () => {
     expect(read("client/src/components/Footer.tsx")).not.toContain('href: "#"');
     expect(read("client/src/components/Footer.tsx")).not.toContain('href="#"');
-    expect(read("client/public/404.html")).toContain('name="robots" content="noindex, nofollow"');
+    expect(read("client/public/404.html")).toContain(
+      'name="robots" content="noindex, nofollow"',
+    );
   });
 });
